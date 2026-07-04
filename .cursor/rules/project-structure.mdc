@@ -1,0 +1,17 @@
+---
+description: MiviaLab repo layout — where design, dev, and assets live
+alwaysApply: true
+---
+
+# Project structure
+
+```
+design/     Design explorations — one self-contained subfolder per direction (static HTML/CSS or a full standalone app prototype)
+web/        Production website — full tech stack, build config, deployable app
+assets/     Shared docs and raw media (NOT web/public)
+.cursor/    Agent rules
+```
+
+- Put new design directions in `design/<name>/`. A direction may be simple static HTML/CSS or a full standalone app prototype (its own `package.json`, deps, and build) — but it must stay self-contained inside its subfolder.
+- Implement the chosen site in `web/`. Runtime public assets go in `web/`'s own public/static path.
+- Store strategy docs in `assets/docs/`, images in `assets/images/`. Copy into `web/` when the site needs them.

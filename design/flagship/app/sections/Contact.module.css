@@ -1,0 +1,141 @@
+.section {
+  padding-block: clamp(5rem, 12vw, 10rem);
+  border-top: 1px solid var(--color-line);
+}
+
+.inner {
+  width: min(100% - (var(--gutter) * 2), var(--maxw));
+  margin-inline: auto;
+}
+
+.head {
+  max-width: 46ch;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.index {
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: var(--step-h2);
+  margin-bottom: 1.25rem;
+}
+
+.lead {
+  color: var(--color-text-muted);
+  font-size: var(--step-lead);
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+/* The form is the primary action: it gets the dominant column. */
+.formCol {
+  order: 1;
+}
+
+.aside {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.asideLabel {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+/* WeChat QR — strong secondary */
+.wechat {
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  background: var(--color-bg-raised);
+}
+
+.qr {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.wechatNote {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.reviewTag {
+  font-family: var(--font-body);
+  color: var(--color-accent);
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+  margin-right: 0.3em;
+}
+
+/* Other channels — the smallest tier, deliberately quiet */
+.channels {
+  padding-top: 0.5rem;
+}
+
+.channelList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.channel {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.7rem;
+  border-top: 1px solid var(--color-line);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.channel:hover {
+  color: var(--color-accent);
+}
+
+.channelLabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.channelValue {
+  font-size: 0.95rem;
+}
+
+@media (min-width: 880px) {
+  .grid {
+    grid-template-columns: 1.4fr 0.85fr;
+  }
+}

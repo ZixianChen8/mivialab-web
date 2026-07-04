@@ -1,0 +1,128 @@
+.section {
+  padding-block: clamp(5rem, 12vw, 10rem);
+  border-top: 1px solid var(--color-line);
+}
+
+.inner {
+  width: min(100% - (var(--gutter) * 2), var(--maxw));
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.intro {
+  max-width: 60ch;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.index {
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: var(--step-h2);
+  margin-bottom: 1.5rem;
+}
+
+.body {
+  color: var(--color-text-muted);
+  font-size: var(--step-lead);
+  line-height: 1.55;
+}
+
+.body + .body {
+  margin-top: 1.25rem;
+}
+
+.langs {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.lang {
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.people {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  background: var(--color-bg-raised);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.personName {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.personRole {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-line);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.locDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+@media (min-width: 880px) {
+  .inner {
+    grid-template-columns: 1.5fr 0.9fr;
+  }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="MiviaLab">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <circle cx="80" cy="84" r="7" fill="#ff5436"/>
+  <text x="80" y="90" fill="#9a958c" font-family="monospace" font-size="22" letter-spacing="6" x-anchor="start" dx="24">OTTAWA  TORONTO</text>
+  <text x="80" y="340" fill="#f4f1ea" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-style="italic">MiviaLab</text>
+  <text x="80" y="430" fill="#f4f1ea" font-family="Georgia, serif" font-size="44">Web design &amp; development studio.</text>
+  <text x="80" y="556" fill="#9a958c" font-family="monospace" font-size="22" letter-spacing="2">Fast. Secure. Fully custom.</text>
+</svg>

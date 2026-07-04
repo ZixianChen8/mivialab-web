@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MiviaLab — Design explorations</title>
+  <meta name="description" content="Compare three homepage style directions for MiviaLab.">
+  <style>
+    :root {
+      --bg: #F5F5F3;
+      --text: #1A1A1A;
+      --muted: #5C5C5C;
+      --border: #DDD;
+      --focus: #1E4D5C;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      width: min(100% - 2rem, 48rem);
+      margin-inline: auto;
+      padding-block: 3rem 4rem;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin: 0 0 2.5rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .card {
+      display: block;
+      padding: 1.5rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .card:hover {
+      border-color: #999;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem;
+    }
+
+    .card p {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>MiviaLab homepage explorations</h1>
+    <p class="lead">Three static prototypes sharing the same content structure. Open each in a new tab to compare.</p>
+
+    <div class="grid">
+      <a class="card" href="editorial/index.html">
+        <span class="tag">Direction A</span>
+        <h2>Editorial Minimal</h2>
+        <p>Typography-led, generous whitespace, deep teal accent. Premium Canadian studio.</p>
+      </a>
+
+      <a class="card" href="warm-studio/index.html">
+        <span class="tag">Direction B</span>
+        <h2>Warm Studio</h2>
+        <p>Approachable cards, terracotta and sage accents. Partner tone for small-business owners.</p>
+      </a>
+
+      <a class="card" href="precision-dark/index.html">
+        <span class="tag">Direction C</span>
+        <h2>Precision Dark</h2>
+        <p>Proof-forward metrics, developer credibility. Dark base with light contact panel.</p>
+      </a>
+    </div>
+
+    <footer>
+      <p>Static HTML/CSS prototypes — no build step. See <code>design/README.md</code> for folder conventions.</p>
+    </footer>
+  </div>
+</body>
+</html>

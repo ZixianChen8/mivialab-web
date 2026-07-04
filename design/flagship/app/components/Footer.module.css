@@ -1,0 +1,76 @@
+.footer {
+  border-top: 1px solid var(--color-line);
+  padding-block: clamp(2.5rem, 5vw, 4rem) 2rem;
+}
+
+.inner {
+  width: min(100% - (var(--gutter) * 2), var(--maxw));
+  margin-inline: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.langs {
+  display: inline-flex;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+}
+
+.lang {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+
+.lang:hover {
+  color: var(--color-text);
+}
+
+.lang[data-active] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.legal {
+  width: min(100% - (var(--gutter) * 2), var(--maxw));
+  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-line);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.note {
+  opacity: 0.7;
+}

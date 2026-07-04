@@ -1,0 +1,212 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding-block: clamp(7rem, 14vh, 11rem) clamp(3rem, 8vh, 6rem);
+}
+
+/* Static fallback gradient — visible on mobile / reduced-motion where the
+   WebGL canvas does not mount. */
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(
+      120% 90% at 75% 15%,
+      rgba(255, 84, 54, 0.16),
+      transparent 55%
+    ),
+    radial-gradient(100% 100% at 15% 90%, rgba(120, 90, 200, 0.1), transparent 60%),
+    var(--color-bg);
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg::after {
+  /* gentle vignette + bottom fade into the page */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    var(--color-bg) 100%
+  );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - (var(--gutter) * 2), var(--maxw));
+  margin-inline: auto;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.kickerDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  margin-right: 0.8em;
+}
+
+.title {
+  font-size: var(--step-hero);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  max-width: 20ch;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  padding-block: 0.04em;
+}
+
+.lineInner {
+  display: block;
+  will-change: transform;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.lead {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: var(--step-lead);
+  line-height: 1.5;
+  max-width: 52ch;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  flex-wrap: wrap;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform var(--dur-fast) var(--ease-out),
+    filter var(--dur-fast) var(--ease-out);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.arrow {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.cta:hover .arrow {
+  transform: translateX(4px);
+}
+
+.ghost {
+  font-size: 1rem;
+  color: var(--color-text);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.ghost::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-text-muted);
+  transform-origin: left;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.ghost:hover::after {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.scroll {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: clamp(1.25rem, 4vh, 2.5rem);
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-text-muted),
+    transparent
+  );
+  animation: drop 1.8s var(--ease-in-out) infinite;
+}
+
+@keyframes drop {
+  0% {
+    transform: scaleY(0.3);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0.3);
+    transform-origin: bottom;
+  }
+}
+
+@media (max-width: 600px) {
+  .scroll {
+    display: none;
+  }
+}

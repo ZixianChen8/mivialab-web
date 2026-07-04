@@ -1,0 +1,192 @@
+.section {
+  padding-block: clamp(5rem, 12vw, 10rem);
+  border-top: 1px solid var(--color-line);
+}
+
+.inner {
+  width: min(100% - (var(--gutter) * 2), var(--maxw));
+  margin-inline: auto;
+}
+
+.head {
+  max-width: 52ch;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.index {
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: var(--step-h2);
+  margin-bottom: 1.25rem;
+}
+
+.lead {
+  color: var(--color-text-muted);
+  font-size: var(--step-lead);
+  line-height: 1.5;
+}
+
+.priceRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  background: var(--color-bg-raised);
+  margin-bottom: 1.25rem;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.priceLabel {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.priceValue {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+}
+
+.priceTbd {
+  font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.priceUnit {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+}
+
+.priceNote {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.reviewTag {
+  font-family: var(--font-body);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  margin-right: 0.4em;
+}
+
+.priceCta {
+  color: var(--color-text);
+  font-size: 1.05rem;
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 3px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.priceCta:hover {
+  color: var(--color-accent);
+}
+
+.cols {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.col {
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.colExtra {
+  background: transparent;
+  border-style: dashed;
+}
+
+.colTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.tick,
+.plus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+
+.tick {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+.plus {
+  border: 1px solid var(--color-line);
+  color: var(--color-text-muted);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  padding-block: 0.85rem;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-text);
+  font-size: 1.02rem;
+}
+
+.colExtra .listItem {
+  color: var(--color-text-muted);
+}
+
+.listItem:first-child {
+  border-top: 0;
+}
+
+.colFoot {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+@media (min-width: 760px) {
+  .cols {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
