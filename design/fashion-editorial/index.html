@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiviaLab — Web design &amp; development studio in Ottawa</title>
+  <meta name="description" content="MiviaLab builds modern, fast, custom websites for small businesses in the Ottawa–Toronto corridor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       01 HERO
+       ============================================================ -->
+  <header class="hero" id="home">
+    <div class="hero__shell">
+      <nav class="hero__nav" aria-label="Primary">
+        <a class="hero__logo" href="#home">MiviaLab</a>
+        <ul class="hero__links">
+          <li><a href="#studio">Studio</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="hero__cta" href="#contact">Start a project</a>
+        <button class="hero__menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+      </nav>
+
+      <div class="hero__mobile-nav" id="mobile-nav" hidden>
+        <a href="#studio">Studio</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="hero__stage">
+        <p class="hero__bg-word" aria-hidden="true">MIVIALAB</p>
+
+        <p class="hero__aside hero__aside--left reveal">
+          <span class="hero__eyebrow">Ottawa–Toronto</span>
+          Web design &amp; development for small businesses that need to look premium and load fast.
+        </p>
+
+        <figure class="hero__portrait" id="hero-portrait" aria-label="Studio portrait — hover to reveal in color">
+          <img
+            class="hero__img hero__img--bw"
+            src="https://picsum.photos/seed/mivialab-hero/720/900?grayscale"
+            alt="MiviaLab studio atmosphere"
+            width="720"
+            height="900"
+          >
+          <img
+            class="hero__img hero__img--color"
+            src="https://picsum.photos/seed/mivialab-hero/720/900"
+            alt=""
+            aria-hidden="true"
+            width="720"
+            height="900"
+          >
+        </figure>
+
+        <div class="hero__aside hero__aside--right reveal">
+          <div class="hero__stamp" aria-hidden="true">
+            <span>Est.</span>
+            <strong>2024</strong>
+            <span>Ottawa</span>
+          </div>
+        </div>
+
+        <div class="hero__bottom reveal">
+          <h1 class="hero__brand">MiviaLab</h1>
+          <p class="hero__tagline">Styled to perform.</p>
+          <a class="hero__scroll" href="#studio">Scroll the story</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Bridge strip -->
+    <div class="bridge bridge--into-studio" aria-hidden="true">
+      <p class="bridge__quote">A Canadian studio. Custom code. Sites owners never have to touch.</p>
+    </div>
+
+    <!-- ============================================================
+         02 STUDIO SPREAD
+         ============================================================ -->
+    <section class="studio section--light" id="studio" aria-labelledby="studio-heading">
+      <div class="studio__inner">
+        <div class="studio__index" aria-hidden="true">02</div>
+
+        <div class="studio__copy reveal">
+          <p class="section-label">The studio</p>
+          <h2 class="studio__headline" id="studio-heading">
+            The team that shapes your presence online
+          </h2>
+          <p class="studio__lead">
+            MiviaLab is a web design and development studio in the Ottawa–Toronto corridor. We build fully custom sites for small businesses — modern, fast, secure, and maintained so owners never have to touch them.
+          </p>
+          <p class="studio__body">
+            Public face: a clean Canadian studio. English-first, premium, broad. Behind that, bilingual delivery in English, French, and 中文 when a project needs it — a capability, not a niche label.
+          </p>
+          <p class="studio__body">
+            The goal of this site is simple: earn enough trust that you reach out. One primary contact path. Everything else stays secondary.
+          </p>
+          <ul class="studio__facts">
+            <li><span>Based in</span> Ottawa–Toronto</li>
+            <li><span>Built for</span> Small businesses</li>
+            <li><span>Languages</span> EN / FR / 中文</li>
+            <li><span>Model</span> Build + monthly care</li>
+          </ul>
+        </div>
+
+        <div class="studio__collage reveal">
+          <figure class="studio__shot studio__shot--a">
+            <img src="https://picsum.photos/seed/mivia-studio-a/640/860" alt="Design exploration on screen" loading="lazy" width="640" height="860">
+            <figcaption>Custom layouts — never a template skin</figcaption>
+          </figure>
+          <figure class="studio__shot studio__shot--b">
+            <img src="https://picsum.photos/seed/mivia-studio-b/720/520" alt="Brand and type studies" loading="lazy" width="720" height="520">
+            <figcaption>Brand presence that matches the business</figcaption>
+          </figure>
+          <figure class="studio__shot studio__shot--c">
+            <img src="https://picsum.photos/seed/mivia-studio-c/520/640" alt="Responsive site on devices" loading="lazy" width="520" height="640">
+            <figcaption>Built to perform on every screen</figcaption>
+          </figure>
+          <figure class="studio__shot studio__shot--d">
+            <img src="https://picsum.photos/seed/mivia-studio-d/560/420" alt="Ongoing maintenance work" loading="lazy" width="560" height="420">
+            <figcaption>Ongoing care after launch</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <blockquote class="studio__pull reveal">
+        <p>“Loads fast. Stays secure. Fully custom. You never have to touch it.”</p>
+        <cite>What buyers actually need from a studio partner</cite>
+      </blockquote>
+    </section>
+
+    <!-- Chapter break -->
+    <section class="chapter" aria-label="Chapter break">
+      <img
+        class="chapter__img"
+        src="https://picsum.photos/seed/mivia-chapter/1920/900"
+        alt=""
+        loading="lazy"
+        width="1920"
+        height="900"
+      >
+      <div class="chapter__veil"></div>
+      <p class="chapter__text reveal">
+        <span>03</span>
+        What we deliver
+      </p>
+    </section>
+
+    <!-- ============================================================
+         03 SERVICES
+         ============================================================ -->
+    <section class="services section--dark" id="services" aria-labelledby="services-heading">
+      <div class="services__inner">
+        <div class="services__head reveal">
+          <p class="section-label section-label--light">Services &amp; expertise</p>
+          <h2 class="services__title" id="services-heading">Custom web design &amp; development</h2>
+          <p class="services__sub">
+            Hand-built code — not Wix or Squarespace templates. Every site is tailored to the business, optimized for speed, and backed by ongoing security and care.
+          </p>
+        </div>
+
+        <ol class="services__list">
+          <li class="services__item reveal">
+            <span class="services__num">01</span>
+            <div>
+              <h3>Speed that keeps customers</h3>
+              <p>Sites that load fast so you stop losing visitors. We build lean and prove it with PageSpeed Insights — not marketing claims.</p>
+            </div>
+          </li>
+          <li class="services__item reveal">
+            <span class="services__num">02</span>
+            <div>
+              <h3>Security you can trust</h3>
+              <p>Protect customer data with regular reviews and updates. Your site stays current without you chasing plugins.</p>
+            </div>
+          </li>
+          <li class="services__item reveal">
+            <span class="services__num">03</span>
+            <div>
+              <h3>Fully custom build</h3>
+              <p>Clean, editable code shaped around your business — not a bloated template you fight every time you need a change.</p>
+            </div>
+          </li>
+          <li class="services__item reveal">
+            <span class="services__num">04</span>
+            <div>
+              <h3>Full service after launch</h3>
+              <p>Monthly care covers maintenance, security, ongoing customization, and continuous SEO. You run the business; we run the site.</p>
+            </div>
+          </li>
+          <li class="services__item reveal">
+            <span class="services__num">05</span>
+            <div>
+              <h3>Bilingual when it matters</h3>
+              <p>EN / FR / 中文 delivery as a premium capability — including genuine French for Ottawa’s bilingual reality.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="services__note reveal">
+          Edits to existing content are included in the monthly plan. New features, pages, or integrations after delivery are quoted separately.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04 WORK
+         ============================================================ -->
+    <section class="work section--light" id="work" aria-labelledby="work-heading">
+      <div class="work__head">
+        <div class="work__intro reveal">
+          <p class="section-label">Selected work</p>
+          <h2 class="work__headline" id="work-heading">Proof before we meet</h2>
+          <p>
+            One real client project, plus clearly labeled concept samples for the verticals we serve. Samples are never presented as live clients.
+          </p>
+        </div>
+        <div class="work__index" aria-hidden="true">04</div>
+      </div>
+
+      <div class="carousel reveal" id="carousel">
+        <div class="carousel__track" id="carousel-track">
+          <article class="carousel__card">
+            <div class="carousel__image">
+              <img src="https://picsum.photos/seed/mivia-work-opera/800/600" alt="Meng Wei Yue Opera Studio website preview" loading="lazy" width="800" height="600">
+            </div>
+            <div class="carousel__meta">
+              <span class="badge badge--client">Client project</span>
+              <h3>Meng Wei Yue Opera Studio</h3>
+              <p>Bilingual website for an Ottawa-area music and arts studio — brand presence, scheduling clarity, and a polished online home.</p>
+            </div>
+          </article>
+
+          <article class="carousel__card">
+            <div class="carousel__image">
+              <img src="https://picsum.photos/seed/mivia-work-music/800/600" alt="Riverbend Music Academy concept sample" loading="lazy" width="800" height="600">
+            </div>
+            <div class="carousel__meta">
+              <span class="badge badge--sample">Concept sample</span>
+              <h3>Riverbend Music Academy</h3>
+              <p>Sample for a tutoring and arts studio — class listings, instructor bios, and enrollment-focused CTAs.</p>
+            </div>
+          </article>
+
+          <article class="carousel__card">
+            <div class="carousel__image">
+              <img src="https://picsum.photos/seed/mivia-work-clinic/800/600" alt="Harbour Wellness Clinic concept sample" loading="lazy" width="800" height="600">
+            </div>
+            <div class="carousel__meta">
+              <span class="badge badge--sample">Concept sample</span>
+              <h3>Harbour Wellness Clinic</h3>
+              <p>Sample for a wellness clinic — services, practitioner profiles, and a calm booking-led layout.</p>
+            </div>
+          </article>
+
+          <article class="carousel__card">
+            <div class="carousel__image">
+              <img src="https://picsum.photos/seed/mivia-work-bakery/800/600" alt="Canal Street Bakery concept sample" loading="lazy" width="800" height="600">
+            </div>
+            <div class="carousel__meta">
+              <span class="badge badge--sample">Concept sample</span>
+              <h3>Canal Street Bakery</h3>
+              <p>Sample for a local bakery — menu highlights, hours, and a warm brand-forward storefront online.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="carousel__controls">
+          <button class="carousel__btn" type="button" id="carousel-prev" aria-label="Previous project">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M13 4L7 10L13 16" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+          <button class="carousel__btn" type="button" id="carousel-next" aria-label="Next project">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STATEMENT BRIDGE
+         ============================================================ -->
+    <section class="statement section--dark reveal" aria-labelledby="statement-heading">
+      <h2 class="sr-only" id="statement-heading">Studio philosophy</h2>
+
+      <div class="statement__ring">
+        <svg class="statement__text-ring" viewBox="0 0 400 400" aria-hidden="true">
+          <defs>
+            <path id="circle-path" d="M 200,200 m -150,0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0"/>
+          </defs>
+          <text>
+            <textPath href="#circle-path" startOffset="0%">
+              WHERE DESIGN AND CODE BECOME YOUR COMPETITIVE EDGE • MIVIALAB • OTTAWA STUDIO •
+            </textPath>
+          </text>
+        </svg>
+
+        <figure class="statement__portrait">
+          <img src="https://picsum.photos/seed/mivia-circle/600/600" alt="MiviaLab creative direction" loading="lazy" width="600" height="600">
+          <span class="statement__accent" aria-hidden="true"></span>
+        </figure>
+      </div>
+
+      <p class="statement__caption">Design and code, working as one system — not a pretty shell over a fragile build.</p>
+    </section>
+
+    <!-- ============================================================
+         05 PROOF
+         ============================================================ -->
+    <section class="proof section--light" id="proof" aria-labelledby="proof-heading">
+      <div class="proof__head reveal">
+        <p class="section-label">Proof we’re collecting</p>
+        <h2 class="proof__headline" id="proof-heading">Honest placeholders — not invented praise</h2>
+        <p class="proof__sub">
+          Trust is the product. Until bilingual testimonials and before/after PageSpeed evidence are approved, these slots stay labeled as pending.
+        </p>
+      </div>
+
+      <div class="proof__grid">
+        <article class="proof__card proof__card--offset reveal">
+          <div class="proof__media">
+            <img src="https://picsum.photos/seed/mivia-proof-1/640/480" alt="" loading="lazy" width="640" height="480">
+          </div>
+          <div class="proof__body">
+            <span class="proof__status">Pending</span>
+            <p>Bilingual testimonial from Meng Wei Yue Opera Studio — name, photo, and a short note on the launch experience.</p>
+            <footer>
+              <strong>Meng Wei Yue Opera Studio</strong>
+              <span>Ottawa — real client</span>
+            </footer>
+          </div>
+        </article>
+
+        <article class="proof__card reveal">
+          <div class="proof__media">
+            <img src="https://picsum.photos/seed/mivia-proof-2/640/480" alt="" loading="lazy" width="640" height="480">
+          </div>
+          <div class="proof__body">
+            <span class="proof__status">Pending</span>
+            <p>Before/after design screenshots from a live rebuild — so visitors can see the jump, not just hear about it.</p>
+            <footer>
+              <strong>Visual evidence</strong>
+              <span>Collect this month</span>
+            </footer>
+          </div>
+        </article>
+
+        <article class="proof__card proof__card--accent reveal">
+          <div class="proof__media">
+            <img src="https://picsum.photos/seed/mivia-proof-3/640/480" alt="" loading="lazy" width="640" height="480">
+          </div>
+          <div class="proof__body">
+            <span class="proof__status">Pending</span>
+            <p>Verified PageSpeed comparison with screenshots — the speed claim, proven in numbers.</p>
+            <footer>
+              <strong>Performance proof</strong>
+              <span>PageSpeed Insights</span>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06 CONTACT / FOOTER
+         ============================================================ -->
+    <footer class="footer section--dark" id="contact">
+      <div class="footer__poster">
+        <p class="footer__bg-word" aria-hidden="true">MIVIALAB</p>
+
+        <div class="footer__top reveal">
+          <p class="section-label section-label--light">06 — Contact</p>
+          <div class="footer__titles">
+            <h2 class="footer__title">Ready when you are</h2>
+            <p class="footer__pitch">
+              Tell us what you need built or improved. Short form first — WeChat and email stay available underneath.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer__layout reveal">
+          <figure class="footer__portrait">
+            <img src="https://picsum.photos/seed/mivia-footer/480/640" alt="MiviaLab" loading="lazy" width="480" height="640">
+          </figure>
+
+          <div class="footer__contact">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="contact-form__row">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required>
+                <p class="contact-form__error">Please enter your name.</p>
+              </div>
+
+              <div class="contact-form__row">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required>
+                <p class="contact-form__error">Please enter a valid email.</p>
+              </div>
+
+              <div class="contact-form__row contact-form__row--full">
+                <label for="contact-project">Project note</label>
+                <textarea id="contact-project" name="project" rows="4" required placeholder="What do you need built or improved?"></textarea>
+                <p class="contact-form__error">Tell us what you need built or improved.</p>
+              </div>
+
+              <button class="footer__primary-cta" type="submit">Send project note</button>
+              <p class="contact-form__status" id="contact-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="footer__secondary">
+              <p class="footer__secondary-label">Or reach us directly</p>
+              <a class="footer__secondary-link" href="mailto:hello@mivialab.com">hello@mivialab.com</a>
+              <ul class="footer__social" aria-label="Social links">
+                <li><a href="#" aria-label="Instagram">Ig</a></li>
+                <li><a href="#" aria-label="LinkedIn">In</a></li>
+                <li><a href="#" aria-label="RedNote">RN</a></li>
+                <li><a href="#" aria-label="WeChat">Wx</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <nav class="footer__nav" aria-label="Footer">
+            <a href="#home">Home</a>
+            <a href="#studio">Studio</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <p class="footer__legal">&copy; <span id="year"></span> MiviaLab — Web design &amp; development studio, Ottawa–Toronto corridor</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
