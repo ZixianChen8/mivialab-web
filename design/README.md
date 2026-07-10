@@ -13,6 +13,7 @@ Static design prototypes and layout experiments for the MiviaLab site.
 | [`cinematic/`](cinematic/) | Cinematic — fullscreen moody nature hero, centered splash reveal, parallax scroll, image-dominant |
 | [`flagship/`](flagship/) | Flagship build — full Next.js + Lenis + GSAP app prototype (see its README to run) |
 | [`trust-minimal/`](trust-minimal/) | Trust minimal — ui-ux-pro-max step-1 demo; single-column, Inter, contact-first |
+| [`cartoon-motion/`](cartoon-motion/) | Cartoon motion — playful sticker look, centered transparent logo with mouse-reactive tilt |
 
 Each subfolder is one explored direction. A direction can be a simple static HTML/CSS prototype or a full standalone app prototype (with its own `package.json`, dependencies, and build) — keep everything self-contained inside its own subfolder.
 

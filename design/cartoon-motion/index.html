@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MiviaLab — Web design &amp; development studio in Ottawa</title>
+  <meta
+    name="description"
+    content="MiviaLab builds modern, fast, fully custom websites for small businesses in the Ottawa–Toronto corridor. Full-service — you never touch your site."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top" aria-label="MiviaLab home">
+        <img class="wordmark-logo" src="images/mivialab-logo.png" alt="" width="48" height="48" />
+        <span>MiviaLab</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#promise">Why us</a>
+        <a href="#contact" class="nav-cta">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero: logo-first, mouse-reactive (kept) -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero-sky" aria-hidden="true">
+        <span class="blob blob-a"></span>
+        <span class="blob blob-b"></span>
+        <span class="blob blob-c"></span>
+        <span class="doodle doodle-star" data-parallax="0.04">✦</span>
+        <span class="doodle doodle-squiggle" data-parallax="-0.06">
+          <svg viewBox="0 0 80 40" width="80" height="40"><path d="M4 20 Q20 4 36 20 T68 20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </span>
+        <span class="doodle doodle-dot" data-parallax="0.08"></span>
+        <span class="doodle doodle-ring" data-parallax="-0.05"></span>
+        <span class="doodle doodle-spark" data-parallax="0.07">✧</span>
+      </div>
+
+      <div class="hero-stage">
+        <div class="logo-orbit" id="logo-orbit" aria-hidden="true">
+          <span class="orbit-chip chip-1">fast</span>
+          <span class="orbit-chip chip-2">custom</span>
+          <span class="orbit-chip chip-3">secure</span>
+        </div>
+
+        <div class="logo-stage" id="logo-stage">
+          <div class="logo-tilt" id="logo-tilt">
+            <img
+              class="logo-mark"
+              src="images/mivialab-logo.png"
+              alt="MiviaLab"
+              width="420"
+              height="420"
+              id="logo-img"
+              draggable="false"
+            />
+          </div>
+        </div>
+
+        <p class="hero-eyebrow">Ottawa–Toronto corridor</p>
+        <h1 id="hero-heading">Web design that feels alive.</h1>
+        <p class="hero-lead">
+          Fast, secure, fully custom sites for small businesses — built and maintained so you never have to touch your site.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Start your project</a>
+          <a class="btn btn-ghost" href="#work">See our work</a>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#work" aria-label="Scroll to work">
+        <span>Scroll</span>
+        <span class="scroll-bounce" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- Story progress line -->
+    <div class="story-rail" aria-hidden="true">
+      <div class="story-rail-fill" id="story-rail-fill"></div>
+    </div>
+
+    <!-- 01 · Selected work -->
+    <section class="chapter work" id="work" data-chapter="01" aria-labelledby="work-heading">
+      <div class="wrap">
+        <header class="chapter-head reveal">
+          <span class="chapter-index">01</span>
+          <h2 id="work-heading">Selected work</h2>
+          <p>Fully custom sites, built to load fast and stay secure — designed, developed, and maintained end to end.</p>
+        </header>
+
+        <div class="work-cards">
+          <article class="work-card reveal" data-stagger>
+            <div class="work-media work-media--opera" role="img" aria-label="Placeholder preview for Meng Wei Yue Opera Studio website">
+              <div class="work-shade" aria-hidden="true"></div>
+              <span class="work-open" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              </span>
+            </div>
+            <div class="work-meta">
+              <span class="work-tag work-tag--real">Client</span>
+              <h3>Meng Wei Yue Opera Studio</h3>
+              <p>Arts &amp; education · bilingual site</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-stagger>
+            <div class="work-media work-media--river" role="img" aria-label="Concept sample preview for tutoring studio website">
+              <div class="work-shade" aria-hidden="true"></div>
+              <span class="work-open" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              </span>
+            </div>
+            <div class="work-meta">
+              <span class="work-tag">Concept</span>
+              <h3>Riverbend Music Academy</h3>
+              <p>Tutoring &amp; arts · sample concept</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-stagger>
+            <div class="work-media work-media--harbour" role="img" aria-label="Concept sample preview for wellness clinic website">
+              <div class="work-shade" aria-hidden="true"></div>
+              <span class="work-open" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              </span>
+            </div>
+            <div class="work-meta">
+              <span class="work-tag">Concept</span>
+              <h3>Harbour Wellness Clinic</h3>
+              <p>Wellness clinic · sample concept</p>
+            </div>
+          </article>
+        </div>
+        <p class="sample-note reveal">Concepts are sample designs to show range — not real clients.</p>
+      </div>
+    </section>
+
+    <!-- 02 · Process -->
+    <section class="chapter process" id="process" data-chapter="02" aria-labelledby="process-heading">
+      <div class="wrap">
+        <header class="chapter-head reveal">
+          <span class="chapter-index">02</span>
+          <h2 id="process-heading">How we work</h2>
+          <p>A calm, straightforward process — so owners never have to touch their site.</p>
+        </header>
+
+        <ul class="tour-list">
+          <li class="tour-row reveal" data-stagger>
+            <span class="tour-step">Step 01</span>
+            <span class="tour-title">Discovery &amp; strategy</span>
+            <span class="tour-detail">Goals, audience, and the single action your site should drive</span>
+            <a class="tour-link" href="#contact">Start</a>
+          </li>
+          <li class="tour-row reveal" data-stagger>
+            <span class="tour-step">Step 02</span>
+            <span class="tour-title">Design</span>
+            <span class="tour-detail">Custom layout &amp; brand direction — no templates</span>
+            <a class="tour-link" href="#contact">Start</a>
+          </li>
+          <li class="tour-row reveal" data-stagger>
+            <span class="tour-step">Step 03</span>
+            <span class="tour-title">Build</span>
+            <span class="tour-detail">Fast, secure, hand-written code · EN / FR / 中文</span>
+            <a class="tour-link" href="#contact">Start</a>
+          </li>
+          <li class="tour-row reveal" data-stagger>
+            <span class="tour-step">Step 04</span>
+            <span class="tour-title">Launch &amp; care</span>
+            <span class="tour-detail">Maintenance, security, and SEO on a monthly plan</span>
+            <a class="tour-link" href="#contact">Start</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 03 · Promise / differentiators -->
+    <section class="chapter promise" id="promise" data-chapter="03" aria-labelledby="promise-heading">
+      <div class="wrap">
+        <header class="chapter-head reveal">
+          <span class="chapter-index">03</span>
+          <h2 id="promise-heading">What you actually get</h2>
+          <p>Outcomes you can feel — not buzzwords.</p>
+        </header>
+
+        <div class="promise-grid">
+          <article class="promise-item reveal" data-stagger>
+            <span class="promise-num" aria-hidden="true">01</span>
+            <h3>Loads fast</h3>
+            <p>Your site opens quickly so you stop losing customers to slow pages. We prove it with real PageSpeed scores.</p>
+          </article>
+          <article class="promise-item reveal" data-stagger>
+            <span class="promise-num" aria-hidden="true">02</span>
+            <h3>Stays secure</h3>
+            <p>Protect customer data with regular security reviews, updates, and monitoring — handled for you.</p>
+          </article>
+          <article class="promise-item reveal" data-stagger>
+            <span class="promise-num" aria-hidden="true">03</span>
+            <h3>Fully custom</h3>
+            <p>Clean, hand-built code — not bloated Wix or Squarespace templates. Every detail fits your business.</p>
+          </article>
+          <article class="promise-item reveal" data-stagger>
+            <span class="promise-num" aria-hidden="true">04</span>
+            <h3>Full service</h3>
+            <p>You never have to log in or fix anything. We maintain, update, and improve your site on an ongoing basis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · Languages + care (paired story beat) -->
+    <section class="chapter care" id="care" data-chapter="04" aria-labelledby="care-heading">
+      <div class="wrap care-split">
+        <div class="care-block reveal" data-stagger>
+          <span class="chapter-index">04</span>
+          <h2 id="care-heading">Fully bilingual sites</h2>
+          <p>
+            We deliver professional websites in <strong>English</strong>, <strong>French</strong>, and <strong>中文</strong> —
+            a premium capability for Ottawa businesses that need to reach more customers.
+          </p>
+        </div>
+        <div class="care-block care-block--accent reveal" data-stagger>
+          <span class="chapter-index">05</span>
+          <h2 id="pricing-heading">We stay with you</h2>
+          <p>
+            Monthly subscription covers maintenance, security updates, continuous customization, and SEO —
+            so your site keeps working while you run your business.
+          </p>
+          <ul class="care-list">
+            <li><strong>Included:</strong> edits to existing content, upkeep, and routine improvements</li>
+            <li><strong>Quoted separately:</strong> new features, pages, or integrations after delivery</li>
+          </ul>
+          <p class="care-note">Pricing on request — we'll scope a plan that fits your business.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · Contact -->
+    <section class="chapter contact" id="contact" data-chapter="06" aria-labelledby="contact-heading">
+      <div class="wrap contact-wrap">
+        <header class="chapter-head chapter-head--center reveal">
+          <span class="chapter-index">06</span>
+          <h2 id="contact-heading">Let's build something that lasts.</h2>
+          <p>Tell us about your business and what you need. One short reply and we'll take it from there.</p>
+        </header>
+
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="business">Business type</label>
+            <input type="text" id="business" name="business" autocomplete="organization" placeholder="e.g. restaurant, clinic, studio" />
+          </div>
+          <div class="form-field">
+            <label for="message">What do you need? <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="3" required placeholder="A new site, a redesign, ongoing care…"></textarea>
+          </div>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+          <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">Send message</button>
+        </form>
+
+        <aside class="contact-alt reveal">
+          <div class="wechat-inline">
+            <div class="qr-placeholder" role="img" aria-label="WeChat QR code placeholder — scan to connect"></div>
+            <p><strong>WeChat</strong> — scan to connect (community leads welcome)</p>
+          </div>
+          <p class="contact-tertiary-line">
+            Or reach us at
+            <a href="mailto:hello@mivialab.com">hello@mivialab.com</a>
+            ·
+            <a href="tel:+16135550100">+1 (613) 555-0100</a>
+            ·
+            <a href="#" aria-label="Instagram (link placeholder)">Instagram</a>
+            ·
+            <a href="#" aria-label="LinkedIn (link placeholder)">LinkedIn</a>
+            ·
+            <a href="#" aria-label="RedNote (link placeholder)">RedNote</a>
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="follow">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/mivialab-logo.png" alt="MiviaLab" width="56" height="56" />
+        <p>Ottawa–Toronto · EN / FR / 中文</p>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> MiviaLab. Web design &amp; development studio.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
