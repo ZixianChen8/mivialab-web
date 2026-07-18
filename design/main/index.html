@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pine-fog">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiviaLab — Web design &amp; development studio in Ottawa</title>
+  <meta name="description" content="MiviaLab builds modern, fast, custom websites for small businesses in the Ottawa–Toronto corridor.">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('mivialab-color-system');
+        if (stored) document.documentElement.setAttribute('data-theme', stored);
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="themes.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- 1. HERO — scroll-pinned 3D work fly-through -->
+  <section class="hero artist-container" id="home">
+    <div class="hero__pin-height">
+      <div class="hero__stage">
+        <div class="hero-bg" aria-hidden="true"></div>
+
+        <svg class="splash-svg" aria-hidden="true" preserveAspectRatio="none">
+          <defs>
+            <mask id="splashMask">
+              <rect width="100%" height="100%" fill="black" />
+              <circle class="splash s1" cx="50%" cy="50%" r="40" fill="white" />
+              <circle class="splash s2" cx="55%" cy="48%" r="25" fill="white" />
+              <circle class="splash s3" cx="45%" cy="55%" r="30" fill="white" />
+              <circle class="splash s4" cx="60%" cy="52%" r="20" fill="white" />
+            </mask>
+          </defs>
+          <rect class="splash-fill" width="100%" height="100%" mask="url(#splashMask)" />
+        </svg>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact" class="nav-contact">Contact</a></li>
+          </ul>
+          <button class="nav-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+            <span></span><span></span>
+          </button>
+        </nav>
+
+        <div class="nav-mobile" id="mobile-nav" hidden>
+          <a href="#about">About</a>
+          <a href="#outcomes">Outcomes</a>
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#process">How we work</a>
+          <a href="#audience">Who we help</a>
+          <a href="#offer">Offer</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="hero__scene" aria-hidden="true">
+          <div class="hero__media">
+            <img src="images/cover-2.png" alt="" width="800" height="600" loading="eager">
+            <p>Meng Wei Yue</p>
+          </div>
+          <div class="hero__media">
+            <img src="images/cover-3.png" alt="" width="800" height="600" loading="eager">
+            <p>Harbour Wellness</p>
+          </div>
+          <div class="hero__media">
+            <img src="images/cover-1.png" alt="" width="800" height="600" loading="eager">
+            <p>Riverbend Music</p>
+          </div>
+          <div class="hero__media">
+            <img src="images/gallery-2.png" alt="" width="800" height="600" loading="lazy">
+            <p>Canal Street</p>
+          </div>
+          <div class="hero__media">
+            <img src="images/gallery-1.png" alt="" width="800" height="600" loading="lazy">
+            <p>Custom build</p>
+          </div>
+          <div class="hero__media">
+            <img src="images/gallery-3.png" alt="" width="800" height="600" loading="lazy">
+            <p>Studio craft</p>
+          </div>
+          <div class="hero__media">
+            <img src="images/hero.png" alt="" width="800" height="600" loading="lazy">
+            <p>Full service</p>
+          </div>
+          <div class="hero__media">
+            <img src="images/bg_1.webp" alt="" width="800" height="600" loading="lazy">
+            <p>Ottawa–Toronto</p>
+          </div>
+        </div>
+
+        <!-- Spotlight scrim: dims sky + cards at edges; clear center lights them up -->
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-bg-fg" aria-hidden="true"></div>
+
+        <div class="hero-dock">
+          <div class="hero-dock__brand">
+            <img
+              class="brand-name"
+              src="assets/images/logo/design1_bw_upscaled_tr.png"
+              alt="MiviaLab"
+              width="2000"
+              height="2000"
+            >
+            <div class="hero-dock__copy">
+              <h1 class="brand-headline">Web design &amp; development for small businesses</h1>
+              <p class="brand-tagline">Ottawa–Toronto · custom sites, cared for end to end</p>
+              <div class="hero-actions">
+                <a class="hero-cta" href="#contact">Start a project</a>
+                <a class="hero-secondary" href="#work">View work</a>
+              </div>
+            </div>
+          </div>
+
+          <a class="hero-scroll" href="#about" aria-label="Scroll to learn more">
+            <span class="hero-scroll__label">Scroll</span>
+            <span class="hero-scroll__bar" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- 2. ABOUT -->
+    <section class="about section--dark" id="about" aria-labelledby="about-heading">
+      <div class="about__inner">
+        <div class="about__copy reveal">
+          <p class="section-label section-label--light">About</p>
+          <h2 class="about__title" id="about-heading">A Canadian studio in the Ottawa–Toronto corridor</h2>
+          <p class="about__lead">
+            MiviaLab is a web design and development studio for small businesses. English-first, premium, and straightforward — we build sites that look professional and stay easy for owners because we handle them end to end.
+          </p>
+          <p class="about__body">
+            We sit between a freelance site builder and a big agency: the structure, SEO setup, and ongoing care of a studio, with accessible pricing, direct communication, and a scope that flexes to your business. When a project needs it, we deliver bilingual sites in English, French, and 中文 — a premium capability, not our brand identity.
+          </p>
+          <ul class="about__points">
+            <li>Accessible pricing built for small-business budgets</li>
+            <li>Direct communication — you talk to the people building your site</li>
+            <li>Flexible scope that grows with your business</li>
+            <li>Full service, so you never have to touch the site</li>
+          </ul>
+        </div>
+        <figure class="about__visual reveal">
+          <img src="images/gallery-3.png" alt="" loading="lazy" width="640" height="800">
+        </figure>
+      </div>
+    </section>
+
+    <!-- 3. OUTCOMES -->
+    <section class="outcomes section--light" id="outcomes" aria-labelledby="outcomes-heading">
+      <div class="outcomes__inner">
+        <div class="outcomes__head reveal">
+          <p class="section-label">Outcomes</p>
+          <h2 class="outcomes__title" id="outcomes-heading">What your business actually gets</h2>
+          <p class="outcomes__sub">
+            Buyer results — not jargon. These are the four things owners feel every day after launch, and everything below is how we deliver them.
+          </p>
+        </div>
+
+        <ol class="outcomes__list">
+          <li class="outcomes__item reveal">
+            <div>
+              <h3>Loads fast so you stop losing customers</h3>
+              <p>Lean builds that keep visitors on the page. We prove speed with PageSpeed Insights — not marketing claims.</p>
+            </div>
+          </li>
+          <li class="outcomes__item reveal">
+            <div>
+              <h3>Security you can trust</h3>
+              <p>Protect customer data with regular reviews and updates. Your site stays current without you chasing plugins.</p>
+            </div>
+          </li>
+          <li class="outcomes__item reveal">
+            <div>
+              <h3>Fully custom — not a template</h3>
+              <p>Clean, editable code shaped around your business — not a Wix or Squarespace skin you fight every time you need a change.</p>
+            </div>
+          </li>
+          <li class="outcomes__item reveal">
+            <div>
+              <h3>Full service — you never touch the site</h3>
+              <p>We handle design, build, and ongoing care. You run the business; we run the website.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. WORK -->
+    <section class="work section--dark" id="work" aria-labelledby="work-heading">
+      <div class="work__head">
+        <div class="work__intro reveal">
+          <p class="section-label section-label--light">Work</p>
+          <h2 class="work__headline work__headline--light" id="work-heading">Real client. Labeled samples.</h2>
+          <p>
+            One shipped project you can open, plus concept samples that show range — never presented as live clients.
+          </p>
+        </div>
+      </div>
+
+      <div class="carousel reveal" id="carousel">
+        <div class="carousel__track" id="carousel-track">
+          <article class="carousel__card">
+            <a class="carousel__link" href="work/meng-wei-yue.html">
+              <div class="carousel__image">
+                <img src="images/cover-2.png" alt="Meng Wei Yue Opera Studio website preview" loading="lazy" width="800" height="600">
+              </div>
+              <div class="carousel__meta">
+                <span class="badge badge--client">Real client</span>
+                <h3>Meng Wei Yue Opera Studio</h3>
+                <p>Bilingual website for an Ottawa-area music and arts studio — brand presence, scheduling clarity, and a polished online home.</p>
+                <span class="carousel__more">View project</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="carousel__card">
+            <div class="carousel__image">
+              <img src="images/cover-3.png" alt="Harbour Wellness Clinic concept sample" loading="lazy" width="800" height="600">
+            </div>
+            <div class="carousel__meta">
+              <span class="badge badge--sample">Concept sample</span>
+              <h3>Harbour Wellness Clinic</h3>
+              <p>Sample for a wellness clinic — services, practitioner profiles, and a calm booking-led layout.</p>
+            </div>
+          </article>
+
+          <article class="carousel__card">
+            <div class="carousel__image">
+              <img src="images/cover-1.png" alt="Riverbend Music Academy concept sample" loading="lazy" width="800" height="600">
+            </div>
+            <div class="carousel__meta">
+              <span class="badge badge--sample">Concept sample</span>
+              <h3>Riverbend Music Academy</h3>
+              <p>Sample for a tutoring and arts studio — class listings, instructor bios, and enrollment-focused CTAs.</p>
+            </div>
+          </article>
+
+          <article class="carousel__card">
+            <div class="carousel__image">
+              <img src="images/gallery-2.png" alt="Canal Street Bakery concept sample" loading="lazy" width="800" height="600">
+            </div>
+            <div class="carousel__meta">
+              <span class="badge badge--sample">Concept sample</span>
+              <h3>Canal Street Bakery</h3>
+              <p>Sample for a local bakery — menu highlights, hours, and a warm brand-forward storefront online.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="carousel__controls carousel__controls--light">
+          <button class="carousel__btn" type="button" id="carousel-prev" aria-label="Previous project">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M13 4L7 10L13 16" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+          <button class="carousel__btn" type="button" id="carousel-next" aria-label="Next project">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SERVICES -->
+    <section class="services section--light" id="services" aria-labelledby="services-heading">
+      <div class="services__inner">
+        <div class="services__head reveal">
+          <p class="section-label">Services</p>
+          <h2 class="services__title" id="services-heading">Everything your website needs, in one studio</h2>
+          <p class="services__sub">
+            Website design and development is the core. Everything around it — search, upkeep, marketing support, and promo materials — exists to keep that site working long after launch.
+          </p>
+        </div>
+
+        <div class="services__grid">
+          <article class="services__card services__card--primary reveal">
+            <p class="services__kicker">Core service</p>
+            <h3>Website design &amp; development</h3>
+            <p>Clear, professional, mobile-friendly sites built around your business, services, and customers — custom code, never a template.</p>
+            <ul class="services__list">
+              <li>New business websites</li>
+              <li>Website redesigns</li>
+              <li>Local branch &amp; head-office-linked sites</li>
+              <li>Organization &amp; event websites</li>
+              <li>Landing pages</li>
+            </ul>
+          </article>
+
+          <article class="services__card reveal">
+            <p class="services__kicker">Supporting</p>
+            <h3>SEO &amp; website optimization</h3>
+            <p>Help search engines understand your site so the right local customers can find you.</p>
+            <ul class="services__list">
+              <li>Basic SEO setup at build time</li>
+              <li>Titles &amp; search descriptions</li>
+              <li>Local service information</li>
+              <li>Mobile &amp; speed improvements</li>
+            </ul>
+          </article>
+
+          <article class="services__card reveal">
+            <p class="services__kicker">Supporting</p>
+            <h3>Website maintenance</h3>
+            <p>Keep the site accurate, functional, and current without lifting a finger yourself.</p>
+            <ul class="services__list">
+              <li>Text &amp; image updates</li>
+              <li>Form &amp; link checks</li>
+              <li>Status &amp; mobile monitoring</li>
+              <li>Ongoing SEO improvements</li>
+            </ul>
+          </article>
+
+          <article class="services__card reveal">
+            <p class="services__kicker">Supporting</p>
+            <h3>Marketing website support</h3>
+            <p>Connect the site to your campaigns — we handle the website side alongside your ads specialist.</p>
+            <ul class="services__list">
+              <li>Landing page development</li>
+              <li>Conversion pathways &amp; tracking</li>
+              <li>Google Ads specialist collaboration</li>
+              <li>Campaign-related updates</li>
+            </ul>
+          </article>
+
+          <article class="services__card reveal">
+            <p class="services__kicker">Supporting</p>
+            <h3>Promotional materials</h3>
+            <p>Keep your website, events, and social channels visually consistent.</p>
+            <ul class="services__list">
+              <li>AI-assisted posters</li>
+              <li>Social media graphics</li>
+              <li>Short promotional video editing</li>
+              <li>Event &amp; launch graphics</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="services__note reveal">
+          Need something outside this list? Where a project calls for a specialist — full ad management, professional filming, or certified translation — we bring the right partner in rather than overpromise.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. HOW WE WORK -->
+    <section class="process section--dark" id="process" aria-labelledby="process-heading">
+      <div class="process__inner">
+        <div class="process__head reveal">
+          <p class="section-label section-label--light">How we work</p>
+          <h2 class="process__title" id="process-heading">A clear path from idea to launch</h2>
+          <p class="process__sub">
+            No jargon and no guesswork — you always know what happens next, and we stay on after launch instead of disappearing.
+          </p>
+        </div>
+
+        <ol class="process__steps">
+          <li class="process__step reveal">
+            <span class="process__num" aria-hidden="true">01</span>
+            <div class="process__body">
+              <h3>Talk it through</h3>
+              <p>We learn your business, services, customers, and goals — and look at any site you have now.</p>
+            </div>
+          </li>
+          <li class="process__step reveal">
+            <span class="process__num" aria-hidden="true">02</span>
+            <div class="process__body">
+              <h3>Plan &amp; scope</h3>
+              <p>We map pages, structure, and contact pathways, then agree on deliverables, timeline, and what's included.</p>
+            </div>
+          </li>
+          <li class="process__step reveal">
+            <span class="process__num" aria-hidden="true">03</span>
+            <div class="process__body">
+              <h3>Design &amp; build</h3>
+              <p>We design the layout and build it in custom code — mobile included, with basic SEO set up from the start.</p>
+            </div>
+          </li>
+          <li class="process__step reveal">
+            <span class="process__num" aria-hidden="true">04</span>
+            <div class="process__body">
+              <h3>Review &amp; launch</h3>
+              <p>You review the content and details; we test across devices, links, and forms, then take it live.</p>
+            </div>
+          </li>
+          <li class="process__step reveal">
+            <span class="process__num" aria-hidden="true">05</span>
+            <div class="process__body">
+              <h3>Ongoing care</h3>
+              <p>Maintenance, SEO, updates, and marketing support keep the site healthy as your business grows.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. WHO WE HELP -->
+    <section class="audience section--light" id="audience" aria-labelledby="audience-heading">
+      <div class="audience__inner">
+        <div class="audience__head reveal">
+          <p class="section-label">Who we help</p>
+          <h2 class="audience__title" id="audience-heading">Built for small businesses like yours</h2>
+          <p class="audience__sub">
+            If any of these sound familiar, a MiviaLab site is a fit.
+          </p>
+        </div>
+
+        <div class="audience__grid">
+          <div class="audience__col reveal">
+            <h3 class="audience__subhead">Is this you?</h3>
+            <ul class="audience__list">
+              <li>No website yet</li>
+              <li>An outdated or hard-to-use site</li>
+              <li>Relying mainly on social media, referrals, or Google Maps</li>
+              <li>A local branch that needs its own site linked to head office</li>
+              <li>No internal team to keep a website updated</li>
+              <li>Getting ready to run Google Ads</li>
+              <li>In need of affordable promo materials for events or social</li>
+            </ul>
+          </div>
+          <div class="audience__col reveal">
+            <h3 class="audience__subhead">Businesses we work with</h3>
+            <ul class="audience__tags">
+              <li>Local services</li>
+              <li>Clinics &amp; wellness</li>
+              <li>Restaurants &amp; cafés</li>
+              <li>Beauty &amp; spa</li>
+              <li>Education &amp; arts</li>
+              <li>Nonprofits &amp; cultural orgs</li>
+              <li>Real estate, insurance &amp; accounting</li>
+              <li>Consultants &amp; independents</li>
+              <li>Startups &amp; new businesses</li>
+              <li>Regional &amp; branch offices</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. OFFER -->
+    <section class="offer section--dark" id="offer" aria-labelledby="offer-heading">
+      <div class="offer__inner">
+        <div class="offer__head reveal">
+          <p class="section-label section-label--light">Offer</p>
+          <h2 class="offer__title" id="offer-heading">Site build + monthly care</h2>
+          <p class="offer__sub">
+            Once we're a fit, it's one partnership: we design and build your site, then keep it fast, secure, and current so you never have to manage it.
+          </p>
+        </div>
+
+        <div class="offer__grid">
+          <article class="offer__block reveal">
+            <p class="offer__kicker">The build</p>
+            <h3>A custom website for your business</h3>
+            <p>Strategy, design, and hand-built code — not a template. Shaped around the one action your site should drive.</p>
+          </article>
+          <article class="offer__block reveal">
+            <p class="offer__kicker">Monthly care</p>
+            <h3>Maintenance, security, SEO, and ongoing edits</h3>
+            <p>Continuous upkeep so the site stays healthy. Edits to existing content are included. New features, pages, or integrations after delivery are quoted separately.</p>
+          </article>
+        </div>
+
+        <p class="offer__note reveal">
+          Monthly care-plan pricing is shared on request — we don’t publish a number until that amount is finalized.
+        </p>
+      </div>
+    </section>
+
+    <!-- 9. CONTACT -->
+    <footer class="footer section--dark" id="contact">
+      <div class="footer__poster">
+        <p class="footer__bg-word" aria-hidden="true">MIVIALAB</p>
+
+        <div class="footer__top reveal">
+          <p class="section-label section-label--light">Contact</p>
+          <div class="footer__titles">
+            <h2 class="footer__title">Tell us what you need</h2>
+            <p class="footer__pitch">
+              Short form first. Prefer WeChat? Use the QR. Everything else stays secondary.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer__layout reveal">
+          <div class="footer__primary">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="contact-form__row">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required>
+                <p class="contact-form__error">Please enter your name.</p>
+              </div>
+
+              <div class="contact-form__row">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required>
+                <p class="contact-form__error">Please enter a valid email.</p>
+              </div>
+
+              <div class="contact-form__row contact-form__row--full">
+                <label for="contact-project">Project note</label>
+                <textarea id="contact-project" name="project" rows="4" required placeholder="What do you need built or improved?"></textarea>
+                <p class="contact-form__error">Tell us what you need built or improved.</p>
+              </div>
+
+              <button class="footer__primary-cta" type="submit">Send project note</button>
+              <p class="contact-form__status" id="contact-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <aside class="footer__secondary-panel">
+            <div class="footer__wechat">
+              <p class="footer__secondary-label">WeChat</p>
+              <img
+                class="footer__qr"
+                src="images/wechat-qr-placeholder.svg"
+                alt="WeChat QR code placeholder — replace with studio QR"
+                width="160"
+                height="160"
+              >
+              <p class="footer__wechat-note">Scan to continue on WeChat</p>
+            </div>
+
+            <div class="footer__channels">
+              <p class="footer__secondary-label">Also</p>
+              <a class="footer__secondary-link" href="mailto:hello@mivialab.com">hello@mivialab.com</a>
+              <ul class="footer__social" aria-label="Social links">
+                <li><a href="#" aria-label="Instagram">Ig</a></li>
+                <li><a href="#" aria-label="LinkedIn">In</a></li>
+                <li><a href="#" aria-label="RedNote">RN</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+
+        <div class="footer__bottom">
+          <nav class="footer__nav" aria-label="Footer">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#outcomes">Outcomes</a>
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#process">How we work</a>
+            <a href="#audience">Who we help</a>
+            <a href="#offer">Offer</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <p class="footer__legal">&copy; <span id="year"></span> MiviaLab — Web design &amp; development studio, Ottawa–Toronto corridor</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Color system chooser (design tool) -->
+  <div class="theme-chooser" id="theme-chooser">
+    <button
+      class="theme-chooser__toggle"
+      type="button"
+      id="theme-chooser-toggle"
+      aria-expanded="false"
+      aria-controls="theme-chooser-panel"
+    >
+      <span class="theme-chooser__dots" id="theme-chooser-dots" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </span>
+      <span class="theme-chooser__label">Color systems</span>
+    </button>
+
+    <div class="theme-chooser__panel" id="theme-chooser-panel" role="dialog" aria-labelledby="theme-chooser-title" hidden>
+      <div class="theme-chooser__head">
+        <div>
+          <h2 id="theme-chooser-title">Color systems</h2>
+          <p>Preview live. Choice saves in this browser.</p>
+        </div>
+        <button class="theme-chooser__close" type="button" id="theme-chooser-close" aria-label="Close color systems">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+      </div>
+
+      <ul class="theme-chooser__list" id="theme-chooser-list"></ul>
+
+      <p class="theme-chooser__hint">
+        Active: <span class="theme-chooser__current" id="theme-chooser-current">Pine Fog</span>
+        · Keys <kbd>1</kbd>–<kbd>0</kbd> when panel is open · <kbd>Esc</kbd> closes
+      </p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
+  <script src="hero-anim-config.js"></script>
+  <script src="hero-bg-layers-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

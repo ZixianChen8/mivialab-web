@@ -122,6 +122,10 @@ These are unresolved in the business doc — flag them rather than making up val
 | File | Purpose |
 |---|---|
 | [`assets/docs/mivialab-business.md`](assets/docs/mivialab-business.md) | Full strategy & positioning |
+| [`assets/docs/mivialab-site-structure.md`](assets/docs/mivialab-site-structure.md) | v1 website IA — pages, sections, graduation rules |
+| [`assets/docs/mivialab-prd-v1.md`](assets/docs/mivialab-prd-v1.md) | Product requirements for marketing site v1 |
+| [`assets/docs/adr/0001-lean-multi-page-v1.md`](assets/docs/adr/0001-lean-multi-page-v1.md) | ADR — lean multi-page shape |
+| [`CONTEXT.md`](CONTEXT.md) | Domain glossary (site vocabulary) |
 | [`.cursor/rules/mivialab-business.mdc`](.cursor/rules/mivialab-business.mdc) | Cursor rule — business quick reference |
 | [`.cursor/rules/project-structure.mdc`](.cursor/rules/project-structure.mdc) | Cursor rule — repo layout |
 | [`README.md`](README.md) | Human-readable repo overview |

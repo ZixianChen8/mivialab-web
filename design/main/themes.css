@@ -1,0 +1,785 @@
+/* ============================================================
+   MiviaLab — 10 color systems
+   Apply via <html data-theme="…">
+
+   Each system is a full palette (foundation + component roles),
+   not a hue tint of one template. Switching themes must recolor
+   CTAs, cards, badges, forms, shadows, and section surfaces.
+
+   Strategies (impeccable / design-taste):
+     restrained | committed | full | drenched
+   ============================================================ */
+
+/* Shared token contract — every theme defines all of these.
+   Foundation: ink/mist/text/accent…
+   Components: cta/card/badge/form/shadow/logo… */
+
+:root,
+[data-theme="pine-fog"] {
+  /* Forest restrained — pine dusk, cool bone (not cream), amber signal */
+  --ink: oklch(0.15 0.025 155);
+  --ink-deep: oklch(0.11 0.02 155);
+  --mist: oklch(0.93 0.01 155);
+  --mist-dim: oklch(0.9 0.02 155 / 0.62);
+  --mist-faint: oklch(0.9 0.02 155 / 0.4);
+  --white: oklch(0.97 0.005 155);
+  --black: oklch(0.13 0.02 155);
+  --dark: oklch(0.2 0.03 155);
+  --off-white: oklch(0.98 0.004 155);
+  --light: oklch(0.99 0.003 155);
+  --paper: oklch(0.95 0.006 155);
+  --text: oklch(0.22 0.02 155);
+  --text-muted: oklch(0.44 0.025 150);
+  --text-light: oklch(0.88 0.015 150);
+  --accent: oklch(0.7 0.1 70);
+  --accent-soft: oklch(0.88 0.04 70);
+  --focus: oklch(0.72 0.08 70);
+  --surface-raised: oklch(0.995 0.002 155);
+  --error: oklch(0.58 0.16 25);
+  --line-on-light: oklch(0.22 0.02 155 / 0.14);
+  --line-on-dark: oklch(0.9 0.02 155 / 0.14);
+  --hero-veil: oklch(0.11 0.02 155 / 0.72);
+  --footer-glow: oklch(0.7 0.1 70 / 0.14);
+  --nav-panel: oklch(0.11 0.02 155 / 0.94);
+
+  --cta-bg: oklch(0.7 0.1 70);
+  --cta-fg: oklch(0.16 0.03 70);
+  --cta-hover-bg: oklch(0.76 0.1 70);
+  --cta-hero-bg: oklch(0.7 0.1 70);
+  --cta-hero-fg: oklch(0.16 0.03 70);
+  --cta-hero-hover-bg: oklch(0.76 0.1 70);
+  --card-bg: oklch(0.99 0.003 155);
+  --card-meta-bg: oklch(0.965 0.005 155);
+  --badge-client-bg: oklch(0.22 0.03 155);
+  --badge-client-fg: oklch(0.94 0.015 150);
+  --badge-sample-bg: oklch(0.86 0.05 70);
+  --badge-sample-fg: oklch(0.28 0.05 55);
+  --kicker: oklch(0.55 0.09 65);
+  --control-border: oklch(0.22 0.02 155);
+  --control-fg: oklch(0.22 0.02 155);
+  --control-hover-bg: oklch(0.22 0.02 155);
+  --control-hover-fg: oklch(0.95 0.012 145);
+  --control-on-dark-border: oklch(0.9 0.02 155 / 0.45);
+  --control-on-dark-fg: oklch(0.94 0.015 150);
+  --control-on-dark-hover-bg: oklch(0.94 0.015 150);
+  --control-on-dark-hover-fg: oklch(0.15 0.025 155);
+  --hero-scrim-a: oklch(0.12 0.02 155 / 0.28);
+  --hero-scrim-b: oklch(0.1 0.02 155 / 0.62);
+  --hero-chip-bg: oklch(0.12 0.02 155 / 0.42);
+  --shadow-media: oklch(0.12 0.02 155 / 0.5);
+  --shadow-card: oklch(0.22 0.03 155 / 0.12);
+  --logo-filter: invert(1) drop-shadow(0 2px 28px oklch(0.1 0.02 155 / 0.55));
+  --form-surface: oklch(0.96 0.01 155 / 0.05);
+  --form-input-bg: oklch(0.96 0.01 155 / 0.08);
+  --form-fg: oklch(0.94 0.015 150);
+  --form-placeholder: oklch(0.94 0.015 150 / 0.38);
+  --form-focus-border: oklch(0.7 0.1 70 / 0.75);
+  --panel-on-dark: oklch(0.96 0.01 155 / 0.05);
+  --footer-cta-bg: oklch(0.7 0.1 70);
+  --footer-cta-fg: oklch(0.16 0.03 70);
+  --footer-cta-hover-bg: oklch(0.78 0.1 70);
+  --surface-hover: oklch(0.22 0.02 155 / 0.05);
+  --stroke-ghost: oklch(0.9 0.02 155 / 0.07);
+  --brand-shadow: oklch(0.1 0.02 155 / 0.45);
+
+  --sage: var(--accent);
+  --beige: var(--focus);
+  --blush: var(--accent-soft);
+  --accent-warm: var(--kicker);
+}
+
+/* 2 — Cold Luxury: steel office, silver lights, cobalt signal */
+[data-theme="slate-studio"] {
+  --ink: oklch(0.18 0.025 255);
+  --ink-deep: oklch(0.13 0.025 255);
+  --mist: oklch(0.92 0.012 250);
+  --mist-dim: oklch(0.92 0.012 250 / 0.65);
+  --mist-faint: oklch(0.92 0.012 250 / 0.42);
+  --white: oklch(0.97 0.004 250);
+  --black: oklch(0.16 0.025 255);
+  --dark: oklch(0.26 0.035 255);
+  --off-white: oklch(0.98 0.004 250);
+  --light: oklch(0.99 0.003 250);
+  --paper: oklch(0.95 0.006 250);
+  --text: oklch(0.24 0.03 255);
+  --text-muted: oklch(0.46 0.03 255);
+  --text-light: oklch(0.88 0.015 250);
+  --accent: oklch(0.5 0.12 250);
+  --accent-soft: oklch(0.88 0.04 250);
+  --focus: oklch(0.55 0.1 250);
+  --surface-raised: oklch(0.995 0.002 250);
+  --error: oklch(0.55 0.16 25);
+  --line-on-light: oklch(0.24 0.03 255 / 0.14);
+  --line-on-dark: oklch(0.92 0.012 250 / 0.14);
+  --hero-veil: oklch(0.13 0.025 255 / 0.78);
+  --footer-glow: oklch(0.5 0.12 250 / 0.16);
+  --nav-panel: oklch(0.13 0.025 255 / 0.94);
+
+  --cta-bg: oklch(0.5 0.12 250);
+  --cta-fg: oklch(0.97 0.01 250);
+  --cta-hover-bg: oklch(0.56 0.12 250);
+  --cta-hero-bg: oklch(0.5 0.12 250);
+  --cta-hero-fg: oklch(0.97 0.01 250);
+  --cta-hero-hover-bg: oklch(0.58 0.12 250);
+  --card-bg: oklch(0.99 0.003 250);
+  --card-meta-bg: oklch(0.965 0.005 250);
+  --badge-client-bg: oklch(0.5 0.12 250);
+  --badge-client-fg: oklch(0.97 0.01 250);
+  --badge-sample-bg: oklch(0.88 0.03 250);
+  --badge-sample-fg: oklch(0.32 0.05 250);
+  --kicker: oklch(0.48 0.11 250);
+  --control-border: oklch(0.24 0.03 255);
+  --control-fg: oklch(0.24 0.03 255);
+  --control-hover-bg: oklch(0.5 0.12 250);
+  --control-hover-fg: oklch(0.97 0.01 250);
+  --control-on-dark-border: oklch(0.92 0.012 250 / 0.4);
+  --control-on-dark-fg: oklch(0.92 0.012 250);
+  --control-on-dark-hover-bg: oklch(0.5 0.12 250);
+  --control-on-dark-hover-fg: oklch(0.97 0.01 250);
+  --hero-scrim-a: oklch(0.14 0.03 255 / 0.35);
+  --hero-scrim-b: oklch(0.12 0.03 255 / 0.68);
+  --hero-chip-bg: oklch(0.14 0.03 255 / 0.45);
+  --shadow-media: oklch(0.14 0.03 255 / 0.48);
+  --shadow-card: oklch(0.24 0.04 255 / 0.12);
+  --logo-filter: invert(1) drop-shadow(0 2px 28px oklch(0.12 0.03 255 / 0.5));
+  --form-surface: oklch(0.97 0.008 250 / 0.05);
+  --form-input-bg: oklch(0.97 0.008 250 / 0.09);
+  --form-fg: oklch(0.94 0.01 250);
+  --form-placeholder: oklch(0.94 0.01 250 / 0.38);
+  --form-focus-border: oklch(0.62 0.1 250 / 0.8);
+  --panel-on-dark: oklch(0.97 0.008 250 / 0.05);
+  --footer-cta-bg: oklch(0.5 0.12 250);
+  --footer-cta-fg: oklch(0.97 0.01 250);
+  --footer-cta-hover-bg: oklch(0.58 0.12 250);
+  --surface-hover: oklch(0.5 0.12 250 / 0.06);
+  --stroke-ghost: oklch(0.92 0.012 250 / 0.07);
+  --brand-shadow: oklch(0.12 0.03 255 / 0.45);
+
+  --sage: var(--accent);
+  --beige: var(--focus);
+  --blush: var(--accent-soft);
+  --accent-warm: var(--kicker);
+}
+
+/* 3 — Evening gallery: near-black + brass CTAs (committed accent) */
+[data-theme="ink-brass"] {
+  --ink: oklch(0.11 0.005 95);
+  --ink-deep: oklch(0.08 0.004 95);
+  --mist: oklch(0.9 0.02 90);
+  --mist-dim: oklch(0.9 0.02 90 / 0.6);
+  --mist-faint: oklch(0.9 0.02 90 / 0.38);
+  --white: oklch(0.97 0.004 90);
+  --black: oklch(0.1 0.005 95);
+  --dark: oklch(0.17 0.01 95);
+  --off-white: oklch(0.985 0.002 90);
+  --light: oklch(0.995 0.001 90);
+  --paper: oklch(0.95 0.005 90);
+  --text: oklch(0.18 0.012 95);
+  --text-muted: oklch(0.44 0.02 90);
+  --text-light: oklch(0.86 0.02 90);
+  --accent: oklch(0.78 0.13 85);
+  --accent-soft: oklch(0.9 0.05 85);
+  --focus: oklch(0.74 0.11 85);
+  --surface-raised: oklch(1 0 0);
+  --error: oklch(0.58 0.16 30);
+  --line-on-light: oklch(0.18 0.012 95 / 0.14);
+  --line-on-dark: oklch(0.9 0.02 90 / 0.14);
+  --hero-veil: oklch(0.08 0.004 95 / 0.82);
+  --footer-glow: oklch(0.78 0.13 85 / 0.14);
+  --nav-panel: oklch(0.08 0.004 95 / 0.95);
+
+  --cta-bg: oklch(0.78 0.13 85);
+  --cta-fg: oklch(0.14 0.03 85);
+  --cta-hover-bg: oklch(0.84 0.12 85);
+  --cta-hero-bg: oklch(0.78 0.13 85);
+  --cta-hero-fg: oklch(0.14 0.03 85);
+  --cta-hero-hover-bg: oklch(0.84 0.12 85);
+  --card-bg: oklch(0.99 0.002 90);
+  --card-meta-bg: oklch(0.965 0.004 90);
+  --badge-client-bg: oklch(0.78 0.13 85);
+  --badge-client-fg: oklch(0.14 0.03 85);
+  --badge-sample-bg: oklch(0.22 0.01 95);
+  --badge-sample-fg: oklch(0.9 0.04 85);
+  --kicker: oklch(0.62 0.11 80);
+  --control-border: oklch(0.18 0.012 95);
+  --control-fg: oklch(0.18 0.012 95);
+  --control-hover-bg: oklch(0.78 0.13 85);
+  --control-hover-fg: oklch(0.14 0.03 85);
+  --control-on-dark-border: oklch(0.78 0.13 85 / 0.55);
+  --control-on-dark-fg: oklch(0.9 0.04 85);
+  --control-on-dark-hover-bg: oklch(0.78 0.13 85);
+  --control-on-dark-hover-fg: oklch(0.14 0.03 85);
+  --hero-scrim-a: oklch(0.08 0.004 95 / 0.4);
+  --hero-scrim-b: oklch(0.06 0.004 95 / 0.72);
+  --hero-chip-bg: oklch(0.08 0.004 95 / 0.5);
+  --shadow-media: oklch(0.08 0.004 95 / 0.55);
+  --shadow-card: oklch(0.18 0.02 95 / 0.14);
+  --logo-filter: invert(1) drop-shadow(0 2px 28px oklch(0.78 0.13 85 / 0.25));
+  --form-surface: oklch(0.96 0.012 90 / 0.05);
+  --form-input-bg: oklch(0.96 0.012 90 / 0.08);
+  --form-fg: oklch(0.94 0.02 90);
+  --form-placeholder: oklch(0.94 0.02 90 / 0.35);
+  --form-focus-border: oklch(0.78 0.13 85 / 0.7);
+  --panel-on-dark: oklch(0.96 0.012 90 / 0.05);
+  --footer-cta-bg: oklch(0.78 0.13 85);
+  --footer-cta-fg: oklch(0.14 0.03 85);
+  --footer-cta-hover-bg: oklch(0.84 0.12 85);
+  --surface-hover: oklch(0.78 0.13 85 / 0.08);
+  --stroke-ghost: oklch(0.78 0.13 85 / 0.08);
+  --brand-shadow: oklch(0.08 0.004 95 / 0.5);
+
+  --sage: var(--accent);
+  --beige: var(--focus);
+  --blush: var(--accent-soft);
+  --accent-warm: var(--kicker);
+}
+
+/* 4 — Cobalt committed: navy surfaces, cool white, saturated cobalt CTAs */
+[data-theme="harbour-blue"] {
+  --ink: oklch(0.2 0.07 255);
+  --ink-deep: oklch(0.14 0.06 255);
+  --mist: oklch(0.94 0.01 235);
+  --mist-dim: oklch(0.93 0.02 235 / 0.65);
+  --mist-faint: oklch(0.93 0.02 235 / 0.4);
+  --white: oklch(0.97 0.005 240);
+  --black: oklch(0.18 0.06 255);
+  --dark: oklch(0.28 0.08 255);
+  --off-white: oklch(0.98 0.004 240);
+  --light: oklch(0.99 0.003 240);
+  --paper: oklch(0.95 0.006 245);
+  --text: oklch(0.24 0.05 255);
+  --text-muted: oklch(0.45 0.05 255);
+  --text-light: oklch(0.9 0.02 235);
+  --accent: oklch(0.52 0.18 260);
+  --accent-soft: oklch(0.88 0.05 255);
+  --focus: oklch(0.55 0.15 260);
+  --surface-raised: oklch(0.995 0.002 240);
+  --error: oklch(0.55 0.17 25);
+  --line-on-light: oklch(0.24 0.05 255 / 0.14);
+  --line-on-dark: oklch(0.93 0.02 235 / 0.16);
+  --hero-veil: oklch(0.14 0.06 255 / 0.78);
+  --footer-glow: oklch(0.52 0.18 260 / 0.18);
+  --nav-panel: oklch(0.14 0.06 255 / 0.94);
+
+  --cta-bg: oklch(0.52 0.18 260);
+  --cta-fg: oklch(0.98 0.01 240);
+  --cta-hover-bg: oklch(0.58 0.17 260);
+  --cta-hero-bg: oklch(0.52 0.18 260);
+  --cta-hero-fg: oklch(0.98 0.01 240);
+  --cta-hero-hover-bg: oklch(0.6 0.16 260);
+  --card-bg: oklch(0.99 0.003 240);
+  --card-meta-bg: oklch(0.965 0.005 245);
+  --badge-client-bg: oklch(0.52 0.18 260);
+  --badge-client-fg: oklch(0.98 0.01 240);
+  --badge-sample-bg: oklch(0.88 0.04 250);
+  --badge-sample-fg: oklch(0.3 0.07 255);
+  --kicker: oklch(0.48 0.16 260);
+  --control-border: oklch(0.24 0.05 255);
+  --control-fg: oklch(0.24 0.05 255);
+  --control-hover-bg: oklch(0.52 0.18 260);
+  --control-hover-fg: oklch(0.98 0.01 240);
+  --control-on-dark-border: oklch(0.93 0.02 235 / 0.4);
+  --control-on-dark-fg: oklch(0.93 0.02 235);
+  --control-on-dark-hover-bg: oklch(0.52 0.18 260);
+  --control-on-dark-hover-fg: oklch(0.98 0.01 240);
+  --hero-scrim-a: oklch(0.16 0.07 255 / 0.32);
+  --hero-scrim-b: oklch(0.12 0.06 255 / 0.7);
+  --hero-chip-bg: oklch(0.16 0.07 255 / 0.42);
+  --shadow-media: oklch(0.14 0.06 255 / 0.5);
+  --shadow-card: oklch(0.24 0.06 255 / 0.14);
+  --logo-filter: invert(1) drop-shadow(0 2px 28px oklch(0.14 0.06 255 / 0.5));
+  --form-surface: oklch(0.97 0.012 235 / 0.06);
+  --form-input-bg: oklch(0.97 0.012 235 / 0.1);
+  --form-fg: oklch(0.94 0.015 235);
+  --form-placeholder: oklch(0.94 0.015 235 / 0.38);
+  --form-focus-border: oklch(0.62 0.14 260 / 0.75);
+  --panel-on-dark: oklch(0.97 0.012 235 / 0.06);
+  --footer-cta-bg: oklch(0.52 0.18 260);
+  --footer-cta-fg: oklch(0.98 0.01 240);
+  --footer-cta-hover-bg: oklch(0.6 0.16 260);
+  --surface-hover: oklch(0.52 0.18 260 / 0.07);
+  --stroke-ghost: oklch(0.93 0.02 235 / 0.08);
+  --brand-shadow: oklch(0.14 0.06 255 / 0.45);
+
+  --sage: var(--accent);
+  --beige: var(--focus);
+  --blush: var(--accent-soft);
+  --accent-warm: var(--kicker);
+}
+
+/* 5 — Black & Tan: charcoal ink, warm tan body (not cream), ember CTAs */
+[data-theme="cedar-ember"] {
+  --ink: oklch(0.16 0.03 45);
+  --ink-deep: oklch(0.11 0.025 45);
+  --mist: oklch(0.92 0.012 70);
+  --mist-dim: oklch(0.9 0.025 70 / 0.62);
+  --mist-faint: oklch(0.9 0.025 70 / 0.4);
+  --white: oklch(0.97 0.005 70);
+  --black: oklch(0.14 0.025 45);
+  --dark: oklch(0.24 0.035 45);
+  --off-white: oklch(0.98 0.005 70);
+  --light: oklch(0.99 0.003 70);
+  --paper: oklch(0.95 0.006 65);
+  --text: oklch(0.22 0.03 45);
+  --text-muted: oklch(0.42 0.035 50);
+  --text-light: oklch(0.88 0.025 70);
+  --accent: oklch(0.58 0.16 45);
+  --accent-soft: oklch(0.82 0.06 50);
+  --focus: oklch(0.62 0.13 45);
+  --surface-raised: oklch(0.995 0.002 70);
+  --error: oklch(0.52 0.17 30);
+  --line-on-light: oklch(0.22 0.03 45 / 0.16);
+  --line-on-dark: oklch(0.9 0.025 70 / 0.14);
+  --hero-veil: oklch(0.11 0.025 45 / 0.8);
+  --footer-glow: oklch(0.58 0.16 45 / 0.16);
+  --nav-panel: oklch(0.11 0.025 45 / 0.94);
+
+  --cta-bg: oklch(0.58 0.16 45);
+  --cta-fg: oklch(0.98 0.01 70);
+  --cta-hover-bg: oklch(0.64 0.15 45);
+  --cta-hero-bg: oklch(0.58 0.16 45);
+  --cta-hero-fg: oklch(0.98 0.01 70);
+  --cta-hero-hover-bg: oklch(0.66 0.14 45);
+  --card-bg: oklch(0.99 0.003 70);
+  --card-meta-bg: oklch(0.965 0.005 65);
+  --badge-client-bg: oklch(0.58 0.16 45);
+  --badge-client-fg: oklch(0.98 0.01 70);
+  --badge-sample-bg: oklch(0.78 0.05 60);
+  --badge-sample-fg: oklch(0.28 0.05 45);
+  --kicker: oklch(0.5 0.14 40);
+  --control-border: oklch(0.22 0.03 45);
+  --control-fg: oklch(0.22 0.03 45);
+  --control-hover-bg: oklch(0.58 0.16 45);
+  --control-hover-fg: oklch(0.98 0.01 70);
+  --control-on-dark-border: oklch(0.9 0.025 70 / 0.4);
+  --control-on-dark-fg: oklch(0.9 0.025 70);
+  --control-on-dark-hover-bg: oklch(0.58 0.16 45);
+  --control-on-dark-hover-fg: oklch(0.98 0.01 70);
+  --hero-scrim-a: oklch(0.12 0.03 45 / 0.35);
+  --hero-scrim-b: oklch(0.1 0.025 45 / 0.72);
+  --hero-chip-bg: oklch(0.12 0.03 45 / 0.45);
+  --shadow-media: oklch(0.11 0.025 45 / 0.5);
+  --shadow-card: oklch(0.22 0.04 45 / 0.14);
+  --logo-filter: invert(1) drop-shadow(0 2px 28px oklch(0.11 0.025 45 / 0.5));
+  --form-surface: oklch(0.94 0.02 70 / 0.06);
+  --form-input-bg: oklch(0.94 0.02 70 / 0.1);
+  --form-fg: oklch(0.92 0.02 70);
+  --form-placeholder: oklch(0.92 0.02 70 / 0.38);
+  --form-focus-border: oklch(0.58 0.16 45 / 0.75);
+  --panel-on-dark: oklch(0.94 0.02 70 / 0.06);
+  --footer-cta-bg: oklch(0.58 0.16 45);
+  --footer-cta-fg: oklch(0.98 0.01 70);
+  --footer-cta-hover-bg: oklch(0.66 0.14 45);
+  --surface-hover: oklch(0.58 0.16 45 / 0.08);
+  --stroke-ghost: oklch(0.9 0.025 70 / 0.07);
+  --brand-shadow: oklch(0.11 0.025 45 / 0.45);
+
+  --sage: var(--accent);
+  --beige: var(--focus);
+  --blush: var(--accent-soft);
+  --accent-warm: var(--kicker);
+}
+
+/* 6 — Light-first winter: pale hero chrome, ice accent, charcoal darks */
+[data-theme="snowfield"] {
+  --ink: oklch(0.9 0.015 230);
+  --ink-deep: oklch(0.84 0.02 230);
+  --mist: oklch(0.28 0.035 250);
+  --mist-dim: oklch(0.28 0.035 250 / 0.7);
+  --mist-faint: oklch(0.28 0.035 250 / 0.45);
+  --white: oklch(0.22 0.03 250);
+  --black: oklch(0.22 0.03 250);
+  --dark: oklch(0.26 0.03 250);
+  --off-white: oklch(0.985 0.003 230);
+  --light: oklch(0.995 0.002 230);
+  --paper: oklch(0.955 0.005 230);
+  --text: oklch(0.24 0.03 250);
+  --text-muted: oklch(0.44 0.035 250);
+  --text-light: oklch(0.9 0.012 230);
+  --accent: oklch(0.58 0.12 230);
+  --accent-soft: oklch(0.88 0.05 230);
+  --focus: oklch(0.52 0.1 230);
+  --surface-raised: oklch(1 0 0);
+  --error: oklch(0.52 0.18 25);
+  --line-on-light: oklch(0.24 0.03 250 / 0.14);
+  --line-on-dark: oklch(0.9 0.012 230 / 0.16);
+  --hero-veil: oklch(0.96 0.01 230 / 0.28);
+  --footer-glow: oklch(0.58 0.12 230 / 0.14);
+  --nav-panel: oklch(0.98 0.008 230 / 0.94);
+
+  --cta-bg: oklch(0.58 0.12 230);
+  --cta-fg: oklch(0.98 0.01 230);
+  --cta-hover-bg: oklch(0.5 0.12 230);
+  --cta-hero-bg: oklch(0.24 0.03 250);
+  --cta-hero-fg: oklch(0.97 0.01 230);
+  --cta-hero-hover-bg: oklch(0.32 0.04 250);
+  --card-bg: oklch(1 0 0);
+  --card-meta-bg: oklch(0.97 0.004 230);
+  --badge-client-bg: oklch(0.24 0.03 250);
+  --badge-client-fg: oklch(0.97 0.01 230);
+  --badge-sample-bg: oklch(0.88 0.05 230);
+  --badge-sample-fg: oklch(0.3 0.05 240);
+  --kicker: oklch(0.48 0.11 230);
+  --control-border: oklch(0.24 0.03 250);
+  --control-fg: oklch(0.24 0.03 250);
+  --control-hover-bg: oklch(0.58 0.12 230);
+  --control-hover-fg: oklch(0.98 0.01 230);
+  --control-on-dark-border: oklch(0.9 0.012 230 / 0.4);
+  --control-on-dark-fg: oklch(0.9 0.012 230);
+  --control-on-dark-hover-bg: oklch(0.58 0.12 230);
+  --control-on-dark-hover-fg: oklch(0.98 0.01 230);
+  --hero-scrim-a: oklch(0.98 0.01 230 / 0.2);
+  --hero-scrim-b: oklch(0.9 0.02 230 / 0.55);
+  --hero-chip-bg: oklch(0.98 0.01 230 / 0.55);
+  --shadow-media: oklch(0.24 0.03 250 / 0.2);
+  --shadow-card: oklch(0.24 0.03 250 / 0.1);
+  --logo-filter: drop-shadow(0 2px 20px oklch(1 0 0 / 0.65));
+  --form-surface: oklch(1 0 0 / 0.06);
+  --form-input-bg: oklch(1 0 0 / 0.1);
+  --form-fg: oklch(0.94 0.01 230);
+  --form-placeholder: oklch(0.94 0.01 230 / 0.4);
+  --form-focus-border: oklch(0.58 0.12 230 / 0.8);
+  --panel-on-dark: oklch(1 0 0 / 0.06);
+  --footer-cta-bg: oklch(0.58 0.12 230);
+  --footer-cta-fg: oklch(0.98 0.01 230);
+  --footer-cta-hover-bg: oklch(0.5 0.12 230);
+  --surface-hover: oklch(0.58 0.12 230 / 0.07);
+  --stroke-ghost: oklch(0.9 0.012 230 / 0.08);
+  --brand-shadow: oklch(1 0 0 / 0.55);
+
+  --sage: var(--accent);
+  --beige: var(--focus);
+  --blush: var(--accent-soft);
+  --accent-warm: var(--kicker);
+}
+
+/* 7 — Oxblood drenched darks; cool stone light body (not cream) */
+[data-theme="oxblood"] {
+  --ink: oklch(0.2 0.09 25);
+  --ink-deep: oklch(0.14 0.08 25);
+  --mist: oklch(0.93 0.015 40);
+  --mist-dim: oklch(0.93 0.015 40 / 0.65);
+  --mist-faint: oklch(0.93 0.015 40 / 0.42);
+  --white: oklch(0.97 0.004 40);
+  --black: oklch(0.18 0.08 25);
+  --dark: oklch(0.3 0.11 25);
+  --off-white: oklch(0.98 0.003 80);
+  --light: oklch(0.99 0.002 80);
+  --paper: oklch(0.95 0.005 70);
+  --text: oklch(0.22 0.025 25);
+  --text-muted: oklch(0.44 0.03 25);
+  --text-light: oklch(0.92 0.02 40);
+  --accent: oklch(0.52 0.17 28);
+  --accent-soft: oklch(0.88 0.05 30);
+  --focus: oklch(0.48 0.15 28);
+  --surface-raised: oklch(0.995 0.002 80);
+  --error: oklch(0.62 0.14 40);
+  --line-on-light: oklch(0.22 0.025 25 / 0.14);
+  --line-on-dark: oklch(0.93 0.015 40 / 0.16);
+  --hero-veil: oklch(0.14 0.08 25 / 0.78);
+  --footer-glow: oklch(0.52 0.17 28 / 0.18);
+  --nav-panel: oklch(0.14 0.08 25 / 0.94);
+
+  --cta-bg: oklch(0.52 0.17 28);
+  --cta-fg: oklch(0.97 0.01 40);
+  --cta-hover-bg: oklch(0.58 0.16 28);
+  --cta-hero-bg: oklch(0.52 0.17 28);
+  --cta-hero-fg: oklch(0.97 0.01 40);
+  --cta-hero-hover-bg: oklch(0.6 0.15 28);
+  --card-bg: oklch(0.99 0.002 80);
+  --card-meta-bg: oklch(0.965 0.004 70);
+  --badge-client-bg: oklch(0.52 0.17 28);
+  --badge-client-fg: oklch(0.97 0.01 40);
+  --badge-sample-bg: oklch(0.88 0.04 40);
+  --badge-sample-fg: oklch(0.32 0.08 25);
+  --kicker: oklch(0.48 0.15 25);
+  --control-border: oklch(0.22 0.025 25);
+  --control-fg: oklch(0.22 0.025 25);
+  --control-hover-bg: oklch(0.52 0.17 28);
+  --control-hover-fg: oklch(0.97 0.01 40);
+  --control-on-dark-border: oklch(0.93 0.015 40 / 0.4);
+  --control-on-dark-fg: oklch(0.93 0.015 40);
+  --control-on-dark-hover-bg: oklch(0.52 0.17 28);
+  --control-on-dark-hover-fg: oklch(0.97 0.01 40);
+  --hero-scrim-a: oklch(0.16 0.09 25 / 0.35);
+  --hero-scrim-b: oklch(0.12 0.08 25 / 0.72);
+  --hero-chip-bg: oklch(0.16 0.09 25 / 0.45);
+  --shadow-media: oklch(0.14 0.08 25 / 0.5);
+  --shadow-card: oklch(0.22 0.05 25 / 0.14);
+  --logo-filter: invert(1) drop-shadow(0 2px 28px oklch(0.14 0.08 25 / 0.5));
+  --form-surface: oklch(0.96 0.012 40 / 0.06);
+  --form-input-bg: oklch(0.96 0.012 40 / 0.1);
+  --form-fg: oklch(0.94 0.015 40);
+  --form-placeholder: oklch(0.94 0.015 40 / 0.38);
+  --form-focus-border: oklch(0.62 0.14 28 / 0.75);
+  --panel-on-dark: oklch(0.96 0.012 40 / 0.06);
+  --footer-cta-bg: oklch(0.52 0.17 28);
+  --footer-cta-fg: oklch(0.97 0.01 40);
+  --footer-cta-hover-bg: oklch(0.6 0.15 28);
+  --surface-hover: oklch(0.52 0.17 28 / 0.08);
+  --stroke-ghost: oklch(0.93 0.015 40 / 0.08);
+  --brand-shadow: oklch(0.14 0.08 25 / 0.45);
+
+  --sage: var(--accent);
+  --beige: var(--focus);
+  --blush: var(--accent-soft);
+  --accent-warm: var(--kicker);
+}
+
+/* 8 — Night craft full palette: near-black + electric chartreuse CTAs */
+[data-theme="volt-night"] {
+  --ink: oklch(0.13 0.025 140);
+  --ink-deep: oklch(0.09 0.02 140);
+  --mist: oklch(0.93 0.015 130);
+  --mist-dim: oklch(0.92 0.03 130 / 0.62);
+  --mist-faint: oklch(0.92 0.03 130 / 0.4);
+  --white: oklch(0.97 0.005 130);
+  --black: oklch(0.11 0.02 140);
+  --dark: oklch(0.18 0.03 140);
+  --off-white: oklch(0.98 0.004 140);
+  --light: oklch(0.99 0.003 140);
+  --paper: oklch(0.95 0.006 140);
+  --text: oklch(0.2 0.025 140);
+  --text-muted: oklch(0.44 0.025 140);
+  --text-light: oklch(0.88 0.03 130);
+  --accent: oklch(0.9 0.22 125);
+  --accent-soft: oklch(0.9 0.08 125);
+  --focus: oklch(0.82 0.18 125);
+  --surface-raised: oklch(0.995 0.002 140);
+  --error: oklch(0.6 0.17 25);
+  --line-on-light: oklch(0.2 0.025 140 / 0.14);
+  --line-on-dark: oklch(0.9 0.22 125 / 0.22);
+  --hero-veil: oklch(0.09 0.02 140 / 0.84);
+  --footer-glow: oklch(0.9 0.22 125 / 0.12);
+  --nav-panel: oklch(0.09 0.02 140 / 0.95);
+
+  --cta-bg: oklch(0.9 0.22 125);
+  --cta-fg: oklch(0.14 0.04 140);
+  --cta-hover-bg: oklch(0.93 0.2 125);
+  --cta-hero-bg: oklch(0.9 0.22 125);
+  --cta-hero-fg: oklch(0.14 0.04 140);
+  --cta-hero-hover-bg: oklch(0.93 0.2 125);
+  --card-bg: oklch(0.99 0.003 140);
+  --card-meta-bg: oklch(0.965 0.005 140);
+  --badge-client-bg: oklch(0.9 0.22 125);
+  --badge-client-fg: oklch(0.14 0.04 140);
+  --badge-sample-bg: oklch(0.22 0.03 140);
+  --badge-sample-fg: oklch(0.9 0.18 125);
+  --kicker: oklch(0.55 0.14 130);
+  --control-border: oklch(0.2 0.025 140);
+  --control-fg: oklch(0.2 0.025 140);
+  --control-hover-bg: oklch(0.9 0.22 125);
+  --control-hover-fg: oklch(0.14 0.04 140);
+  --control-on-dark-border: oklch(0.9 0.22 125 / 0.45);
+  --control-on-dark-fg: oklch(0.9 0.18 125);
+  --control-on-dark-hover-bg: oklch(0.9 0.22 125);
+  --control-on-dark-hover-fg: oklch(0.14 0.04 140);
+  --hero-scrim-a: oklch(0.1 0.025 140 / 0.4);
+  --hero-scrim-b: oklch(0.08 0.02 140 / 0.75);
+  --hero-chip-bg: oklch(0.1 0.025 140 / 0.5);
+  --shadow-media: oklch(0.09 0.02 140 / 0.55);
+  --shadow-card: oklch(0.2 0.04 140 / 0.14);
+  --logo-filter: invert(1) drop-shadow(0 2px 28px oklch(0.9 0.22 125 / 0.2));
+  --form-surface: oklch(0.95 0.025 130 / 0.05);
+  --form-input-bg: oklch(0.95 0.025 130 / 0.08);
+  --form-fg: oklch(0.94 0.03 130);
+  --form-placeholder: oklch(0.94 0.03 130 / 0.35);
+  --form-focus-border: oklch(0.9 0.22 125 / 0.7);
+  --panel-on-dark: oklch(0.95 0.025 130 / 0.05);
+  --footer-cta-bg: oklch(0.9 0.22 125);
+  --footer-cta-fg: oklch(0.14 0.04 140);
+  --footer-cta-hover-bg: oklch(0.93 0.2 125);
+  --surface-hover: oklch(0.9 0.22 125 / 0.08);
+  --stroke-ghost: oklch(0.9 0.22 125 / 0.1);
+  --brand-shadow: oklch(0.09 0.02 140 / 0.5);
+
+  --sage: var(--accent);
+  --beige: var(--focus);
+  --blush: var(--accent-soft);
+  --accent-warm: var(--kicker);
+}
+
+/* 9 — Terracotta + Slate: cool slate body, brick accent (not cream+clay) */
+[data-theme="stone-clay"] {
+  --ink: oklch(0.26 0.02 250);
+  --ink-deep: oklch(0.2 0.018 250);
+  --mist: oklch(0.93 0.01 250);
+  --mist-dim: oklch(0.93 0.01 250 / 0.65);
+  --mist-faint: oklch(0.93 0.01 250 / 0.42);
+  --white: oklch(0.97 0.004 250);
+  --black: oklch(0.24 0.018 250);
+  --dark: oklch(0.32 0.022 250);
+  --off-white: oklch(0.98 0.004 250);
+  --light: oklch(0.99 0.003 250);
+  --paper: oklch(0.95 0.005 250);
+  --text: oklch(0.26 0.02 250);
+  --text-muted: oklch(0.46 0.02 250);
+  --text-light: oklch(0.9 0.01 250);
+  --accent: oklch(0.55 0.12 40);
+  --accent-soft: oklch(0.88 0.04 40);
+  --focus: oklch(0.58 0.1 40);
+  --surface-raised: oklch(0.995 0.002 250);
+  --error: oklch(0.52 0.15 30);
+  --line-on-light: oklch(0.26 0.02 250 / 0.16);
+  --line-on-dark: oklch(0.93 0.01 250 / 0.14);
+  --hero-veil: oklch(0.2 0.018 250 / 0.72);
+  --footer-glow: oklch(0.55 0.12 40 / 0.14);
+  --nav-panel: oklch(0.2 0.018 250 / 0.94);
+
+  --cta-bg: oklch(0.55 0.12 40);
+  --cta-fg: oklch(0.98 0.01 80);
+  --cta-hover-bg: oklch(0.6 0.12 40);
+  --cta-hero-bg: oklch(0.55 0.12 40);
+  --cta-hero-fg: oklch(0.98 0.01 80);
+  --cta-hero-hover-bg: oklch(0.62 0.11 40);
+  --card-bg: oklch(0.99 0.003 250);
+  --card-meta-bg: oklch(0.965 0.004 250);
+  --badge-client-bg: oklch(0.55 0.12 40);
+  --badge-client-fg: oklch(0.98 0.01 80);
+  --badge-sample-bg: oklch(0.86 0.03 250);
+  --badge-sample-fg: oklch(0.32 0.03 250);
+  --kicker: oklch(0.5 0.11 40);
+  --control-border: oklch(0.26 0.02 250);
+  --control-fg: oklch(0.26 0.02 250);
+  --control-hover-bg: oklch(0.55 0.12 40);
+  --control-hover-fg: oklch(0.98 0.01 80);
+  --control-on-dark-border: oklch(0.93 0.01 250 / 0.4);
+  --control-on-dark-fg: oklch(0.93 0.01 250);
+  --control-on-dark-hover-bg: oklch(0.55 0.12 40);
+  --control-on-dark-hover-fg: oklch(0.98 0.01 80);
+  --hero-scrim-a: oklch(0.22 0.02 250 / 0.3);
+  --hero-scrim-b: oklch(0.18 0.02 250 / 0.68);
+  --hero-chip-bg: oklch(0.22 0.02 250 / 0.42);
+  --shadow-media: oklch(0.2 0.018 250 / 0.48);
+  --shadow-card: oklch(0.26 0.03 250 / 0.12);
+  --logo-filter: invert(1) drop-shadow(0 2px 28px oklch(0.2 0.018 250 / 0.45));
+  --form-surface: oklch(0.96 0.008 250 / 0.05);
+  --form-input-bg: oklch(0.96 0.008 250 / 0.09);
+  --form-fg: oklch(0.94 0.01 250);
+  --form-placeholder: oklch(0.94 0.01 250 / 0.38);
+  --form-focus-border: oklch(0.55 0.12 40 / 0.75);
+  --panel-on-dark: oklch(0.96 0.008 250 / 0.05);
+  --footer-cta-bg: oklch(0.55 0.12 40);
+  --footer-cta-fg: oklch(0.98 0.01 80);
+  --footer-cta-hover-bg: oklch(0.62 0.11 40);
+  --surface-hover: oklch(0.55 0.12 40 / 0.07);
+  --stroke-ghost: oklch(0.93 0.01 250 / 0.07);
+  --brand-shadow: oklch(0.2 0.018 250 / 0.45);
+
+  --sage: var(--accent);
+  --beige: var(--focus);
+  --blush: var(--accent-soft);
+  --accent-warm: var(--kicker);
+}
+
+/* 10 — Teal committed: teal-black darks, aqua-white lights, mint CTAs */
+[data-theme="northern-teal"] {
+  --ink: oklch(0.16 0.045 200);
+  --ink-deep: oklch(0.11 0.04 200);
+  --mist: oklch(0.93 0.015 190);
+  --mist-dim: oklch(0.92 0.03 190 / 0.62);
+  --mist-faint: oklch(0.92 0.03 190 / 0.4);
+  --white: oklch(0.97 0.005 190);
+  --black: oklch(0.14 0.04 200);
+  --dark: oklch(0.22 0.05 200);
+  --off-white: oklch(0.98 0.004 195);
+  --light: oklch(0.99 0.003 195);
+  --paper: oklch(0.95 0.006 195);
+  --text: oklch(0.24 0.035 200);
+  --text-muted: oklch(0.44 0.035 200);
+  --text-light: oklch(0.88 0.03 190);
+  --accent: oklch(0.72 0.13 185);
+  --accent-soft: oklch(0.88 0.06 185);
+  --focus: oklch(0.68 0.11 185);
+  --surface-raised: oklch(0.995 0.002 195);
+  --error: oklch(0.58 0.15 30);
+  --line-on-light: oklch(0.24 0.035 200 / 0.14);
+  --line-on-dark: oklch(0.92 0.03 190 / 0.16);
+  --hero-veil: oklch(0.11 0.04 200 / 0.8);
+  --footer-glow: oklch(0.72 0.13 185 / 0.14);
+  --nav-panel: oklch(0.11 0.04 200 / 0.94);
+
+  --cta-bg: oklch(0.72 0.13 185);
+  --cta-fg: oklch(0.14 0.04 200);
+  --cta-hover-bg: oklch(0.78 0.12 185);
+  --cta-hero-bg: oklch(0.72 0.13 185);
+  --cta-hero-fg: oklch(0.14 0.04 200);
+  --cta-hero-hover-bg: oklch(0.8 0.11 185);
+  --card-bg: oklch(0.99 0.003 195);
+  --card-meta-bg: oklch(0.965 0.005 195);
+  --badge-client-bg: oklch(0.72 0.13 185);
+  --badge-client-fg: oklch(0.14 0.04 200);
+  --badge-sample-bg: oklch(0.86 0.05 185);
+  --badge-sample-fg: oklch(0.28 0.05 200);
+  --kicker: oklch(0.5 0.1 190);
+  --control-border: oklch(0.24 0.035 200);
+  --control-fg: oklch(0.24 0.035 200);
+  --control-hover-bg: oklch(0.72 0.13 185);
+  --control-hover-fg: oklch(0.14 0.04 200);
+  --control-on-dark-border: oklch(0.72 0.13 185 / 0.45);
+  --control-on-dark-fg: oklch(0.88 0.06 185);
+  --control-on-dark-hover-bg: oklch(0.72 0.13 185);
+  --control-on-dark-hover-fg: oklch(0.14 0.04 200);
+  --hero-scrim-a: oklch(0.12 0.045 200 / 0.35);
+  --hero-scrim-b: oklch(0.1 0.04 200 / 0.72);
+  --hero-chip-bg: oklch(0.12 0.045 200 / 0.45);
+  --shadow-media: oklch(0.11 0.04 200 / 0.5);
+  --shadow-card: oklch(0.24 0.05 200 / 0.12);
+  --logo-filter: invert(1) drop-shadow(0 2px 28px oklch(0.11 0.04 200 / 0.5));
+  --form-surface: oklch(0.96 0.02 190 / 0.05);
+  --form-input-bg: oklch(0.96 0.02 190 / 0.09);
+  --form-fg: oklch(0.94 0.025 190);
+  --form-placeholder: oklch(0.94 0.025 190 / 0.38);
+  --form-focus-border: oklch(0.72 0.13 185 / 0.75);
+  --panel-on-dark: oklch(0.96 0.02 190 / 0.05);
+  --footer-cta-bg: oklch(0.72 0.13 185);
+  --footer-cta-fg: oklch(0.14 0.04 200);
+  --footer-cta-hover-bg: oklch(0.8 0.11 185);
+  --surface-hover: oklch(0.72 0.13 185 / 0.08);
+  --stroke-ghost: oklch(0.72 0.13 185 / 0.1);
+  --brand-shadow: oklch(0.11 0.04 200 / 0.45);
+
+  --sage: var(--accent);
+  --beige: var(--focus);
+  --blush: var(--accent-soft);
+  --accent-warm: var(--kicker);
+}
+
+/* Snowfield: light hero chrome (logo/text already tokenized) */
+[data-theme="snowfield"] .brand-name {
+  filter: var(--logo-filter);
+}
+
+[data-theme="snowfield"] .brand-headline {
+  text-shadow: 0 2px 24px var(--brand-shadow);
+}
+
+[data-theme="snowfield"] .nav-links a,
+[data-theme="snowfield"] .nav-menu-btn span,
+[data-theme="snowfield"] .hero-secondary,
+[data-theme="snowfield"] .hero-scroll {
+  color: var(--text);
+}
+
+[data-theme="snowfield"] .nav-links a:hover,
+[data-theme="snowfield"] .nav-links .nav-contact,
+[data-theme="snowfield"] .hero-secondary:hover {
+  color: var(--ink-deep);
+}
+
+[data-theme="snowfield"] .nav-links a::after,
+[data-theme="snowfield"] .hero-scroll__bar::after {
+  background: var(--text);
+}
+
+[data-theme="snowfield"] .nav-mobile {
+  border-color: var(--line-on-light);
+}
+
+[data-theme="snowfield"] .nav-mobile a {
+  color: var(--text);
+}
+
+[data-theme="snowfield"] .splash-fill {
+  fill: var(--off-white);
+}
