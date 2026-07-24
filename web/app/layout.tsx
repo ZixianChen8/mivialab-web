@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { GOOGLE_FONTS_HREF } from "@/lib/fonts";
+import { GOOGLE_FONTS_HREF, DEFAULT_FONT_ID } from "@/lib/fonts";
 import { themeInitScript } from "@/lib/theme-init-script";
+import { ACTIVE_THEME_ID } from "@/lib/themes";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,7 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="pine-fog" data-font="manrope" suppressHydrationWarning>
+    <html
+      lang="en"
+      data-theme={ACTIVE_THEME_ID}
+      data-font={DEFAULT_FONT_ID}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

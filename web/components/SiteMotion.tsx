@@ -112,7 +112,10 @@ export function SiteMotion({ enableHero = false }: SiteMotionProps) {
         syncTouch: sc.syncTouch,
         anchors: true,
       });
-      lenis.on("scroll", ScrollTrigger.update);
+      lenis.on("scroll", () => {
+        ScrollTrigger.update();
+        window.dispatchEvent(new Event("mivia:scroll"));
+      });
       gsap.ticker.add(tickerCb);
       gsap.ticker.lagSmoothing(0);
     }

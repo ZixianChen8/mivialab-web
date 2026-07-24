@@ -89,6 +89,8 @@ export function HomePage() {
       <SiteMotion enableHero />
 
       <div className="home-stack">
+        <SiteNav />
+
         <section className="hero artist-container mwg_effect001" id="home">
           <div className="hero__stage">
             <div className="hero__clip">
@@ -106,8 +108,6 @@ export function HomePage() {
                 </defs>
                 <rect className="splash-fill" width="100%" height="100%" mask="url(#splashMask)" />
               </svg>
-
-              <SiteNav />
 
               <div className="hero__rail">
                 <div className="hero__cards" aria-hidden="true">
@@ -140,7 +140,16 @@ export function HomePage() {
               <div className="hero-bg-fg" aria-hidden="true" />
 
               <div className="hero-dock">
-                <div className="hero-dock__brand">
+                <div className="hero-dock__intro">
+                  <p className="hero-kicker">Ottawa–Toronto studio</p>
+                  <h1 className="brand-headline">
+                    Web design &amp; development
+                    <br />
+                    for small businesses
+                  </h1>
+                </div>
+
+                <div className="hero-dock__anchor">
                   <img
                     className="brand-name"
                     src="/assets/images/logo/design1_bw_upscaled_tr.png"
@@ -148,17 +157,19 @@ export function HomePage() {
                     width={2000}
                     height={2000}
                   />
-                  <div className="hero-dock__copy">
-                    <h1 className="brand-headline">Web design &amp; development for small businesses</h1>
-                    <p className="brand-tagline">Ottawa–Toronto · custom sites, cared for end to end</p>
-                    <div className="hero-actions">
-                      <a className="hero-cta" href="#contact">
-                        Start a project
-                      </a>
-                      <a className="hero-secondary" href="#services">
-                        See services
-                      </a>
-                    </div>
+                </div>
+
+                <div className="hero-dock__support">
+                  <p className="brand-tagline">
+                    Custom sites, cared for end to end.
+                  </p>
+                  <div className="hero-actions">
+                    <a className="hero-cta" href="#contact">
+                      Start a project
+                    </a>
+                    <a className="hero-secondary" href="#services">
+                      See services
+                    </a>
                   </div>
                 </div>
 

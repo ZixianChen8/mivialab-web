@@ -1,6 +1,12 @@
 /* Font choices — switched via data-font on <html> (FontChooser). */
 
 :root,
+[data-font="poppins"] {
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", Georgia, serif;
+}
+
 [data-font="manrope"] {
   --font-display: "Manrope", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, sans-serif;
@@ -40,12 +46,6 @@
 [data-font="dm-sans"] {
   --font-display: "DM Sans", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
-  --font-serif: "Libre Baskerville", Georgia, serif;
-}
-
-[data-font="poppins"] {
-  --font-display: "Poppins", system-ui, sans-serif;
-  --font-body: "Poppins", system-ui, sans-serif;
   --font-serif: "Libre Baskerville", Georgia, serif;
 }
 

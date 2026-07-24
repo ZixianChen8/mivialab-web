@@ -42,7 +42,7 @@ export const FONTS: FontDefinition[] = [
 ];
 
 export const FONT_STORAGE_KEY = "mivialab-font-system";
-export const DEFAULT_FONT_ID = "manrope";
+export const DEFAULT_FONT_ID = "poppins";
 
 const SERIF_ACCENT = `"Libre Baskerville", Georgia, serif`;
 
