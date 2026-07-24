@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en" class="lenis" style="--scrollbar-width: 0px;"> <body class="tutorial chrome" style="">
+    <header class="navigation pf g f f-space f-center">  <div> <a class="link-logo pr roll roll2" href="https://madewithgsap.com/" aria-label="Go to homepage"> <span> <span class="translate"> <span><img class="logo" src="https://madewithgsap.com/assets/img/logo.svg" alt="" width="300" height="150"></span> <span><img class="logo" src="https://madewithgsap.com/assets/img/logo.svg" alt="" width="300" height="150"></span> </span> </span> </a> </div> <div class="contents"> <div class="right f f-center"> <nav class="not-log label f"> <ul class="f"> <li> <a class="roll" href="https://madewithgsap.com/effects"> <span> <span class="translate"> <span class="gap-spe">Collection <i class="label-s">109</i></span> <span class="gap-spe">Collection <i class="label-s">109</i></span> </span> </span> </a> </li> <li> <a class="roll" href="https://madewithgsap.com/get-started"> <span> <span class="translate"> <span>Pricing</span> <span>Pricing</span> </span> </span> </a> </li> <li> <a class="roll" href="https://madewithgsap.com/faq"> <span> <span class="translate"> <span>FAQ</span> <span>FAQ</span> </span> </span> </a> </li> <li> <a class="roll" href="https://madewithgsap.com/showcase"> <span> <span class="translate"> <span>Showcase</span> <span>Showcase</span> </span> </span> </a> </li> </ul> </nav> <div class="bottom-mob"> <a href="https://madewithgsap.com/get-started" class="cta-main cta-main3 roll"> <span> <span class="translate"> <span><span>Join</span><img class="stag st2" src="https://madewithgsap.com/assets/img/mwg2/arrow.svg" alt="" width="300" height="150"></span> <span><span>Join</span><img class="stag st2" src="https://madewithgsap.com/assets/img/mwg2/arrow.svg" alt="" width="300" height="150"></span> </span> </span> </a> <a href="https://madewithgsap.com/login" class="cta-rounded sign-in roll"> <span> <span class="translate"> <span><img src="https://madewithgsap.com/assets/img/mwg2/log.svg" alt="" width="300" height="150"></span> <span><img src="https://madewithgsap.com/assets/img/mwg2/log.svg" alt="" width="300" height="150"></span> </span> </span> </a> </div> </div> </div> <div class="nav-mob f pr"> <a href="https://madewithgsap.com/get-started" class="cta-main cta-main3"> <span>Join</span> <img src="https://madewithgsap.com/assets/img/mwg2/arrow.svg" alt="" width="300" height="150"> </a> <button class="cta-rounded to-menu-mob pr" aria-label="Open/Close menu"> <img class="img-open pa" src="https://madewithgsap.com/assets/img/nav/open-menu.svg" alt="" width="300" height="150"> <img class="img-close pa" src="https://madewithgsap.com/assets/img/nav/close-menu.svg" alt="" width="300" height="150"> </button> </div> <button class="close-menu-mob pf"></button>  </header> <div class="intro pf" aria-hidden="true" style="opacity: 0; visibility: hidden;"></div> <div class="message label-s pr" style="translate: none; rotate: none; scale: none; transform: translate(0%, 100%) translate(0px, 25px);"> <p></p> <button class="pa close-message"> <img src="https://madewithgsap.com/assets/img/close.svg" alt="" width="300" height="150"> </button> </div>      <main>
+        <section class="sec-black t-content f t-tuto-n-log">
+            <!-- COLONNES DE GAUCHE -->
+            <div class="t-col">
+                            </div>
+
+            <!-- COLONNES DU MILIEU -->
+            <div class="pr t-tuto anchor">
+                <div class="t-hero pr body-s f">
+                    <video src="https://pub-8ca9b5847fbb4d4fb97b3497fb9521d5.r2.dev/video_OPTIM/068.mp4" muted="" autoplay="" loop="" playsinline=""></video>
+                    <h1><span>068</span><span>Images Flowing</span></h1>
+                    <p>In this effect, a series of images travels across the viewport on scroll, from left to right, following a cylindrical curve. The image at the center stays perfectly straight, while the others continue to warp along the shape. Let’s build it!</p>
+                </div>
+
+                <h2 class="title-xs anchor" id="anchor1">HTML Structure</h2>
+
+                <p>The section opens with a tall wrapper around a viewport-sized column. A small header row sits at the top, then every asset lives inside its own card wrapper — we duplicate the block for each image and caption pair:</p>
+
+                <div class="code-wrapper">
+                    <button><img src="https://madewithgsap.com/assets/img/tutorial/copy.svg" alt="" width="300" height="150"></button>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mwg_effect068<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pin-height<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Travel through my lens<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Let’s collaborate<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>media<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./assets/medias/1.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Rabat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>media<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./assets/medias/2.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Mexico City<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!-- duplicate .media for each extra image --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </div>
+
+                <p>As we scroll, the stage stays pinned while each card lifts in depth, pivots across the view, then steps aside so the next one can take its turn.</p>
+
+                
+            </div>
+
+            <!-- COLONNES DE DROITE -->
+            <div class="t-col">
+                            </div>
+        </section>
+
+            <section class="global-push">
+        <div class="f f-center">
+            <div class="people f">
+                <img src="https://madewithgsap.com/assets/img/get-started/1.png" alt="">
+                <img src="https://madewithgsap.com/assets/img/get-started/2.png" alt="">
+                <img src="https://madewithgsap.com/assets/img/get-started/3.png" alt="">
+                <img src="https://madewithgsap.com/assets/img/get-started/4.png" alt="">
+                <img src="https://madewithgsap.com/assets/img/get-started/5.png" alt="">
+                <img src="https://madewithgsap.com/assets/img/get-started/6.png" alt="">
+                <img src="https://madewithgsap.com/assets/img/get-started/1.png" alt="">
+            </div>
+            <h2 class="title-m">Become a member to <span class="text-w">unlock <br>the full effect</span> today.</h2>
+            <a href="https://madewithgsap.com/get-started" class="cta-main cta-main3 roll">
+                <span>
+                    <span class="translate">
+                        <span><span>Join now</span><img src="https://madewithgsap.com/assets/img/mwg2/arrow.svg" alt="" width="300" height="150"></span>
+                        <span><span>Join now</span><img src="https://madewithgsap.com/assets/img/mwg2/arrow.svg" alt="" width="300" height="150"></span>
+                    </span>
+                </span>
+            </a>
+        </div>
+    </section> 
+
+    <section class="free-push f f-space pr">
+        <div class="img">
+            <img src="https://madewithgsap.com/assets/img/mwg2/free.png" alt="">
+        </div>
+        <div class="content f f-space">
+            <div class="top f">
+                <p class="label pa diode">Discover the platform</p>
+                <p class="title-xs"><span class="text-g">See how the platform works:</span> try our free effects.</p>
+                <a href="https://madewithgsap.com/effects?freebies" class="cta-main cta-main2 roll">
+                    <span>
+                        <span class="translate">
+                            <span><span>Try it now</span><img src="https://madewithgsap.com/assets/img/mwg2/arrow-g.svg" alt="" width="300" height="150"></span>
+                            <span><span>Try it now</span><img src="https://madewithgsap.com/assets/img/mwg2/arrow-g.svg" alt="" width="300" height="150"></span>
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <p class="label-s">(No registration or credit card needed)</p>
+        </div>
+    </section>
+ <footer class="wrapper sec-border sec-white pr"> <div class="content pr">  <div class="top"> <p class="label">Join our ever-growing collection of unique, <br>well-crafted JS effects.</p> <h2 class="sr-only">Get ready to animate</h2> <p class="title-xl" aria-hidden="true"> <span class="anim-title anim-title3 f"> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -110%);"> <span>G</span> <span>G</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -110%);"> <span>e</span> <span>e</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -110%);"> <span>t</span> <span>t</span> </span> &nbsp; <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -110%);"> <span>r</span> <span>r</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -110%);"> <span>e</span> <span>e</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -110%);"> <span>a</span> <span>a</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -110%);"> <span>d</span> <span>d</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -110%);"> <span>y</span> <span>y</span> </span> &nbsp; <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -110%);"> <span>t</span> <span>t</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -110%);"> <span>o</span> <span>o</span> </span> </span> <span class="anim-title anim-title2 f"> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -106%);"> <span>a</span> <span>a</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -106%);"> <span>n</span> <span>n</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -106%);"> <span>i</span> <span>i</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -106%);"> <span>m</span> <span>m</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -106%);"> <span>a</span> <span>a</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -106%);"> <span>t</span> <span>t</span> </span> <span style="translate: none; rotate: none; scale: none; transform: translate(0%, -106%);"> <span>e</span> <span>e</span> </span> </span> </p> <div class="buttons f"> <a href="https://madewithgsap.com/get-started" class="cta-main cta-main3 roll"> <span> <span class="translate"> <span><span>Become a member</span><img src="https://madewithgsap.com/assets/img/mwg2/arrow.svg" alt="" width="300" height="150"></span> <span><span>Become a member</span><img src="https://madewithgsap.com/assets/img/mwg2/arrow.svg" alt="" width="300" height="150"></span> </span> </span> </a> <a href="https://madewithgsap.com/effects" class="cta-main cta-main1 roll"> <span> <span class="translate"> <span>Explore collection</span> <span>Explore collection</span> </span> </span> <i></i> </a> </div> </div>  <div class="bottom f f-space"> <div class="left col1"> <div class="inner-form"> <h2 class="title-xs">Never miss what's next</h2> <form class="f form-newsletter body-s f-space" method="" action="https://madewithgsap.com/effects/tutorial068"> <input type="email" name="email" placeholder="Your email" required=""> <button class="cta-sec cta-sec2 roll"> <span> <span class="translate"> <span><span>Submit</span><img src="https://madewithgsap.com/assets/img/mwg2/arrow.svg" alt="" width="300" height="150"></span> <span><span>Submit</span><img src="https://madewithgsap.com/assets/img/mwg2/arrow.svg" alt="" width="300" height="150"></span> </span> </span> </button> </form> <p class="body-xs">By submitting your email, you’ll be the first to know about upcoming updates for Made With Gsap. You can unsubscribe at any time.</p> </div> </div> <div class="right col1 f f-space"> <div class="col2"> <h2>Social</h2> <ul class="label"> <li><a href="https://www.instagram.com/madewithgsap" target="_blank" rel="noreferrer"><span>Instagram</span></a></li> <li><a href="https://www.linkedin.com/company/madewithgsap/" target="_blank" rel="noreferrer"><span>Linkedin</span></a></li> <li><a href="https://x.com/madewithgsap" target="_blank" rel="noreferrer"><span>X(Twitter)</span></a></li> <li><a href="https://www.youtube.com/@MadeWithGsap" target="_blank" rel="noreferrer"><span>Youtube</span></a></li> <li><a href="https://bsky.app/profile/madewithgsap.bsky.social" target="_blank" rel="noreferrer"><span>Bluesky</span></a></li> </ul> </div> <div class="col2"> <h2>Pages</h2> <ul class="label"> <li><a href="https://madewithgsap.com/effects"><span>Collection</span></a></li> <li><a href="https://madewithgsap.com/faq"><span>FAQ</span></a></li> <li><a href="https://madewithgsap.com/get-started"><span>Pricing</span></a></li> <li><a href="https://madewithgsap.com/showcase"><span>Showcase</span></a></li> <li><a href="https://madewithgsap.com/effects?freebies"><span>Free effects</span></a></li> </ul> </div> <div class="col2 col2-last"> <h2>Contact</h2> <ul class="label"> <li><a class="prevent" href="mailto:contact@madewithgsap.com"><span>Reach us</span></a></li>  </ul>  </div> </div> </div> <div class="f f-space label footer-end"> <div class="col1">©2026 Made With Gsap</div> <div class="col1 f f-space"> <ul class="f links-sec"> <li><a href="https://madewithgsap.com/permissions-terms"><span>Permissions &amp; Terms</span></a></li> <li><a href="https://madewithgsap.com/privacy-policy"><span>Privacy policy</span></a></li> </ul> <p class="col2 f manoir"> <a href="https://manoirinc.com/" target="_blank"> <img src="https://madewithgsap.com/assets/img/mwg2/manoir.svg" alt="" width="300" height="150"> </a> </p> </div> </div> </div> </footer>     </main>
+             </body></html>

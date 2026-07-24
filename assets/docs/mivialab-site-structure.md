@@ -18,31 +18,33 @@ Get strangers to trust MiviaLab enough to reach out. The site funnels to one **p
 | URL | Role |
 |---|---|
 | `/` | Landing page — full persuasion scroll |
+| `/about` | Studio story — who MiviaLab is |
 | `/work/meng-wei-yue` | Work detail — Meng Wei Yue Opera Studio (real client) |
 
 ### Explicitly not in v1
 
 - `/work` index
-- `/services`, `/about`, `/pricing`, `/contact` as pages
+- `/services`, `/pricing`, `/contact` as pages
 - Team page, Blog
 - Language switcher / `/fr` / `/zh` routes
 - Proof section (until real proof assets exist)
 
 ## Landing page (`/`)
 
-English only. Section order:
+English only. No section labels or numbered section chrome. Section titles read as one continuous story.
+
+Section order:
 
 1. **Hero** — brand, one headline, one short line, CTA into the funnel
-2. **About** — studio note + positioning (between a freelance builder and a big agency); bilingual capability (EN / FR / 中文) as a premium feature, not brand identity
+2. **Pitch** — problem/promise (why a custom site matters); link to `/about` for studio depth
 3. **Outcomes** — buyer results (speed, security, custom build, full service)
 4. **Work** — real client + clearly labeled concept samples; link to Work detail when it exists
-5. **Services** — five categories, dev-led (website design & development primary; SEO, maintenance, marketing support, promotional materials supporting); honesty note on out-of-scope work
-6. **How we work** — 5-step process (talk it through, plan & scope, design & build, review & launch, ongoing care)
-7. **Who we help** — "is this you?" fit list + client types
-8. **Offer** — site build + monthly care plan; no fabricated monthly price while that amount is still open
-9. **Contact** — short form (primary), WeChat QR (secondary), other channels subordinate
+5. **Pricing** — three build packages starting at $999 / $1,499 / $2,999; monthly care priced on request
+6. **Contact** — short form (primary), WeChat QR (secondary), other channels subordinate
 
-About moves to second so a stranger learns who MiviaLab is before the pitch. Services, How we work, and Who we help were added (from the capability report) to give the page more substance and to connect the sections into one funnel. This is richer than the original 6-section lean shape but stays a single landing page — no `/services`, `/about`, or `/process` routes yet.
+## About page (`/about`)
+
+Studio positioning: Canadian / Ottawa–Toronto corridor, between freelance and agency, bilingual capability as a premium feature. Ends with CTA into the same primary contact action (`/#contact`).
 
 ## Work detail (`/work/[slug]`)
 
@@ -72,10 +74,10 @@ The marketing site ships **English only** in v1. “We build bilingual sites (EN
 | Proof strip on `/` | Real testimonial and/or PageSpeed before/after exists |
 | Another `/work/[slug]` | Real client, or a concept sample with enough depth (still labeled concept) |
 | `/work` index | Enough Work details that browsing needs its own page |
-| `/services` or `/pricing` | Offer content is thick enough that a landing section is no longer enough; monthly price / included-vs-extra line is clearer |
+| `/pricing` as its own page | Pricing content outgrows the landing section; monthly care price / included-vs-extra line is clearer |
 | Locale routes | Real translated copy and a clear buyer reason (e.g. Ottawa FR) |
 
 ## Open items (from business doc — do not invent)
 
-- Ballpark monthly care-plan price
 - Clearer line for “new feature = extra” vs included upkeep
+- Ballpark monthly care-plan price (build starting prices are published on the landing Pricing section)

@@ -23,7 +23,7 @@
 
   <div class="grain" aria-hidden="true"></div>
 
-  <!-- 1. HERO — scroll-pinned 3D work fly-through -->
+  <!-- Hero — scroll-pinned 3D work fly-through -->
   <section class="hero artist-container" id="home">
     <div class="hero__pin-height">
       <div class="hero__stage">
@@ -44,8 +44,9 @@
 
         <nav class="nav" aria-label="Primary">
           <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="#work">Work</a></li>
+            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact" class="nav-contact">Contact</a></li>
           </ul>
           <button class="nav-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
@@ -54,13 +55,9 @@
         </nav>
 
         <div class="nav-mobile" id="mobile-nav" hidden>
-          <a href="#about">About</a>
-          <a href="#outcomes">Outcomes</a>
+          <a href="about.html">About</a>
           <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#process">How we work</a>
-          <a href="#audience">Who we help</a>
-          <a href="#offer">Offer</a>
+          <a href="#pricing">Pricing</a>
           <a href="#contact">Contact</a>
         </div>
 
@@ -123,7 +120,7 @@
             </div>
           </div>
 
-          <a class="hero-scroll" href="#about" aria-label="Scroll to learn more">
+          <a class="hero-scroll" href="#pitch" aria-label="Scroll to continue">
             <span class="hero-scroll__label">Scroll</span>
             <span class="hero-scroll__bar" aria-hidden="true"></span>
           </a>
@@ -134,43 +131,38 @@
 
   <main>
 
-    <!-- 2. ABOUT -->
-    <section class="about section--dark" id="about" aria-labelledby="about-heading">
-      <div class="about__inner">
-        <div class="about__copy reveal">
-          <p class="section-label section-label--light">About</p>
-          <h2 class="about__title" id="about-heading">A Canadian studio in the Ottawa–Toronto corridor</h2>
-          <p class="about__lead">
-            MiviaLab is a web design and development studio for small businesses. English-first, premium, and straightforward — we build sites that look professional and stay easy for owners because we handle them end to end.
+    <!-- Pitch -->
+    <section class="pitch section--dark" id="pitch" aria-labelledby="pitch-heading">
+      <div class="pitch__inner">
+        <div class="pitch__copy reveal">
+          <h2 class="pitch__title" id="pitch-heading">Your website should earn the next inquiry</h2>
+          <p class="pitch__lead">
+            Most small-business sites look fine and still lose people — services are hard to find, contact is buried, and nobody wants to fight a template every time something changes.
           </p>
-          <p class="about__body">
-            We sit between a freelance site builder and a big agency: the structure, SEO setup, and ongoing care of a studio, with accessible pricing, direct communication, and a scope that flexes to your business. When a project needs it, we deliver bilingual sites in English, French, and 中文 — a premium capability, not our brand identity.
+          <p class="pitch__body">
+            We plan and build custom sites around what you sell and what visitors should do next. Clear structure. Real contact paths. Care after launch so you run the business, not the website.
           </p>
-          <ul class="about__points">
-            <li>Accessible pricing built for small-business budgets</li>
-            <li>Direct communication — you talk to the people building your site</li>
-            <li>Flexible scope that grows with your business</li>
-            <li>Full service, so you never have to touch the site</li>
-          </ul>
+          <p class="pitch__link">
+            <a href="about.html">More about the studio →</a>
+          </p>
         </div>
-        <figure class="about__visual reveal">
+        <figure class="pitch__visual reveal">
           <img src="images/gallery-3.png" alt="" loading="lazy" width="640" height="800">
         </figure>
       </div>
     </section>
 
-    <!-- 3. OUTCOMES -->
+    <!-- Outcomes -->
     <section class="outcomes section--light" id="outcomes" aria-labelledby="outcomes-heading">
       <div class="outcomes__inner">
         <div class="outcomes__head reveal">
-          <p class="section-label">Outcomes</p>
-          <h2 class="outcomes__title" id="outcomes-heading">What your business actually gets</h2>
+          <h2 class="outcomes__title" id="outcomes-heading">Here’s what that feels like after launch</h2>
           <p class="outcomes__sub">
-            Buyer results — not jargon. These are the four things owners feel every day after launch, and everything below is how we deliver them.
+            Four things owners notice every day — not jargon, not promises we can’t show.
           </p>
         </div>
 
-        <ol class="outcomes__list">
+        <ul class="outcomes__list">
           <li class="outcomes__item reveal">
             <div>
               <h3>Loads fast so you stop losing customers</h3>
@@ -195,18 +187,17 @@
               <p>We handle design, build, and ongoing care. You run the business; we run the website.</p>
             </div>
           </li>
-        </ol>
+        </ul>
       </div>
     </section>
 
-    <!-- 4. WORK -->
+    <!-- Work -->
     <section class="work section--dark" id="work" aria-labelledby="work-heading">
       <div class="work__head">
         <div class="work__intro reveal">
-          <p class="section-label section-label--light">Work</p>
-          <h2 class="work__headline work__headline--light" id="work-heading">Real client. Labeled samples.</h2>
+          <h2 class="work__headline work__headline--light" id="work-heading">We’ve already built it for real businesses</h2>
           <p>
-            One shipped project you can open, plus concept samples that show range — never presented as live clients.
+            One shipped client you can open, plus concept samples that show range — clearly labeled, never presented as live clients.
           </p>
         </div>
       </div>
@@ -272,219 +263,84 @@
       </div>
     </section>
 
-    <!-- 5. SERVICES -->
-    <section class="services section--light" id="services" aria-labelledby="services-heading">
-      <div class="services__inner">
-        <div class="services__head reveal">
-          <p class="section-label">Services</p>
-          <h2 class="services__title" id="services-heading">Everything your website needs, in one studio</h2>
-          <p class="services__sub">
-            Website design and development is the core. Everything around it — search, upkeep, marketing support, and promo materials — exists to keep that site working long after launch.
+    <!-- Pricing -->
+    <section class="pricing section--light" id="pricing" aria-labelledby="pricing-heading">
+      <div class="pricing__inner">
+        <div class="pricing__head reveal">
+          <h2 class="pricing__title" id="pricing-heading">Here’s where most projects start</h2>
+          <p class="pricing__sub">
+            Three starting tiers for custom builds. Final scope is quoted after we talk — monthly care is available for every package.
           </p>
         </div>
 
-        <div class="services__grid">
-          <article class="services__card services__card--primary reveal">
-            <p class="services__kicker">Core service</p>
-            <h3>Website design &amp; development</h3>
-            <p>Clear, professional, mobile-friendly sites built around your business, services, and customers — custom code, never a template.</p>
-            <ul class="services__list">
-              <li>New business websites</li>
-              <li>Website redesigns</li>
-              <li>Local branch &amp; head-office-linked sites</li>
-              <li>Organization &amp; event websites</li>
-              <li>Landing pages</li>
+        <div class="pricing__grid">
+          <article class="pricing__card reveal">
+            <p class="pricing__kicker">Essential</p>
+            <h3 class="pricing__name">Starter site</h3>
+            <p class="pricing__price">
+              <span class="pricing__amount">$999</span>
+              <span class="pricing__from">starting at</span>
+            </p>
+            <p class="pricing__desc">A focused online home for a new or simple small business.</p>
+            <ul class="pricing__list">
+              <li>Up to 5 custom pages</li>
+              <li>Mobile-friendly design</li>
+              <li>Contact form &amp; clear CTAs</li>
+              <li>Basic SEO setup</li>
+              <li>Launch support</li>
             </ul>
+            <a class="pricing__cta" href="#contact">Start a project</a>
           </article>
 
-          <article class="services__card reveal">
-            <p class="services__kicker">Supporting</p>
-            <h3>SEO &amp; website optimization</h3>
-            <p>Help search engines understand your site so the right local customers can find you.</p>
-            <ul class="services__list">
-              <li>Basic SEO setup at build time</li>
-              <li>Titles &amp; search descriptions</li>
-              <li>Local service information</li>
-              <li>Mobile &amp; speed improvements</li>
+          <article class="pricing__card pricing__card--featured reveal">
+            <p class="pricing__kicker">Professional</p>
+            <h3 class="pricing__name">Business site</h3>
+            <p class="pricing__price">
+              <span class="pricing__amount">$1,499</span>
+              <span class="pricing__from">starting at</span>
+            </p>
+            <p class="pricing__desc">A fuller site for businesses that need clearer services and stronger trust.</p>
+            <ul class="pricing__list">
+              <li>Up to 10 custom pages</li>
+              <li>New site or redesign</li>
+              <li>Service pages &amp; FAQ</li>
+              <li>Local SEO &amp; search descriptions</li>
+              <li>Google Maps &amp; booking links</li>
+              <li>Content organization support</li>
             </ul>
+            <a class="pricing__cta" href="#contact">Start a project</a>
           </article>
 
-          <article class="services__card reveal">
-            <p class="services__kicker">Supporting</p>
-            <h3>Website maintenance</h3>
-            <p>Keep the site accurate, functional, and current without lifting a finger yourself.</p>
-            <ul class="services__list">
-              <li>Text &amp; image updates</li>
-              <li>Form &amp; link checks</li>
-              <li>Status &amp; mobile monitoring</li>
-              <li>Ongoing SEO improvements</li>
+          <article class="pricing__card reveal">
+            <p class="pricing__kicker">Complete</p>
+            <h3 class="pricing__name">Growth site</h3>
+            <p class="pricing__price">
+              <span class="pricing__amount">$2,999</span>
+              <span class="pricing__from">starting at</span>
+            </p>
+            <p class="pricing__desc">For larger scopes — branches, bilingual needs, or coordinated promo materials.</p>
+            <ul class="pricing__list">
+              <li>Larger multi-page builds</li>
+              <li>Local branch / head-office sites</li>
+              <li>Bilingual capability (EN / FR / 中文)</li>
+              <li>Landing pages for campaigns</li>
+              <li>AI-assisted promo materials</li>
+              <li>Priority launch &amp; onboarding</li>
             </ul>
+            <a class="pricing__cta" href="#contact">Start a project</a>
           </article>
-
-          <article class="services__card reveal">
-            <p class="services__kicker">Supporting</p>
-            <h3>Marketing website support</h3>
-            <p>Connect the site to your campaigns — we handle the website side alongside your ads specialist.</p>
-            <ul class="services__list">
-              <li>Landing page development</li>
-              <li>Conversion pathways &amp; tracking</li>
-              <li>Google Ads specialist collaboration</li>
-              <li>Campaign-related updates</li>
-            </ul>
-          </article>
-
-          <article class="services__card reveal">
-            <p class="services__kicker">Supporting</p>
-            <h3>Promotional materials</h3>
-            <p>Keep your website, events, and social channels visually consistent.</p>
-            <ul class="services__list">
-              <li>AI-assisted posters</li>
-              <li>Social media graphics</li>
-              <li>Short promotional video editing</li>
-              <li>Event &amp; launch graphics</li>
-            </ul>
-          </article>
-        </div>
-
-        <p class="services__note reveal">
-          Need something outside this list? Where a project calls for a specialist — full ad management, professional filming, or certified translation — we bring the right partner in rather than overpromise.
-        </p>
-      </div>
-    </section>
-
-    <!-- 6. HOW WE WORK -->
-    <section class="process section--dark" id="process" aria-labelledby="process-heading">
-      <div class="process__inner">
-        <div class="process__head reveal">
-          <p class="section-label section-label--light">How we work</p>
-          <h2 class="process__title" id="process-heading">A clear path from idea to launch</h2>
-          <p class="process__sub">
-            No jargon and no guesswork — you always know what happens next, and we stay on after launch instead of disappearing.
-          </p>
-        </div>
-
-        <ol class="process__steps">
-          <li class="process__step reveal">
-            <span class="process__num" aria-hidden="true">01</span>
-            <div class="process__body">
-              <h3>Talk it through</h3>
-              <p>We learn your business, services, customers, and goals — and look at any site you have now.</p>
-            </div>
-          </li>
-          <li class="process__step reveal">
-            <span class="process__num" aria-hidden="true">02</span>
-            <div class="process__body">
-              <h3>Plan &amp; scope</h3>
-              <p>We map pages, structure, and contact pathways, then agree on deliverables, timeline, and what's included.</p>
-            </div>
-          </li>
-          <li class="process__step reveal">
-            <span class="process__num" aria-hidden="true">03</span>
-            <div class="process__body">
-              <h3>Design &amp; build</h3>
-              <p>We design the layout and build it in custom code — mobile included, with basic SEO set up from the start.</p>
-            </div>
-          </li>
-          <li class="process__step reveal">
-            <span class="process__num" aria-hidden="true">04</span>
-            <div class="process__body">
-              <h3>Review &amp; launch</h3>
-              <p>You review the content and details; we test across devices, links, and forms, then take it live.</p>
-            </div>
-          </li>
-          <li class="process__step reveal">
-            <span class="process__num" aria-hidden="true">05</span>
-            <div class="process__body">
-              <h3>Ongoing care</h3>
-              <p>Maintenance, SEO, updates, and marketing support keep the site healthy as your business grows.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 7. WHO WE HELP -->
-    <section class="audience section--light" id="audience" aria-labelledby="audience-heading">
-      <div class="audience__inner">
-        <div class="audience__head reveal">
-          <p class="section-label">Who we help</p>
-          <h2 class="audience__title" id="audience-heading">Built for small businesses like yours</h2>
-          <p class="audience__sub">
-            If any of these sound familiar, a MiviaLab site is a fit.
-          </p>
-        </div>
-
-        <div class="audience__grid">
-          <div class="audience__col reveal">
-            <h3 class="audience__subhead">Is this you?</h3>
-            <ul class="audience__list">
-              <li>No website yet</li>
-              <li>An outdated or hard-to-use site</li>
-              <li>Relying mainly on social media, referrals, or Google Maps</li>
-              <li>A local branch that needs its own site linked to head office</li>
-              <li>No internal team to keep a website updated</li>
-              <li>Getting ready to run Google Ads</li>
-              <li>In need of affordable promo materials for events or social</li>
-            </ul>
-          </div>
-          <div class="audience__col reveal">
-            <h3 class="audience__subhead">Businesses we work with</h3>
-            <ul class="audience__tags">
-              <li>Local services</li>
-              <li>Clinics &amp; wellness</li>
-              <li>Restaurants &amp; cafés</li>
-              <li>Beauty &amp; spa</li>
-              <li>Education &amp; arts</li>
-              <li>Nonprofits &amp; cultural orgs</li>
-              <li>Real estate, insurance &amp; accounting</li>
-              <li>Consultants &amp; independents</li>
-              <li>Startups &amp; new businesses</li>
-              <li>Regional &amp; branch offices</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- 8. OFFER -->
-    <section class="offer section--dark" id="offer" aria-labelledby="offer-heading">
-      <div class="offer__inner">
-        <div class="offer__head reveal">
-          <p class="section-label section-label--light">Offer</p>
-          <h2 class="offer__title" id="offer-heading">Site build + monthly care</h2>
-          <p class="offer__sub">
-            Once we're a fit, it's one partnership: we design and build your site, then keep it fast, secure, and current so you never have to manage it.
-          </p>
-        </div>
-
-        <div class="offer__grid">
-          <article class="offer__block reveal">
-            <p class="offer__kicker">The build</p>
-            <h3>A custom website for your business</h3>
-            <p>Strategy, design, and hand-built code — not a template. Shaped around the one action your site should drive.</p>
-          </article>
-          <article class="offer__block reveal">
-            <p class="offer__kicker">Monthly care</p>
-            <h3>Maintenance, security, SEO, and ongoing edits</h3>
-            <p>Continuous upkeep so the site stays healthy. Edits to existing content are included. New features, pages, or integrations after delivery are quoted separately.</p>
-          </article>
-        </div>
-
-        <p class="offer__note reveal">
-          Monthly care-plan pricing is shared on request — we don’t publish a number until that amount is finalized.
-        </p>
-      </div>
-    </section>
-
-    <!-- 9. CONTACT -->
+    <!-- Contact -->
     <footer class="footer section--dark" id="contact">
       <div class="footer__poster">
         <p class="footer__bg-word" aria-hidden="true">MIVIALAB</p>
 
         <div class="footer__top reveal">
-          <p class="section-label section-label--light">Contact</p>
           <div class="footer__titles">
-            <h2 class="footer__title">Tell us what you need</h2>
+            <h2 class="footer__title">When you’re ready, tell us what you need</h2>
             <p class="footer__pitch">
               Short form first. Prefer WeChat? Use the QR. Everything else stays secondary.
             </p>
@@ -545,13 +401,9 @@
         <div class="footer__bottom">
           <nav class="footer__nav" aria-label="Footer">
             <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#outcomes">Outcomes</a>
+            <a href="about.html">About</a>
             <a href="#work">Work</a>
-            <a href="#services">Services</a>
-            <a href="#process">How we work</a>
-            <a href="#audience">Who we help</a>
-            <a href="#offer">Offer</a>
+            <a href="#pricing">Pricing</a>
             <a href="#contact">Contact</a>
           </nav>
           <p class="footer__legal">&copy; <span id="year"></span> MiviaLab — Web design &amp; development studio, Ottawa–Toronto corridor</p>

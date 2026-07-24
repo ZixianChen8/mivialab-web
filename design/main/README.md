@@ -2,26 +2,23 @@
 
 **Chosen working direction.** Combines:
 
-1. **Hero** from [`cinematic/`](../cinematic/) — fullscreen nature image, splash-mask reveal, brand mark, floating nav, side panel, scroll cue, parallax
-2. **Body language** from [`fashion-editorial/`](../fashion-editorial/) — magazine typography, bridge quote, grayscale→color imagery, contact poster
+1. **Hero** from [`cinematic/`](../archive/cinematic/) — fullscreen nature image, splash-mask reveal, brand mark, floating nav, side panel, scroll cue, parallax
+2. **Body language** from [`fashion-editorial/`](../archive/fashion-editorial/) — magazine typography, bridge quote, grayscale→color imagery, contact poster
 
 ## Landing sections (site structure v1)
 
-Order matches [`mivialab-site-structure.md`](../../assets/docs/mivialab-site-structure.md):
+Order matches [`mivialab-site-structure.md`](../../assets/docs/mivialab-site-structure.md). No section labels — titles read as one story:
 
 1. Hero  
-2. About  
+2. Pitch  
 3. Outcomes  
 4. Work  
-5. Services  
-6. How we work  
-7. Who we help  
-8. Offer  
-9. Contact  
+5. Pricing  
+6. Contact  
 
-Services, How we work, and Who we help draw copy from [`mivialab-services-capability.md`](../../assets/docs/mivialab-services-capability.md).
+Studio depth lives on [`about.html`](./about.html). Pricing copy draws from [`mivialab-services-capability.md`](../../assets/docs/mivialab-services-capability.md).
 
-**Out of v1 on this page:** Proof strip, Team, Blog, and Services/About/Pricing as *separate pages* (they live as landing sections for now).
+**Out of v1 as separate pages:** Proof strip, Team, Blog, Pricing/Contact as their own routes.
 
 ## Open locally
 
@@ -32,7 +29,8 @@ python -m http.server 8080
 
 Then visit `http://localhost:8080`.
 
-Work detail stub: `http://localhost:8080/work/meng-wei-yue.html`
+- About: `http://localhost:8080/about.html`
+- Work detail stub: `http://localhost:8080/work/meng-wei-yue.html`
 
 ## Color systems
 
@@ -56,6 +54,7 @@ Ten live palettes in `themes.css`. Use the **Color systems** control (bottom-rig
 | File | Purpose |
 |------|---------|
 | `index.html` | Landing page + theme chooser |
+| `about.html` | Studio about page |
 | `work/meng-wei-yue.html` | Work detail (real client) |
 | `themes.css` | 10 color systems (`data-theme`) |
 | `style.css` | Layout / type / components |

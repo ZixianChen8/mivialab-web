@@ -1,0 +1,33 @@
+/* Licensed self-hosted fonts for the font chooser preview tool. */
+
+@font-face {
+  font-family: "Ranade";
+  src: url("/fonts/ranade.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Object Sans";
+  src: url("/fonts/object-sans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Soria";
+  src: url("/fonts/soria.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sreda";
+  src: url("/fonts/sreda.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}

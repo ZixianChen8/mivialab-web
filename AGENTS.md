@@ -12,14 +12,14 @@ Monorepo for the **MiviaLab** marketing website: design explorations, production
 - **Vision:** Become a trusted web development partner for small businesses through high-quality design and a straightforward development process.
 - **Based in:** Ottawa–Toronto corridor.
 
-The production tech stack is **not chosen yet** — `web/` is a placeholder until implementation begins.
+**Production stack (chosen):** Next.js App Router + TypeScript in `web/`. Visual reference remains `design/main/` (static HTML/CSS/JS). Styling is a faithful CSS port (not Tailwind). Motion: GSAP + ScrollTrigger + Lenis. Contact: Route Handler + Resend. Host: Vercel.
 
 ## Repository structure
 
 ```
 mivialab-web/
 ├── design/          # Design prototypes (one self-contained subfolder per direction: static HTML/CSS or full standalone app)
-├── web/             # Production site — full tech stack lives here
+├── web/             # Production site — Next.js App Router (implements design/main)
 ├── assets/          # Docs, images, and other shared files (not the web app's public folder)
 │   ├── docs/        # Strategy and reference documents
 │   └── images/      # Logos, photos, raw media
@@ -41,10 +41,10 @@ mivialab-web/
 ### Folder rules
 
 - **`design/`** — One subfolder per explored direction (e.g. `design/option-a/`). A direction may be simple static HTML/CSS, or a full standalone app prototype with its own `package.json`, dependencies, and build tooling — as long as everything stays self-contained inside that subfolder.
-- **`web/`** — Production app, build config, and deployable output. Runtime public assets live in `web/`'s own public/static path, not in `assets/`.
+- **`web/`** — Production Next.js app. Runtime public assets live in `web/public/`, not in `assets/`.
 - **`assets/`** — Shared source files. Copy or link into `web/` when the site needs them at runtime.
-
-When a design direction is chosen in `design/`, implement it in `web/`.
+- **`design/main/`** — Visual/reference prototype. Do not treat it as deployable production; port changes into `web/`.
+- **`design/archive/web-vite-react/`** — Archived pre-Main Vite + React + Tailwind scaffold.
 
 ## Business context (read before copy or UX work)
 
@@ -116,6 +116,7 @@ These are unresolved in the business doc — flag them rather than making up val
 - Do not commit unless explicitly asked.
 - Do not put shared docs or raw media in `web/public` — use `assets/` and copy in when needed.
 - For business decisions, treat `assets/docs/mivialab-business.md` as source of truth.
+- **Never use em dashes (—) in phrases.** In user-facing copy, docs, comments, and agent responses, use commas, periods, colons, or rephrase instead.
 
 ## Related files
 

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="WeChat QR code placeholder">
+  <rect width="240" height="240" fill="#0a0a0a"/>
+  <rect x="0.5" y="0.5" width="239" height="239" fill="none" stroke="#ff5436" stroke-opacity="0.5"/>
+  <g fill="#f4f1ea">
+    <!-- finder patterns -->
+    <rect x="24" y="24" width="48" height="48" fill="none" stroke="#f4f1ea" stroke-width="8"/>
+    <rect x="40" y="40" width="16" height="16"/>
+    <rect x="168" y="24" width="48" height="48" fill="none" stroke="#f4f1ea" stroke-width="8"/>
+    <rect x="184" y="40" width="16" height="16"/>
+    <rect x="24" y="168" width="48" height="48" fill="none" stroke="#f4f1ea" stroke-width="8"/>
+    <rect x="40" y="184" width="16" height="16"/>
+    <!-- scattered modules -->
+    <rect x="96" y="32" width="12" height="12"/>
+    <rect x="120" y="48" width="12" height="12"/>
+    <rect x="108" y="72" width="12" height="12"/>
+    <rect x="132" y="84" width="12" height="12"/>
+    <rect x="96" y="96" width="12" height="12"/>
+    <rect x="156" y="96" width="12" height="12"/>
+    <rect x="84" y="120" width="12" height="12"/>
+    <rect x="120" y="120" width="12" height="12"/>
+    <rect x="168" y="120" width="12" height="12"/>
+    <rect x="96" y="144" width="12" height="12"/>
+    <rect x="144" y="144" width="12" height="12"/>
+    <rect x="180" y="144" width="12" height="12"/>
+    <rect x="108" y="168" width="12" height="12"/>
+    <rect x="144" y="180" width="12" height="12"/>
+    <rect x="168" y="168" width="12" height="12"/>
+    <rect x="192" y="180" width="12" height="12"/>
+  </g>
+  <text x="120" y="232" fill="#9a958c" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="1.5">SCAN ON WECHAT  PLACEHOLDER</text>
+</svg>

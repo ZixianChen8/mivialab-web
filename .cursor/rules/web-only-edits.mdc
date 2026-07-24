@@ -1,0 +1,11 @@
+---
+description: Restrict code edits to web/ unless the user explicitly requests design/
+alwaysApply: true
+---
+
+# Edit scope — web only
+
+- Make all code changes in `web/` (production Next.js app).
+- Do **not** edit `design/` unless the user explicitly asks to change the design prototype.
+- When porting or syncing behavior, implement in `web/` only — do not mirror changes into `design/main/` by default.
+- `assets/` and docs are still fair game when relevant; this restriction targets `design/`.

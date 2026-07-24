@@ -8,5 +8,6 @@ Project-wide files that are not part of the production app bundle.
   - `mivialab-prd-v1.md` — product requirements (v1)
   - `adr/` — architecture decision records
 - `images/` — logos, photos, exports, and other raw media
+- `reference/` — visual reference for agents (screenshots, mockups, inspiration); not served at runtime
 
 This is not the `public/` folder used by `web/` at runtime. Copy or link assets into `web/` when the site needs them.
