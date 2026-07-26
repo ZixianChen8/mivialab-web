@@ -18,7 +18,8 @@ Open [http://localhost:3000](http://localhost:3000).
 |-------|------|
 | `/` | Landing (hero + pitch + outcomes + work + pricing + contact) |
 | `/about` | Studio about |
-| `/work/meng-wei-yue` | Real client work detail |
+
+Inactive route source is preserved under `app/_inactive/` for future reuse.
 
 ## Contact form
 

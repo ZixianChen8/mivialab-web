@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./work-detail.css";
 
+// Preserved for future reuse. The private parent folder keeps this page out of routing.
 export const metadata: Metadata = {
   title: "Meng Wei Yue Opera Studio — MiviaLab",
   description:
     "Real client work: bilingual website for Meng Wei Yue Opera Studio, an Ottawa-area music and arts studio.",
 };
 
-export default function MengWeiYuePage() {
+export default function InactiveMengWeiYuePage() {
   return (
     <>
       <div className="wd">
