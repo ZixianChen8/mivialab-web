@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+/* NORMALIZE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* NORMALIZE */
+
+body {
+    background: #121212;
+    color: #F1F1F1;
+}
+.mwg_effect039 {
+    perspective: 100vw;
+    height: 100vh;
+    padding: 25px;
+    overflow: hidden;
+}
+.mwg_effect039 .big-text {
+    font: 500 normal 14.4vw / 0.8 'Inter', sans-serif;
+    letter-spacing: -0.05em;
+}
+.mwg_effect039 .small-text {
+    font: 500 normal 1.6vw / 1.1 'Inter', sans-serif;
+    color: #BAB8B9;
+    letter-spacing: -0.03em;
+    padding: 0 0 0.8vw;
+}
+.mwg_effect039 .line {
+    display: flex;
+    justify-content: space-between;
+}
+.mwg_effect039 .bottom-left {
+    flex-direction: column;
+}
+.mwg_effect039 .line1 .small-text {
+    text-align: right;
+}
+.mwg_effect039 .line2 {
+    align-items: flex-end;
+}
+.mwg_effect039 .icon {
+    width: 7.4vw;
+    height: auto;
+}
+.mwg_effect039 .card {
+    width: 20vw;
+    aspect-ratio: 0.75;
+    border-radius: 1vw;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.mwg_effect039 .card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2, 1.2)
+}
+
+@media (max-width: 768px) {
+    .mwg_effect039 .small-text {
+        display: none;
+    }
+    .mwg_effect039 .bottom-left {
+        padding: 1.8vw 0 0;
+    }
+    .mwg_effect039 .card {
+        width: 40vw;
+    }
+}

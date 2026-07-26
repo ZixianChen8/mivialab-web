@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteChoosers } from "@/components/SiteChoosers";
 import "./work-detail.css";
 
 export const metadata: Metadata = {
@@ -64,7 +63,6 @@ export default function MengWeiYuePage() {
           <Link href="/#contact">Start a project</Link>
         </div>
       </div>
-      <SiteChoosers />
     </>
   );
 }

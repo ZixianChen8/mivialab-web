@@ -1,0 +1,234 @@
+/* ============================================================
+   SITE CHOOSERS — fixed stack (font preview)
+   ============================================================ */
+
+.site-choosers {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.55rem;
+}
+
+.site-choosers .font-chooser {
+  position: relative;
+}
+
+/* ============================================================
+   FONT CHOOSER (stable chrome — does not follow page fonts)
+   ============================================================ */
+
+.font-chooser {
+  --fc-bg: #121416;
+  --fc-panel: #1a1d21;
+  --fc-text: #f2f2f0;
+  --fc-muted: #9a9a94;
+  --fc-line: rgba(255, 255, 255, 0.12);
+  --fc-accent: #e8e4dc;
+  font-family: system-ui, sans-serif;
+}
+
+.font-chooser__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0.95rem;
+  background: var(--fc-bg);
+  color: var(--fc-text);
+  border: 1px solid var(--fc-line);
+  border-radius: 999px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+}
+
+.font-chooser__toggle:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.font-chooser__sample {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.font-chooser__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.font-chooser__panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 0.65rem);
+  width: min(92vw, 380px);
+  max-height: min(72vh, 560px);
+  overflow: auto;
+  background: var(--fc-panel);
+  color: var(--fc-text);
+  border: 1px solid var(--fc-line);
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+  padding: 1rem;
+}
+
+.font-chooser__panel[hidden] {
+  display: none;
+}
+
+.font-chooser__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.font-chooser__head h2 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.font-chooser__head p {
+  margin: 0.25rem 0 0;
+  font-size: 0.72rem;
+  color: var(--fc-muted);
+  line-height: 1.35;
+}
+
+.font-chooser__close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  color: var(--fc-muted);
+  border-radius: var(--radius-pill);
+  transition: color 0.2s, background 0.2s;
+}
+
+.font-chooser__close:hover {
+  color: var(--fc-text);
+}
+
+.font-chooser__groups {
+  display: grid;
+  gap: 1rem;
+}
+
+.font-chooser__group-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fc-muted);
+}
+
+.font-chooser__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.font-chooser__option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.65rem 0.7rem;
+  text-align: left;
+  color: var(--fc-text);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.font-chooser__option:hover,
+.font-chooser__option:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--fc-line);
+}
+
+.font-chooser__option.is-active {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.font-chooser__preview {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  border: 1px solid var(--fc-line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.font-chooser__meta strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.font-chooser__meta span {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--fc-muted);
+  line-height: 1.35;
+}
+
+.font-chooser__key {
+  display: none;
+}
+
+.font-chooser__hint {
+  margin: 0.85rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--fc-line);
+  font-size: 0.68rem;
+  color: var(--fc-muted);
+  line-height: 1.4;
+}
+
+.font-chooser__current {
+  font-weight: 600;
+  color: var(--fc-accent);
+}
+
+@media (max-width: 640px) {
+  .site-choosers {
+    right: 0.65rem;
+    bottom: 0.65rem;
+    left: 0.65rem;
+    align-items: stretch;
+  }
+
+  .font-chooser__panel {
+    width: 100%;
+    right: 0;
+  }
+
+  .font-chooser__toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}

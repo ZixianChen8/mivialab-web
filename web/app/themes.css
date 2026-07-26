@@ -7,6 +7,18 @@
 
 :root,
 [data-theme="volt-night"] {
+  /* Structural tokens (also defined in style.css; kept here so theme :root always resolves them) */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 44px;
+  --radius-pill: 999px;
+  --stroke: 1.5px;
+  --space-gutter: clamp(1.25rem, 4.5vw, 4.5rem);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 0.45s var(--ease-out);
+  --max: 1180px;
+
   --ink: oklch(0.13 0.025 140);
   --ink-deep: oklch(0.09 0.02 140);
   --mist: oklch(0.93 0.015 130);
@@ -71,6 +83,9 @@
   --surface-hover: oklch(0.9 0.22 125 / 0.08);
   --stroke-ghost: oklch(0.9 0.22 125 / 0.1);
   --brand-shadow: oklch(0.09 0.02 140 / 0.5);
+
+  /* Warm editorial cream (contact, pitch, services). Not volt-tinted --off-white. */
+  --surface-cream: #f4f2ee;
 
   --sage: var(--accent);
   --beige: var(--focus);

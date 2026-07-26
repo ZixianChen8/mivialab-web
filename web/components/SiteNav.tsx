@@ -9,7 +9,6 @@ type SiteNavProps = {
 };
 
 const SOCIAL_ICON_SRC: Partial<Record<string, string>> = {
-  Instagram: "/assets/icons/instagram.svg",
   LinkedIn: "/assets/icons/linkedin.svg",
 };
 
@@ -122,47 +121,49 @@ export function SiteNav({ variant = "hero" }: SiteNavProps) {
       <nav className="nav" aria-label="Primary">
         <div className="nav__backdrop" ref={backdropRef} aria-hidden="true" />
 
-        <ul className="nav-links">
-          <li>
-            <Link
-              href="/about"
-              {...(variant === "page" ? { "aria-current": "page" as const } : {})}
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <a href={servicesHref}>Services</a>
-          </li>
-          <li>
-            <a href={contactHref}>Contact</a>
-          </li>
-        </ul>
+        <div className="nav-end">
+          <ul className="nav-links">
+            <li>
+              <Link
+                href="/about"
+                {...(variant === "page" ? { "aria-current": "page" as const } : {})}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <a href={servicesHref}>Services</a>
+            </li>
+            <li>
+              <a href={contactHref}>Contact</a>
+            </li>
+          </ul>
+
+          <ul className="nav-social" aria-label="Social">
+            {FOOTER_SOCIAL.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  aria-label={link.label}
+                  {...(link.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  <SocialLinkContent label={link.label} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <Link className="nav-brand" href={homeHref} aria-label="MiviaLab home">
           <img
             src="/assets/images/logo/design1_bw_upscaled_tr.png"
             alt=""
-            width={112}
-            height={112}
+            width={144}
+            height={144}
           />
         </Link>
-
-        <ul className="nav-social" aria-label="Social">
-          {FOOTER_SOCIAL.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                aria-label={link.label}
-                {...(link.external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-              >
-                <SocialLinkContent label={link.label} />
-              </a>
-            </li>
-          ))}
-        </ul>
 
         <button
           className="nav-menu-btn"

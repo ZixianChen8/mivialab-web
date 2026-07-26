@@ -59,3 +59,43 @@ _Avoid_: Localized marketing site, trilingual site, language switcher (for v1)
 **Work detail sections** (canonical order):
 Hero (project + real-client framing) → Story → Visuals → Outcomes (facts only) → CTA into the primary contact action on the landing page.
 _Avoid_: Related work carousel, fake metrics, separate contact funnel on Work details
+
+**Brand story**:
+The founding narrative told on the About surface: origin → AI-slop problem → thoughtful-AI stance → lower-price promise. On `/about` it plays as a scroll timeline.
+_Avoid_: Our journey, company history, mission statement (as synonyms)
+
+**Story beat**:
+One scroll-timed unit of the brand story (origin, problem, stance, promise). Each beat is a short paragraph that owns a stretch of scroll.
+_Avoid_: Slide, chapter, panel (as synonyms)
+
+**Story stage**:
+The viewport-sized surface held on screen while story beats swap. One beat is readable at a time.
+_Avoid_: Pinned section (as the visitor-facing name), sticky hero
+
+**Scroll track**:
+The tall wrapper that buys the scroll distance a pinned stage plays through. Height is set per timeline, not per content.
+_Avoid_: Fake scroll, scroll jacking (the page keeps scrolling; nothing is locked)
+
+**Stance quote**:
+The story's thesis line ("The real question is how you use it.") riding horizontally across a pinned stage while its letters bounce in.
+_Avoid_: Marquee, ticker, headline banner
+
+**Mindset flip**:
+The mindless-versus-thoughtful contrast: two center-stage lines that flip in 3D as the scroll passes, one replacing the other.
+_Avoid_: Slider, carousel, before/after toggle
+
+**Closing arc**:
+The story's last line typed along rotating concentric curves on a pinned stage, closing the narrative before the founder spotlight.
+_Avoid_: Badge, seal, decorative ring text
+
+**Founder spotlight**:
+Two stacked near-full-viewport bands introducing the people behind MiviaLab: Michael (Tech Lead) above, Olivia (Business Development Lead) below, each with left-biased name, role, and bio.
+_Avoid_: Team page, staff grid, about-the-team section, scroll-toggled founder stage
+
+**Cursor card**:
+The shared portrait card in the founder spotlight that trails the pointer with tilt and idle re-zoom. On touch and reduced motion it is hidden; each band shows its own static portrait instead.
+_Avoid_: Mouse follower, floating avatar
+
+**Founder swap**:
+When the pointer enters a founder band, the shared cursor card's photo crossfades to that founder. Scroll does not swap founders; both bios stay in normal document flow.
+_Avoid_: Carousel, slider, tab switch, scroll midpoint swap

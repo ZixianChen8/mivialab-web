@@ -7,8 +7,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   PITCH_ANIM,
   PITCH_HEADING,
+  PITCH_LABEL,
   PITCH_LINK,
   PITCH_PARAGRAPH,
+  PITCH_PRIMARY,
+  PITCH_SUPPORT,
   pitchAnimCssVars,
   pitchScrollTriggerStart,
 } from "@/lib/pitch-anim-config";
@@ -58,23 +61,41 @@ export function PitchSection() {
     if (!root) return;
 
     const { setup, letter, line } = PITCH_ANIM;
-
-    if (
+    const reducedMotion =
       setup.respectReducedMotion &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
-    }
-
-    const paragraph = root.querySelector<HTMLElement>(".pitch__paragraph");
-    if (!paragraph) return;
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let cancelled = false;
+    let ctx: gsap.Context | undefined;
 
     const runSetup = () => {
       if (cancelled) return;
 
-      const ctx = gsap.context(() => {
+      ctx = gsap.context(() => {
+        if (!reducedMotion) {
+          const entrance = root.querySelectorAll<HTMLElement>(
+            ".pitch__label, .pitch__support, .pitch__actions .pitch__cta"
+          );
+
+          gsap.from(entrance, {
+            opacity: 0,
+            y: 18,
+            duration: 0.75,
+            stagger: 0.08,
+            ease: "power3.out",
+            immediateRender: false,
+            scrollTrigger: {
+              trigger: root,
+              start: "top 78%",
+              once: true,
+              toggleActions: "play none none none",
+            },
+          });
+        }
+
+        const paragraph = root.querySelector<HTMLElement>(".pitch__paragraph");
+        if (!paragraph || reducedMotion) return;
+
         wrapLettersInSpan(paragraph);
 
         const letters = root.querySelectorAll<HTMLElement>(".letter span");
@@ -112,18 +133,14 @@ export function PitchSection() {
       if (setup.refreshAfterMount) {
         requestAnimationFrame(() => ScrollTrigger.refresh());
       }
-
-      return ctx;
     };
-
-    let ctx: gsap.Context | undefined;
 
     if (setup.waitForFonts) {
       void document.fonts.ready.then(() => {
-        ctx = runSetup();
+        runSetup();
       });
     } else {
-      ctx = runSetup();
+      runSetup();
     }
 
     return () => {
@@ -135,7 +152,7 @@ export function PitchSection() {
   return (
     <section
       ref={rootRef}
-      className="pitch pitch--animated section--light mwg_effect058"
+      className="pitch pitch--animated section--cream mwg_effect058"
       id="pitch"
       aria-labelledby="pitch-heading"
       style={pitchAnimCssVars()}
@@ -144,10 +161,19 @@ export function PitchSection() {
         {PITCH_HEADING}
       </h2>
       <div className="pitch__inner">
-        <p className="pitch__paragraph">{PITCH_PARAGRAPH}</p>
-        <p className="pitch__link">
-          <Link href={PITCH_LINK.href}>{PITCH_LINK.label}</Link>
-        </p>
+        <p className="pitch__label">{PITCH_LABEL}</p>
+        <div className="pitch__content">
+          <p className="pitch__paragraph">{PITCH_PARAGRAPH}</p>
+          <p className="pitch__support">{PITCH_SUPPORT}</p>
+          <div className="pitch__actions">
+            <a className="pitch__cta pitch__cta--primary" href={PITCH_PRIMARY.href}>
+              {PITCH_PRIMARY.label}
+            </a>
+            <Link className="pitch__cta pitch__cta--secondary" href={PITCH_LINK.href}>
+              {PITCH_LINK.label}
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

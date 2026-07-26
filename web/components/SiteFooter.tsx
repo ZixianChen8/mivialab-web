@@ -103,6 +103,10 @@ export function SiteFooter() {
                 ))}
               </ul>
             </nav>
+
+            <p className="site-footer__copy site-footer__copy--in-columns">
+              ©MiviaLab {year} | All rights reserved
+            </p>
           </div>
         </div>
 
@@ -110,7 +114,7 @@ export function SiteFooter() {
           <p className="site-footer__wordmark" aria-label="MiviaLab">
             {FOOTER_WORDMARK}
           </p>
-          <p className="site-footer__copy">
+          <p className="site-footer__copy site-footer__copy--brand">
             ©MiviaLab <span id="year">{year}</span> | All rights reserved
           </p>
         </div>

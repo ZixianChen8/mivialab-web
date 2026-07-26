@@ -6,8 +6,6 @@ export type ContactPayload = {
   name: string;
   email: string;
   company?: string;
-  website?: string;
-  service?: string;
   project: string;
 };
 
@@ -34,8 +32,6 @@ export async function sendContactEmail(payload: ContactPayload) {
       `Name: ${payload.name}`,
       `Email: ${payload.email}`,
       payload.company ? `Company: ${payload.company}` : null,
-      payload.website ? `Website: ${payload.website}` : null,
-      payload.service ? `Service: ${payload.service}` : null,
       "",
       "Project description:",
       payload.project,

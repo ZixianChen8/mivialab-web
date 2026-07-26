@@ -10,7 +10,6 @@ export type FooterLink = {
 export const FOOTER_STATEMENT = ["WEB DESIGN", "& DEVELOPMENT", "STUDIO."];
 
 export const FOOTER_SOCIAL: FooterLink[] = [
-  { label: "Instagram", href: "#", external: true },
   { label: "LinkedIn", href: "#", external: true },
 ];
 

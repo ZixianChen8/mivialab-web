@@ -3,25 +3,15 @@
 import { FormEvent, useId, useState } from "react";
 import { STUDIO_EMAIL } from "@/lib/mail";
 
-const SERVICE_OPTIONS = [
-  "Websites",
-  "SEO",
-  "Care",
-  "Materials",
-  "Something else",
-] as const;
-
 type FieldErrors = {
   name: boolean;
   email: boolean;
-  service: boolean;
   project: boolean;
 };
 
 const EMPTY_ERRORS: FieldErrors = {
   name: false,
   email: false,
-  service: false,
   project: false,
 };
 
@@ -40,7 +30,7 @@ export function ContactForm() {
     setStatus("");
   }
 
-  function syncAriaInvalid(el: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement) {
+  function syncAriaInvalid(el: HTMLInputElement | HTMLTextAreaElement) {
     if (!el.checkValidity()) {
       el.setAttribute("aria-invalid", "true");
     } else {
@@ -54,24 +44,21 @@ export function ContactForm() {
     const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
     const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
     const company = (form.elements.namedItem("company") as HTMLInputElement).value.trim();
-    const website = (form.elements.namedItem("website") as HTMLInputElement).value.trim();
-    const service = (form.elements.namedItem("service") as HTMLSelectElement).value.trim();
     const project = (form.elements.namedItem("project") as HTMLTextAreaElement).value.trim();
 
     const nextErrors: FieldErrors = {
       name: !name,
       email: !validateEmail(email),
-      service: !service,
       project: !project,
     };
     setErrors(nextErrors);
 
-    const controls = form.querySelectorAll<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >("input, textarea, select");
+    const controls = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
+      "input, textarea",
+    );
     controls.forEach(syncAriaInvalid);
 
-    if (nextErrors.name || nextErrors.email || nextErrors.service || nextErrors.project) {
+    if (nextErrors.name || nextErrors.email || nextErrors.project) {
       setStatus("Please complete the highlighted fields.");
       const firstInvalid = form.querySelector<HTMLElement>("[aria-invalid='true']");
       firstInvalid?.focus();
@@ -85,7 +72,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, company, website, service, project }),
+        body: JSON.stringify({ name, email, company, project }),
       });
       const data = (await res.json().catch(() => ({}))) as { error?: string; ok?: boolean };
 
@@ -113,12 +100,8 @@ export function ContactForm() {
       onSubmit={onSubmit}
       onBlur={(e) => {
         const target = e.target;
-        if (
-          target instanceof HTMLInputElement ||
-          target instanceof HTMLTextAreaElement ||
-          target instanceof HTMLSelectElement
-        ) {
-          if (target.required || target.type === "email" || target.type === "url") {
+        if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement) {
+          if (target.required || target.type === "email") {
             syncAriaInvalid(target);
           }
         }
@@ -160,7 +143,7 @@ export function ContactForm() {
           </p>
         </div>
 
-        <div className="contact-form__field">
+        <div className="contact-form__field contact-form__field--full">
           <label htmlFor={`${baseId}-company`}>Company name</label>
           <input
             id={`${baseId}-company`}
@@ -168,46 +151,6 @@ export function ContactForm() {
             type="text"
             autoComplete="organization"
           />
-        </div>
-
-        <div className="contact-form__field">
-          <label htmlFor={`${baseId}-website`}>www.example.com</label>
-          <input
-            id={`${baseId}-website`}
-            name="website"
-            type="url"
-            autoComplete="url"
-            inputMode="url"
-          />
-        </div>
-
-        <div
-          className={`contact-form__field contact-form__field--full${errors.service ? " has-error" : ""}`}
-        >
-          <label htmlFor={`${baseId}-service`}>Select your services</label>
-          <div className="contact-form__select-wrap">
-            <select
-              id={`${baseId}-service`}
-              name="service"
-              required
-              aria-required="true"
-              defaultValue=""
-              aria-describedby={errors.service ? `${baseId}-service-error` : undefined}
-              onChange={() => clearField("service")}
-            >
-              <option value="" disabled>
-                Choose a service
-              </option>
-              {SERVICE_OPTIONS.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
-          <p className="contact-form__error" id={`${baseId}-service-error`}>
-            Please select a service.
-          </p>
         </div>
 
         <div

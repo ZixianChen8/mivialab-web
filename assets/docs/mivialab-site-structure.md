@@ -44,7 +44,7 @@ Section order:
 
 ## About page (`/about`)
 
-Studio positioning: Canadian / Ottawa–Toronto corridor, between freelance and agency, bilingual capability as a premium feature. Ends with CTA into the same primary contact action (`/#contact`).
+Brand story scroll: origin → AI-slop problem → thoughtful-AI stance → lower-price promise, then founder spotlight, then CTA into the same primary contact action (`/#contact`). Studio positioning (Canadian / Ottawa–Toronto corridor, bilingual capability as a premium feature) lives inside that narrative.
 
 ## Work detail (`/work/[slug]`)
 

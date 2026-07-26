@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+/* NORMALIZE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* NORMALIZE */
+
+body {
+    background: #121212;
+    color: #F1F1F1;
+}
+.mwg_effect022 .pin-height{
+    height: 400vh;
+}
+.mwg_effect022 .container{
+    height: 100vh;
+}
+.mwg_effect022 .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vw 2.5vw;
+    border-bottom: 1px dashed rgb(73, 73, 73);
+}
+.mwg_effect022 .top p {
+    font: 500 normal 6vw/0.9 'Inter', sans-serif;
+    letter-spacing: -0.05em;
+}
+.mwg_effect022 .top span {
+    font: 500 normal 4.6vw/0.9 'Inter', sans-serif;
+    letter-spacing: -0.05em;
+    display: grid;
+    place-items: center;
+    width: 10vw;
+    height: 10vw;
+    background: #CDFA6A;
+    border-radius: 0.3em;
+    color: #184739;
+}
+.mwg_effect022 .paragraphs {
+    display: flex;
+    align-items: center;
+    padding: 5vw 2.5vw;
+    column-gap: 2.5vw;
+    font: 500 normal 2.3vw/0.9 'Inter', sans-serif;
+    letter-spacing: -0.03em;
+}
+.mwg_effect022 .word {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin: -0.14em 0; /* Depends on the font used */
+}
+.mwg_effect022 .word span {
+    display: block;
+    padding: 0.14em 0; /* Depends on the font used */
+}
+.mwg_effect022 .paragraph:not(:first-child) .word span {
+    transform: translate(0, 100%);
+}
+
+@media (max-width: 768px) {
+    .mwg_effect022 .top {
+        padding: 30px 15px;
+    }
+    .mwg_effect022 .top p {
+        font-size: 27px;
+    }
+    .mwg_effect022 .paragraphs {
+        flex-direction: column;
+        row-gap: 30px;
+        font-size: 27px;
+        padding: 30px 15px;
+    }
+}
+

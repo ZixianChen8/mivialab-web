@@ -6,52 +6,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteMotion } from "@/components/SiteMotion";
 import { SiteNav } from "@/components/SiteNav";
 
-/** Horizontal hero cards — mwg_effect001. Sample sites labeled as concepts. */
-const HERO_CARDS = [
-  {
-    src: "/images/cover-2.png",
-    kind: "Client",
-    tag: "Arts studio",
-    title: "Meng Wei Yue",
-  },
-  {
-    src: "/images/cover-3.png",
-    kind: "Sample",
-    tag: "Wellness",
-    title: "Harbour Wellness",
-  },
-  {
-    src: "/images/cover-1.png",
-    kind: "Sample",
-    tag: "Music school",
-    title: "Riverbend Music",
-  },
-  {
-    src: "/images/gallery-2.png",
-    kind: "Sample",
-    tag: "Local retail",
-    title: "Canal Street",
-  },
-  {
-    src: "/images/gallery-1.png",
-    kind: "Studio",
-    tag: "Custom build",
-    title: "Clean code",
-  },
-  {
-    src: "/images/gallery-3.png",
-    kind: "Studio",
-    tag: "Full service",
-    title: "Cared for",
-  },
-  {
-    src: "/images/hero.png",
-    kind: "Studio",
-    tag: "Ottawa–Toronto",
-    title: "MiviaLab",
-  },
-] as const;
-
 const MARQUEE_REPEAT = Array.from({ length: 6 });
 
 function MarqueeGlyph() {
@@ -86,56 +40,15 @@ function MarqueeLine({ text }: { text: string }) {
 export function HomePage() {
   return (
     <>
-      <SiteMotion enableHero />
+      <SiteMotion />
 
       <div className="home-stack">
         <SiteNav />
 
-        <section className="hero artist-container mwg_effect001" id="home">
+        <section className="hero" id="home">
           <div className="hero__stage">
             <div className="hero__clip">
               <div className="hero-bg" aria-hidden="true" />
-
-              <svg className="splash-svg" aria-hidden="true" preserveAspectRatio="none">
-                <defs>
-                  <mask id="splashMask">
-                    <rect width="100%" height="100%" fill="black" />
-                    <circle className="splash s1" cx="50%" cy="50%" r="40" fill="white" />
-                    <circle className="splash s2" cx="55%" cy="48%" r="25" fill="white" />
-                    <circle className="splash s3" cx="45%" cy="55%" r="30" fill="white" />
-                    <circle className="splash s4" cx="60%" cy="52%" r="20" fill="white" />
-                  </mask>
-                </defs>
-                <rect className="splash-fill" width="100%" height="100%" mask="url(#splashMask)" />
-              </svg>
-
-              <div className="hero__rail">
-                <div className="hero__cards" aria-hidden="true">
-                  {HERO_CARDS.map((card, i) => (
-                    <article className="hero__card" key={`${card.title}-${i}`}>
-                      <img
-                        src={card.src}
-                        alt=""
-                        width={800}
-                        height={1067}
-                        draggable={false}
-                        loading={i < 2 ? "eager" : "lazy"}
-                      />
-                      <div className="hero__card-content">
-                        <p>
-                          <span>{card.kind}</span>
-                          <span>{card.tag}</span>
-                        </p>
-                        <div>
-                          <span className="hero__card-from">From</span>
-                          <p className="hero__card-title">{card.title}</p>
-                        </div>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-
               <div className="hero-overlay" aria-hidden="true" />
               <div className="hero-bg-fg" aria-hidden="true" />
 
@@ -147,16 +60,6 @@ export function HomePage() {
                     <br />
                     for small businesses
                   </h1>
-                </div>
-
-                <div className="hero-dock__anchor">
-                  <img
-                    className="brand-name"
-                    src="/assets/images/logo/design1_bw_upscaled_tr.png"
-                    alt="MiviaLab"
-                    width={2000}
-                    height={2000}
-                  />
                 </div>
 
                 <div className="hero-dock__support">
@@ -172,18 +75,10 @@ export function HomePage() {
                     </a>
                   </div>
                 </div>
-
-                <a className="hero-scroll" href="#pitch" aria-label="Scroll to continue">
-                  <span className="hero-scroll__label">Scroll</span>
-                  <span className="hero-scroll__bar" aria-hidden="true" />
-                </a>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Scroll distance for horizontal cards while the sticky hero stays in view */}
-        <div className="hero-scroll-track" aria-hidden="true" />
 
         <div className="page-sheet">
           <section className="marquee-banner" aria-label="MiviaLab — let’s build your website">
@@ -195,13 +90,6 @@ export function HomePage() {
                 <div className="marquee-banner__sentence marquee-banner__sentence--2">
                   <MarqueeLine text="Let’s build your website" />
                 </div>
-              </div>
-
-              <div className="marquee-banner__meta">
-                <span>Ottawa · Toronto</span>
-                <span>Custom code</span>
-                <span>EN · FR · 中文</span>
-                <span>MiviaLab</span>
               </div>
             </div>
           </section>

@@ -1,0 +1,287 @@
+/* Invisible scroll runway for horizontal card scrub while hero stays sticky */
+.hero-scroll-track {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Everything under the hero rises as one opaque sheet and covers it */
+.page-sheet {
+  position: relative;
+  z-index: 2;
+  background: var(--ink);
+  color: var(--mist);
+  /* Wider reading / grid width than inner pages (1180px default --max). */
+  --max: min(92vw, 1360px);
+}
+
+@media (min-width: 1024px) {
+  .page-sheet {
+    --max: min(94vw, 1520px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-sheet {
+    --max: min(96vw, 1680px);
+  }
+}
+
+/* Opaque cream sheet over hero — pitch, services, contact (not page-sheet ink) */
+.page-sheet > main {
+  background-color: var(--surface-cream);
+  color: var(--text);
+}
+
+/* Horizontal rail — mwg_effect001 .container */
+.hero__rail {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 16vh;
+  pointer-events: none;
+  font-size: clamp(12px, 1vw, 20px);
+  transform: rotate(var(--hero-rail-rotate, 0deg))
+    translateY(calc(var(--hero-rail-offset-y-vh, 0) * 1vh));
+  transform-origin: var(--hero-rail-origin, 50% 50%);
+}
+
+.hero__cards {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  gap: calc(var(--hero-card-gap-vw, 1) * 1vw);
+  will-change: transform;
+  padding-left: calc(var(--hero-cards-pad-start-vw, 12) * 1vw);
+  padding-right: calc(var(--hero-cards-pad-end-vw, 80) * 1vw);
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.hero__cards.is-dragging {
+  cursor: grabbing;
+}
+
+.hero__card {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(var(--hero-card-w-vw, 25) * 1vw);
+  min-width: calc(var(--hero-card-min-px, 280) * 1px);
+  aspect-ratio: 0.75;
+  border-radius: calc(var(--hero-card-radius-vw, 2) * 1vw);
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  border: calc(var(--hero-card-border-vw, 0.5) * 1vw) solid currentColor;
+  color: #f1f1f1;
+  pointer-events: auto;
+}
+
+.hero__card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.hero__card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__card-content p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0.5em 1em;
+  font-size: clamp(0.55rem, 0.9vw, 0.72rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.hero__card-from {
+  display: inline-block;
+  border: 0.2em solid currentColor;
+  border-radius: 100%;
+  padding: 0.28em 0.3em 0.12em;
+  font-size: 0.55em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.hero__card-title {
+  margin: 0;
+  padding: 0.2em 0 0.12em;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.4vw, 2.35rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  white-space: normal;
+}
+
+.hero__card:nth-child(1) { color: #bcefff; }
+.hero__card:nth-child(2) { color: #c9fe6e; }
+.hero__card:nth-child(3) { color: #faff9e; }
+.hero__card:nth-child(4) { color: #fc4c3b; }
+.hero__card:nth-child(5) { color: #f1f1f1; }
+.hero__card:nth-child(6) { color: #8cedff; }
+.hero__card:nth-child(7) { color: #faff9e; }
+
+@media (max-width: 900px) {
+  .hero__cards {
+    padding-left: calc(var(--hero-cards-pad-start-mobile-vw, 8) * 1vw);
+    padding-right: calc(var(--hero-cards-pad-end-mobile-vw, 100) * 1vw);
+  }
+
+  .hero__card {
+    border-width: 6px;
+    border-radius: 23px;
+  }
+
+  .hero__card-title {
+    font-size: clamp(1.25rem, 7vw, 2rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__rail {
+    padding-bottom: 22vh;
+    transform: rotate(var(--hero-rail-rotate, 0deg))
+      translateY(calc(var(--hero-rail-offset-y-mobile-vh, var(--hero-rail-offset-y-vh, 0)) * 1vh));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__rail {
+    transform: none;
+  }
+
+  .hero__cards {
+    padding: 0 5vw;
+    gap: 1rem;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .hero__card {
+    transform: none !important;
+  }
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  /* Extra height below only — keeps the image top visible at start,
+     while leaving room to drift upward on scroll */
+  bottom: calc(var(--hero-bg-inset) * -2);
+  background-image: url("/images/bg_2_layer_1.webp");
+  background-size: cover;
+  background-position: var(--hero-bg-x) var(--hero-bg-y);
+  background-repeat: no-repeat;
+  will-change: transform;
+  transform: scale(var(--hero-bg-scale));
+  transform-origin: center top;
+  z-index: 0;
+}
+
+/* Foliage frame — above GSAP cards, below nav/dock UI */
+.hero-bg-fg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/bg_2_layer_2.webp");
+  background-size: cover;
+  background-position: var(--hero-fg-x) var(--hero-fg-y);
+  background-repeat: no-repeat;
+  transform: scale(var(--hero-fg-scale));
+  transform-origin: center top;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Darken only the opaque foliage (alpha mask), not the window/cards */
+.hero-bg-fg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--hero-spotlight-scrim);
+  opacity: var(--hero-spot-strength);
+  -webkit-mask-image: url("/images/bg_2_layer_2.webp");
+  mask-image: url("/images/bg_2_layer_2.webp");
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: var(--hero-fg-x) var(--hero-fg-y);
+  mask-position: var(--hero-fg-x) var(--hero-fg-y);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-mode: alpha;
+  mask-mode: alpha;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* Above sky + GSAP cards — dim at edges, light up in the clear spot.
+     Below foliage frame so plants still sit on top. */
+  z-index: 9;
+  pointer-events: none;
+  background: var(--hero-spotlight-scrim);
+  opacity: var(--hero-spot-strength);
+}
+
+.splash-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.splash-fill {
+  fill: var(--ink-deep);
+  opacity: 1;
+  transition: opacity 0.9s var(--hero-ease) 0.9s;
+}
+
+.artist-container.revealed .splash-fill {
+  opacity: 0;
+}
+
+.splash {
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform 0.9s var(--hero-ease);
+}
+
+.artist-container.revealed .s1,
+.artist-container:hover .s1 { transform: scale(40); }
+.artist-container.revealed .s2,
+.artist-container:hover .s2 { transform: scale(34); transition-delay: 0.05s; }
+.artist-container.revealed .s3,
+.artist-container:hover .s3 { transform: scale(36); transition-delay: 0.1s; }
+.artist-container.revealed .s4,
+.artist-container:hover .s4 { transform: scale(32); transition-delay: 0.15s; }

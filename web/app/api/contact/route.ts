@@ -5,8 +5,6 @@ type Body = {
   name?: unknown;
   email?: unknown;
   company?: unknown;
-  website?: unknown;
-  service?: unknown;
   project?: unknown;
 };
 
@@ -29,14 +27,12 @@ export async function POST(request: Request) {
   const name = asOptionalString(body.name);
   const email = asOptionalString(body.email);
   const company = asOptionalString(body.company);
-  const website = asOptionalString(body.website);
-  const service = asOptionalString(body.service);
   const project = asOptionalString(body.project);
 
-  if (!name || !isValidEmail(email) || !service || !project) {
+  if (!name || !isValidEmail(email) || !project) {
     return NextResponse.json(
-      { error: "Please provide a valid name, email, service, and project description." },
-      { status: 400 }
+      { error: "Please provide a valid name, email, and project description." },
+      { status: 400 },
     );
   }
 
@@ -44,8 +40,6 @@ export async function POST(request: Request) {
     name.length > 200 ||
     email.length > 320 ||
     company.length > 200 ||
-    website.length > 500 ||
-    service.length > 120 ||
     project.length > 5000
   ) {
     return NextResponse.json({ error: "Message is too long." }, { status: 400 });
@@ -57,8 +51,6 @@ export async function POST(request: Request) {
         name,
         email,
         company,
-        website,
-        service,
         project,
       });
       return NextResponse.json({
@@ -70,18 +62,18 @@ export async function POST(request: Request) {
 
     return NextResponse.json(
       { error: `Contact form is not configured yet. Please email ${STUDIO_EMAIL}.` },
-      { status: 503 }
+      { status: 503 },
     );
   }
 
   try {
-    await sendContactEmail({ name, email, company, website, service, project });
+    await sendContactEmail({ name, email, company, project });
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("[contact] send failed", err);
     return NextResponse.json(
       { error: `Could not send your message. Please try again or email ${STUDIO_EMAIL}.` },
-      { status: 502 }
+      { status: 502 },
     );
   }
 }
