@@ -122,10 +122,6 @@ export function MindsetFlip() {
     >
       <div className="flip__track">
         <div className="flip__stage">
-          <div className="flip__header" aria-hidden="true">
-            <span>{STORY_FLIP_ANIM.headerLeft}</span>
-            <span>{STORY_FLIP_ANIM.headerRight}</span>
-          </div>
           {STORY_FLIP_LINES.map((line) => (
             <p className="flip__line" key={line.slice(0, 16)}>
               <span>{line}</span>

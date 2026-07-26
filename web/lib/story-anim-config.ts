@@ -52,9 +52,6 @@ export const STORY_FLIP_LINES = [
 ] as const;
 
 export const STORY_FLIP_ANIM = {
-  /** Stage chrome labels (top left / top right). */
-  headerLeft: "MiviaLab",
-  headerRight: "How we use AI",
   /** Scroll (vh) per flip; pin height = 100 + (lines - 1) * this. */
   perTransitionVh: 150,
   ease: "expo.inOut",

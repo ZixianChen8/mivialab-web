@@ -281,21 +281,6 @@
   perspective: 300vw;
 }
 
-.flip__header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: clamp(1.5rem, 3vw, 2.5rem) var(--space-gutter);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--mist-dim);
-}
-
 /* The flip cylinder: line rotates around an axis 8vw behind the text,
    its span pushed forward the same amount (from mwg_102). */
 .flip__line {
@@ -332,11 +317,6 @@
   perspective: none;
 }
 
-.flip--static .flip__header {
-  position: static;
-  padding: 0 0 2.5rem;
-}
-
 .flip--static .flip__line {
   position: static;
   max-width: 100%;
@@ -349,10 +329,6 @@
 }
 
 @media (max-width: 768px) {
-  .flip__header {
-    display: none;
-  }
-
   .flip__line {
     max-width: 92vw;
     font-size: clamp(1.9rem, 8.5vw, 2.8rem);
