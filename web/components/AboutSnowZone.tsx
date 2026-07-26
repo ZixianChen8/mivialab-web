@@ -54,13 +54,13 @@ export function AboutSnowZone({ children }: AboutSnowZoneProps) {
             color="#ffffff"
             flakeSize={0.004}
             minFlakeSize={0.7}
-            pixelResolution={720}
+            pixelResolution={480}
             speed={0.4}
-            density={0.2}
+            density={0.08}
             direction={100}
             brightness={1.4}
             depthFade={9}
-            farPlane={23}
+            farPlane={16}
             paused={!showSnow}
           />
         </div>

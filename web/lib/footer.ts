@@ -10,7 +10,7 @@ export type FooterLink = {
 export const FOOTER_STATEMENT = ["WEB DESIGN", "& DEVELOPMENT", "STUDIO."];
 
 export const FOOTER_SOCIAL: FooterLink[] = [
-  { label: "LinkedIn", href: "#", external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/mivialab/", external: true },
 ];
 
 export const FOOTER_ADDRESS = ["Ottawa–Toronto", "Canada"];

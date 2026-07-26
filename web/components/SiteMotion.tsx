@@ -16,13 +16,16 @@ export function SiteMotion() {
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-    const heroSection = document.querySelector(".hero");
+    const heroSection = document.querySelector<HTMLElement>(".hero");
     let themeObserver: MutationObserver | undefined;
+    let onHeroPointerMove: ((e: PointerEvent) => void) | undefined;
+    let onHeroPointerLeave: (() => void) | undefined;
 
     if (heroSection) {
       const skyCfg = HERO_BG_LAYERS.sky;
       const foliageCfg = HERO_BG_LAYERS.foliage;
       const spotCfg = HERO_BG_LAYERS.spotlight;
+      const parCfg = HERO_BG_LAYERS.parallax;
 
       const applyHeroCssVars = () => {
         const root = document.documentElement;
@@ -39,15 +42,26 @@ export function SiteMotion() {
         rootStyle.setProperty("--hero-bg-scale", String(skyCfg.scale));
         rootStyle.setProperty("--hero-bg-x", `${skyCfg.positionX}%`);
         rootStyle.setProperty("--hero-bg-y", `${skyCfg.positionY}%`);
+        rootStyle.setProperty("--hero-bg-offset-y", `${skyCfg.offsetYVh}vh`);
         rootStyle.setProperty("--hero-bg-inset", `${skyCfg.insetPercent}%`);
         rootStyle.setProperty("--hero-fg-scale", String(foliageCfg.scale));
         rootStyle.setProperty("--hero-fg-x", `${foliageCfg.positionX}%`);
         rootStyle.setProperty("--hero-fg-y", `${foliageCfg.positionY}%`);
+        rootStyle.setProperty("--hero-fg-offset-y", `${foliageCfg.offsetYPx}px`);
         rootStyle.setProperty("--hero-spot-x", `${spotCfg.x}%`);
         rootStyle.setProperty("--hero-spot-y", `${spotCfg.y}%`);
         rootStyle.setProperty("--hero-spot-w", `${spotCfg.width}%`);
         rootStyle.setProperty("--hero-spot-h", `${spotCfg.height}%`);
         rootStyle.setProperty("--hero-spot-clear", `${spotCfg.clear}%`);
+        rootStyle.setProperty("--hero-par-perspective", `${parCfg.perspectivePx}px`);
+        rootStyle.setProperty("--hero-sky-par-mx", `${parCfg.sky.moveX}px`);
+        rootStyle.setProperty("--hero-sky-par-my", `${parCfg.sky.moveY}px`);
+        rootStyle.setProperty("--hero-sky-par-ry", `${parCfg.sky.rotateY}deg`);
+        rootStyle.setProperty("--hero-sky-par-rx", `${parCfg.sky.rotateX}deg`);
+        rootStyle.setProperty("--hero-fg-par-mx", `${parCfg.foliage.moveX}px`);
+        rootStyle.setProperty("--hero-fg-par-my", `${parCfg.foliage.moveY}px`);
+        rootStyle.setProperty("--hero-fg-par-ry", `${parCfg.foliage.rotateY}deg`);
+        rootStyle.setProperty("--hero-fg-par-rx", `${parCfg.foliage.rotateX}deg`);
       };
 
       applyHeroCssVars();
@@ -56,6 +70,40 @@ export function SiteMotion() {
         attributes: true,
         attributeFilter: ["data-theme"],
       });
+
+      const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+      if (parCfg.enabled && !reducedMotion && !coarsePointer) {
+        const root = document.documentElement;
+        root.style.setProperty("--hero-par-x", "0");
+        root.style.setProperty("--hero-par-y", "0");
+
+        const xTo = gsap.quickTo(root, "--hero-par-x", {
+          duration: parCfg.followDuration,
+          ease: parCfg.followEase,
+        });
+        const yTo = gsap.quickTo(root, "--hero-par-y", {
+          duration: parCfg.followDuration,
+          ease: parCfg.followEase,
+        });
+        const clampNorm = gsap.utils.clamp(-1, 1);
+
+        onHeroPointerMove = (e: PointerEvent) => {
+          const rect = heroSection.getBoundingClientRect();
+          if (rect.width <= 0 || rect.height <= 0) return;
+          const nx = clampNorm(((e.clientX - rect.left) / rect.width) * 2 - 1);
+          const ny = clampNorm(((e.clientY - rect.top) / rect.height) * 2 - 1);
+          xTo(nx);
+          yTo(ny);
+        };
+
+        onHeroPointerLeave = () => {
+          xTo(0);
+          yTo(0);
+        };
+
+        heroSection.addEventListener("pointermove", onHeroPointerMove);
+        heroSection.addEventListener("pointerleave", onHeroPointerLeave);
+      }
     }
 
     let lenis: Lenis | null = null;
@@ -192,6 +240,15 @@ export function SiteMotion() {
 
     return () => {
       themeObserver?.disconnect();
+      if (heroSection && onHeroPointerMove) {
+        heroSection.removeEventListener("pointermove", onHeroPointerMove);
+      }
+      if (heroSection && onHeroPointerLeave) {
+        heroSection.removeEventListener("pointerleave", onHeroPointerLeave);
+      }
+      gsap.killTweensOf(document.documentElement, "--hero-par-x,--hero-par-y");
+      document.documentElement.style.setProperty("--hero-par-x", "0");
+      document.documentElement.style.setProperty("--hero-par-y", "0");
       document.removeEventListener("click", onAnchorClick);
       if (track && onCarouselScroll) track.removeEventListener("scroll", onCarouselScroll);
       if (onCarouselResize) window.removeEventListener("resize", onCarouselResize);

@@ -10,17 +10,31 @@
   /* Hero background / spotlight (static; archived JS tuning in assets/archive/landing-hero-gsap/) */
   --hero-bg-x: 50%;
   --hero-bg-y: 0%;
-  --hero-bg-scale: 1;
+  --hero-bg-offset-y: -14vh;
+  --hero-bg-scale: 1.12;
   --hero-bg-inset: 8%;
   --hero-fg-x: 50%;
   --hero-fg-y: 30%;
-  --hero-fg-scale: 1;
+  --hero-fg-scale: 1.22;
+  --hero-fg-offset-y: -100px;
   --hero-spot-x: 50%;
   --hero-spot-y: 42%;
   --hero-spot-w: 110%;
   --hero-spot-h: 50%;
   --hero-spot-clear: 65%;
   --hero-spot-strength: 0.74;
+  /* Mouse parallax (normalized -1…1; multipliers from hero-bg-layers-config) */
+  --hero-par-x: 0;
+  --hero-par-y: 0;
+  --hero-par-perspective: 1200px;
+  --hero-sky-par-mx: -12px;
+  --hero-sky-par-my: -8px;
+  --hero-sky-par-ry: 2deg;
+  --hero-sky-par-rx: -2deg;
+  --hero-fg-par-mx: 28px;
+  --hero-fg-par-my: 18px;
+  --hero-fg-par-ry: 4deg;
+  --hero-fg-par-rx: -4deg;
   /* Fallback until SiteMotion builds stops from hero-bg-layers-config (clear must precede scrim stops). */
   --hero-spotlight-scrim: radial-gradient(
     ellipse var(--hero-spot-w) var(--hero-spot-h) at var(--hero-spot-x) var(--hero-spot-y),
@@ -214,6 +228,8 @@ button {
   background: var(--off-white);
   contain: paint;
   isolation: isolate;
+  perspective: var(--hero-par-perspective);
+  transform-style: preserve-3d;
 }
 
 /* Everything under the hero rises as one opaque sheet and covers it */
@@ -252,13 +268,23 @@ button {
   /* Extra height below only — keeps the image top visible at start,
      while leaving room to drift upward on scroll */
   bottom: calc(var(--hero-bg-inset) * -2);
-  background-image: url("/images/bg_2_layer_1.webp");
+  background-image: url("/images/website_with_characters_exp.webp");
   background-size: cover;
   background-position: var(--hero-bg-x) var(--hero-bg-y);
   background-repeat: no-repeat;
-  transform: scale(var(--hero-bg-scale));
+  transform:
+    translateY(var(--hero-bg-offset-y))
+    scale(var(--hero-bg-scale))
+    translate3d(
+      calc(var(--hero-par-x) * var(--hero-sky-par-mx)),
+      calc(var(--hero-par-y) * var(--hero-sky-par-my)),
+      0
+    )
+    rotateY(calc(var(--hero-par-x) * var(--hero-sky-par-ry)))
+    rotateX(calc(var(--hero-par-y) * var(--hero-sky-par-rx)));
   transform-origin: center top;
   z-index: 0;
+  will-change: transform;
 }
 
 /* Foliage frame — below nav/dock UI */
@@ -269,10 +295,20 @@ button {
   background-size: cover;
   background-position: var(--hero-fg-x) var(--hero-fg-y);
   background-repeat: no-repeat;
-  transform: scale(var(--hero-fg-scale));
+  transform:
+    translateY(var(--hero-fg-offset-y))
+    scale(var(--hero-fg-scale))
+    translate3d(
+      calc(var(--hero-par-x) * var(--hero-fg-par-mx)),
+      calc(var(--hero-par-y) * var(--hero-fg-par-my)),
+      0
+    )
+    rotateY(calc(var(--hero-par-x) * var(--hero-fg-par-ry)))
+    rotateX(calc(var(--hero-par-y) * var(--hero-fg-par-rx)));
   transform-origin: center top;
   z-index: 10;
   pointer-events: none;
+  will-change: transform;
 }
 
 /* Darken only the opaque foliage (alpha mask) */
@@ -1406,7 +1442,8 @@ button {
   background: var(--off-white);
   color: var(--text);
   min-height: 100vh;
-  padding-top: 5.5rem;
+  /* Story cold-opens under fixed nav; about.css also sets 0. */
+  padding-top: 0;
 }
 
 /* Split hero: story bottom-left, full-height image card right,
@@ -2415,6 +2452,16 @@ button {
   }
 
   .hero-bg {
-    transform: scale(1.02) !important;
+    transform: translateY(var(--hero-bg-offset-y)) scale(1.02) !important;
+    will-change: auto;
+  }
+
+  .hero-bg-fg {
+    transform: translateY(var(--hero-fg-offset-y)) scale(var(--hero-fg-scale)) !important;
+    will-change: auto;
+  }
+
+  .hero__clip {
+    perspective: none;
   }
 }
