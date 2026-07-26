@@ -18,9 +18,9 @@
   --hero-fg-scale: 1.22;
   --hero-fg-offset-y: -100px;
   --hero-spot-x: 50%;
-  --hero-spot-y: 42%;
+  --hero-spot-y: 36%;
   --hero-spot-w: 110%;
-  --hero-spot-h: 50%;
+  --hero-spot-h: 42%;
   --hero-spot-clear: 65%;
   --hero-spot-strength: 0.74;
   /* Mouse parallax (normalized -1…1; multipliers from hero-bg-layers-config) */
@@ -271,8 +271,8 @@ button {
   /* Extra height below only — keeps the image top visible at start,
      while leaving room to drift upward on scroll */
   bottom: calc(var(--hero-bg-inset) * -2);
-  /* Source: assets/images/background/website_with_characters_exp.webp */
-  background-image: url("/images/background/website_with_characters_exp.webp");
+  /* Source: assets/images/background/websites_with_character.webp */
+  background-image: url("/images/background/websites_with_character.webp");
   background-size: cover;
   background-position: var(--hero-bg-x) var(--hero-bg-y);
   background-repeat: no-repeat;

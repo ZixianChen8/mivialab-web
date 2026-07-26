@@ -28,9 +28,9 @@ export const HERO_BG_LAYERS = {
   },
   spotlight: {
     x: 50,
-    y: 42,
+    y: 36,
     width: 110,
-    height: 50,
+    height: 42,
     clear: 65,
     /** Edge darkness, 0 (light) to 100 (very dark). */
     darkness: 52,
