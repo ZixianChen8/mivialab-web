@@ -125,6 +125,16 @@ export function SiteNav({ variant = "hero" }: SiteNavProps) {
       <nav className="nav" aria-label="Primary">
         <div className="nav__backdrop" ref={backdropRef} aria-hidden="true" />
 
+        <Link className="nav-brand" href={homeHref} aria-label="MiviaLab home">
+          <Image
+            src="/assets/images/logo/design1_bw_upscaled_tr.png"
+            alt=""
+            width={144}
+            height={144}
+            sizes="144px"
+          />
+        </Link>
+
         <div className="nav-end">
           <ul className="nav-links">
             <li>
@@ -159,16 +169,6 @@ export function SiteNav({ variant = "hero" }: SiteNavProps) {
             ))}
           </ul>
         </div>
-
-        <Link className="nav-brand" href={homeHref} aria-label="MiviaLab home">
-          <Image
-            src="/assets/images/logo/design1_bw_upscaled_tr.png"
-            alt=""
-            width={144}
-            height={144}
-            sizes="144px"
-          />
-        </Link>
 
         <button
           className="nav-menu-btn"

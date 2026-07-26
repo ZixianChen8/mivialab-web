@@ -357,7 +357,7 @@ button {
   opacity: var(--hero-spot-strength);
 }
 
-/* Sticky editorial header — links + social left, logo right */
+/* Sticky editorial header — logo left, links + social right */
 .site-header {
   position: fixed;
   top: 0;
@@ -375,7 +375,7 @@ button {
 .nav {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
   column-gap: clamp(1rem, 3vw, 2rem);
   min-height: 5.5rem;
@@ -412,8 +412,8 @@ button {
   align-items: center;
   flex-wrap: wrap;
   gap: clamp(1.5rem, 2.5vw, 2.75rem);
-  justify-self: start;
-  grid-column: 1;
+  justify-self: end;
+  grid-column: 2;
   min-width: 0;
 }
 
@@ -469,12 +469,12 @@ button {
 .nav-brand {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-shrink: 0;
   width: 5.75rem;
   height: 5.75rem;
-  grid-column: 2;
-  justify-self: end;
+  grid-column: 1;
+  justify-self: start;
 }
 
 .nav-brand img {
