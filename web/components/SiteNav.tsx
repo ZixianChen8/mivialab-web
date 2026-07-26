@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FOOTER_SOCIAL } from "@/lib/footer";
 
@@ -23,7 +25,7 @@ function SocialLinkContent({ label }: { label: string }) {
   const iconSrc = SOCIAL_ICON_SRC[label];
   if (iconSrc) {
     return (
-      <img
+      <Image
         className="nav-social__icon"
         src={iconSrc}
         alt=""
@@ -41,8 +43,10 @@ function clamp01(n: number) {
 }
 
 export function SiteNav({ variant = "hero" }: SiteNavProps) {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const backdropRef = useRef<HTMLDivElement>(null);
+  const isAboutPage = pathname === "/about";
   const homeHref = variant === "page" ? "/" : "#home";
   const servicesHref = variant === "page" ? "/#services" : "#services";
   const contactHref = variant === "page" ? "/#contact" : "#contact";
@@ -126,7 +130,7 @@ export function SiteNav({ variant = "hero" }: SiteNavProps) {
             <li>
               <Link
                 href="/about"
-                {...(variant === "page" ? { "aria-current": "page" as const } : {})}
+                {...(isAboutPage ? { "aria-current": "page" as const } : {})}
               >
                 About
               </Link>
@@ -157,11 +161,12 @@ export function SiteNav({ variant = "hero" }: SiteNavProps) {
         </div>
 
         <Link className="nav-brand" href={homeHref} aria-label="MiviaLab home">
-          <img
+          <Image
             src="/assets/images/logo/design1_bw_upscaled_tr.png"
             alt=""
             width={144}
             height={144}
+            sizes="144px"
           />
         </Link>
 
@@ -180,7 +185,11 @@ export function SiteNav({ variant = "hero" }: SiteNavProps) {
 
       <div className="nav-mobile" id="mobile-nav" hidden={!open}>
         <div className="nav-mobile__links">
-          <Link href="/about" onClick={() => setOpen(false)}>
+          <Link
+            href="/about"
+            aria-current={isAboutPage ? "page" : undefined}
+            onClick={() => setOpen(false)}
+          >
             About
           </Link>
           <a href={servicesHref} onClick={() => setOpen(false)}>

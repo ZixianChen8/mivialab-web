@@ -9,7 +9,7 @@
  * 022 columns: paragraph one of the story (origin and the AI-slop problem).
  */
 export const STORY_BEATS = [
-  "We're two University of Ottawa students, and MiviaLab began when our technical co-founder, Michael, kept getting asked by friends to build websites for their small businesses and community groups.",
+  "MiviaLab began when friends asked our technical co-founder, Michael, to build websites for their small businesses and community groups.",
   "Through that work, we noticed a growing problem: as AI made website creation faster, more and more sites started drowning in the same generic look.",
   "Soulless layouts, lifeless copy, the kind of AI-generated filler that feels empty and forgettable.",
 ] as const;
@@ -170,6 +170,8 @@ export const FOUNDERS = [
     name: "Michael",
     role: "Tech Lead",
     photo: "/images/people/michael.png",
+    photoWidth: 800,
+    photoHeight: 800,
     alt: "Portrait of Michael, tech lead at MiviaLab",
     bio: "Computer Science student at the University of Ottawa, passionate about web development and artificial intelligence. Also explores digital design and video editing, and spends free time playing piano and gaming.",
   },
@@ -178,6 +180,8 @@ export const FOUNDERS = [
     name: "Olivia",
     role: "Business Development Lead",
     photo: "/images/people/shunan.jpg",
+    photoWidth: 1085,
+    photoHeight: 1450,
     alt: "Portrait of Olivia, business development lead of MiviaLab",
     bio: "Business Technology Management graduate and Big Data Analytics master's student. Enjoys handcrafting, exploring new foods, and finding inspiration in the small details of everyday life.",
   },

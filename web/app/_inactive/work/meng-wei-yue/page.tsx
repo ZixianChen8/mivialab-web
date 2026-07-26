@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import "./work-detail.css";
 
@@ -40,11 +41,12 @@ export default function InactiveMengWeiYuePage() {
         <section className="wd__section" aria-labelledby="visuals-heading">
           <h2 id="visuals-heading">Visuals</h2>
           <figure className="wd__visual">
-            <img
+            <Image
               src="/images/cover-2.png"
               alt="Meng Wei Yue Opera Studio website preview"
               width={1200}
               height={800}
+              sizes="(max-width: 1200px) 100vw, 1200px"
             />
           </figure>
         </section>

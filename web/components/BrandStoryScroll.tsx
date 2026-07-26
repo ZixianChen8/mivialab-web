@@ -47,6 +47,7 @@ export function BrandStoryScroll() {
       ctx = gsap.context(() => {
         const track = root.querySelector<HTMLElement>(".story__track");
         const stage = root.querySelector<HTMLElement>(".story__stage");
+        const title = root.querySelector<HTMLElement>(".story__title");
         const beats = Array.from(root.querySelectorAll<HTMLElement>(".story__beat"));
         if (!track || !stage || !beats.length) return;
 
@@ -58,6 +59,20 @@ export function BrandStoryScroll() {
           end: "bottom bottom",
           pin: stage,
         });
+
+        if (title) {
+          gsap.to(title, {
+            autoAlpha: 0,
+            y: -12,
+            ease: "none",
+            scrollTrigger: {
+              trigger: track,
+              start: "top top",
+              end: () => `+=${window.innerHeight * 0.35}`,
+              scrub: true,
+            },
+          });
+        }
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -118,6 +133,7 @@ export function BrandStoryScroll() {
         style={{ "--story-track-h": `${storyTrackHeightVh(STORY_BEATS.length)}vh` } as React.CSSProperties}
       >
         <div className="story__stage">
+          <h1 className="story__title">The story behind MiviaLab</h1>
           <div className="story__beats">
             {STORY_BEATS.map((beat) => (
               <p className="story__beat" key={beat.slice(0, 24)}>

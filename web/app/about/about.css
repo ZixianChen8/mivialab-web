@@ -54,6 +54,7 @@
 }
 
 .story__stage {
+  position: relative;
   display: flex;
   align-items: center;
   height: 100vh;
@@ -61,10 +62,27 @@
   overflow: hidden;
 }
 
+.story__title {
+  position: absolute;
+  top: clamp(8rem, 18vh, 10rem);
+  right: var(--space-gutter);
+  z-index: 2;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-align: right;
+  padding: 0.3rem 0.45rem;
+  background: rgba(9, 14, 11, 0.72);
+  color: rgba(242, 239, 231, 0.7);
+}
+
 /* mwg_022: three columns side by side; words fill left → right as you scroll. */
 .story__beats {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   column-gap: clamp(1.25rem, 2.5vw, 2.5rem);
   width: 100%;
   padding: 0 var(--space-gutter);
@@ -78,6 +96,10 @@
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.02em;
+}
+
+.story__beat:first-child {
+  font-size: clamp(1.65rem, 2.6vw, 2.4rem);
 }
 
 /* mwg_022 word shells: overflow-hidden outer, sliding inner span.
@@ -110,6 +132,14 @@
   padding: clamp(7rem, 16vh, 10rem) 0 clamp(4rem, 10vh, 7rem);
 }
 
+.story--static .story__title {
+  position: static;
+  margin: 0 var(--space-gutter) 2rem;
+  padding: 0;
+  text-align: left;
+  background: transparent;
+}
+
 .story--static .story__beats {
   flex-direction: column;
   row-gap: 2.5rem;
@@ -124,18 +154,30 @@
   .story__stage {
     box-sizing: border-box;
     align-items: flex-start;
-    padding-top: max(4.25rem, env(safe-area-inset-top, 0px) + 3.5rem);
+    padding-top: max(7.5rem, env(safe-area-inset-top, 0px) + 6.75rem);
     padding-bottom: 1.25rem;
+  }
+
+  .story__title {
+    top: max(4.5rem, env(safe-area-inset-top, 0px) + 3.75rem);
+    right: auto;
+    left: var(--space-gutter);
+    text-align: left;
   }
 
   .story__beats {
     flex-direction: column;
+    align-items: flex-start;
     row-gap: 1.1rem;
   }
 
   .story__beat {
     font-size: clamp(1.5rem, 6vw, 2rem);
     line-height: 1.18;
+  }
+
+  .story__beat:first-child {
+    font-size: clamp(1.5rem, 6vw, 2rem);
   }
 }
 

@@ -1,0 +1,21 @@
+/* Archived hero kicker + brand tagline (desktop + mobile shared classes) */
+
+.hero-kicker {
+  margin: 0 0 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mist) 68%, transparent);
+}
+
+.brand-tagline {
+  margin: 0;
+  max-width: 34ch;
+  font-size: clamp(0.92rem, 1.35vw, 1.05rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  color: color-mix(in oklch, var(--mist) 82%, transparent);
+  text-wrap: pretty;
+}

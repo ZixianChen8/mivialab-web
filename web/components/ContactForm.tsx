@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useId, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { STUDIO_EMAIL } from "@/lib/mail";
 
 type FieldErrors = {
@@ -31,7 +33,14 @@ export function ContactForm() {
   }
 
   function syncAriaInvalid(el: HTMLInputElement | HTMLTextAreaElement) {
-    if (!el.checkValidity()) {
+    const invalid =
+      el.name === "email"
+        ? !validateEmail(el.value.trim())
+        : el.name === "name" || el.name === "project"
+          ? !el.value.trim()
+          : !el.checkValidity();
+
+    if (invalid) {
       el.setAttribute("aria-invalid", "true");
     } else {
       el.removeAttribute("aria-invalid");
@@ -41,10 +50,13 @@ export function ContactForm() {
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
-    const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
+    const nameInput = form.elements.namedItem("name") as HTMLInputElement;
+    const emailInput = form.elements.namedItem("email") as HTMLInputElement;
+    const projectInput = form.elements.namedItem("project") as HTMLTextAreaElement;
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
     const company = (form.elements.namedItem("company") as HTMLInputElement).value.trim();
-    const project = (form.elements.namedItem("project") as HTMLTextAreaElement).value.trim();
+    const project = projectInput.value.trim();
 
     const nextErrors: FieldErrors = {
       name: !name,
@@ -56,7 +68,9 @@ export function ContactForm() {
     const controls = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
       "input, textarea",
     );
-    controls.forEach(syncAriaInvalid);
+    syncAriaInvalid(nameInput);
+    syncAriaInvalid(emailInput);
+    syncAriaInvalid(projectInput);
 
     if (nextErrors.name || nextErrors.email || nextErrors.project) {
       setStatus("Please complete the highlighted fields.");
@@ -81,7 +95,11 @@ export function ContactForm() {
         return;
       }
 
-      setStatus("Thanks. We’ll get back to you within one business day.");
+      setStatus("Thanks. Your message is on its way to MiviaLab.");
+      trackEvent("generate_lead", {
+        form_name: "project_inquiry",
+        method: "contact_form",
+      });
       form.reset();
       setErrors(EMPTY_ERRORS);
       controls.forEach((el) => el.removeAttribute("aria-invalid"));
@@ -118,7 +136,10 @@ export function ContactForm() {
             required
             aria-required="true"
             aria-describedby={errors.name ? `${baseId}-name-error` : undefined}
-            onInput={() => clearField("name")}
+            onInput={(event) => {
+              clearField("name");
+              syncAriaInvalid(event.currentTarget);
+            }}
           />
           <p className="contact-form__error" id={`${baseId}-name-error`}>
             Please enter your name.
@@ -133,10 +154,14 @@ export function ContactForm() {
             type="email"
             autoComplete="email"
             inputMode="email"
+            spellCheck={false}
             required
             aria-required="true"
             aria-describedby={errors.email ? `${baseId}-email-error` : undefined}
-            onInput={() => clearField("email")}
+            onInput={(event) => {
+              clearField("email");
+              syncAriaInvalid(event.currentTarget);
+            }}
           />
           <p className="contact-form__error" id={`${baseId}-email-error`}>
             Please enter a valid email.
@@ -164,7 +189,10 @@ export function ContactForm() {
             required
             aria-required="true"
             aria-describedby={errors.project ? `${baseId}-project-error` : undefined}
-            onInput={() => clearField("project")}
+            onInput={(event) => {
+              clearField("project");
+              syncAriaInvalid(event.currentTarget);
+            }}
           />
           <p className="contact-form__error" id={`${baseId}-project-error`}>
             Tell us what you need built or improved.
@@ -173,6 +201,21 @@ export function ContactForm() {
       </div>
 
       <div className="contact-form__actions">
+        <p className="contact-form__status">
+          MiviaLab uses the details you submit to respond to your inquiry. See
+          the{" "}
+          <Link
+            href="/privacy"
+            style={{
+              color: "inherit",
+              textDecoration: "underline",
+              textUnderlineOffset: "0.2em",
+            }}
+          >
+            Privacy Policy
+          </Link>
+          .
+        </p>
         <button className="contact-form__submit" type="submit" disabled={sending}>
           {sending ? "Sending…" : "Send message"}
         </button>

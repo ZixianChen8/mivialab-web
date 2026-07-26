@@ -54,7 +54,6 @@ export function HomePage() {
 
               <div className="hero-dock">
                 <div className="hero-dock__intro">
-                  <p className="hero-kicker">Ottawa–Toronto studio</p>
                   <h1 className="brand-headline">
                     Web design &amp; development
                     <br />
@@ -63,14 +62,21 @@ export function HomePage() {
                 </div>
 
                 <div className="hero-dock__support">
-                  <p className="brand-tagline">
-                    Custom sites, cared for end to end.
-                  </p>
                   <div className="hero-actions">
-                    <a className="hero-cta" href="#contact">
+                    <a
+                      className="hero-cta"
+                      href="#contact"
+                      data-analytics-event="cta_click"
+                      data-analytics-placement="hero"
+                    >
                       Start a project
                     </a>
-                    <a className="hero-secondary" href="#services">
+                    <a
+                      className="hero-secondary"
+                      href="#services"
+                      data-analytics-event="navigation_click"
+                      data-analytics-placement="hero"
+                    >
                       See services
                     </a>
                   </div>

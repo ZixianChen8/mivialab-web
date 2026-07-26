@@ -11,8 +11,8 @@ export function ContactSection() {
               Contact Us
             </h2>
             <p className="contact-section__lede">
-              Explore ideas, strategies, and creative insights that help brands grow and digital
-              experiences stand out.
+              Tell us what you need built or improved. We will review your
+              project and come back with a clear next step.
             </p>
           </div>
         </header>
@@ -20,13 +20,34 @@ export function ContactSection() {
         <div className="contact-section__main">
           <aside className="contact-section__info" aria-label="Studio details">
             <div className="contact-section__group">
-              <h3 className="contact-section__group-title">Support</h3>
+              <h3 className="contact-section__group-title">Start a project</h3>
               <p className="contact-section__group-text">
-                <a href={`mailto:${STUDIO_EMAIL}`}>{STUDIO_EMAIL}</a>
+                <a
+                  href={`mailto:${STUDIO_EMAIL}`}
+                  data-analytics-event="contact_click"
+                  data-analytics-placement="contact_section"
+                  data-analytics-method="email"
+                >
+                  {STUDIO_EMAIL}
+                </a>
                 <br />
-                <a href="tel:+18192137859">819 213 7859</a>
+                <a
+                  href="tel:+18192137859"
+                  data-analytics-event="contact_click"
+                  data-analytics-placement="contact_section"
+                  data-analytics-method="phone"
+                >
+                  819 213 7859
+                </a>
                 <br />
-                <a href="tel:+17787914482">778 791 4482</a>
+                <a
+                  href="tel:+17787914482"
+                  data-analytics-event="contact_click"
+                  data-analytics-placement="contact_section"
+                  data-analytics-method="phone"
+                >
+                  778 791 4482
+                </a>
               </p>
             </div>
           </aside>

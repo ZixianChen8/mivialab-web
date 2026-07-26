@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { FOUNDER_ANIM, FOUNDERS } from "@/lib/story-anim-config";
@@ -243,11 +244,12 @@ export function FounderSpotlight() {
           </div>
 
           <div className="founder__static-photo">
-            <img
+            <Image
               src={founder.photo}
               alt={founder.alt}
-              width={480}
-              height={640}
+              width={founder.photoWidth}
+              height={founder.photoHeight}
+              sizes="(max-width: 768px) 72vw, 480px"
             />
           </div>
         </article>
@@ -256,14 +258,15 @@ export function FounderSpotlight() {
       <div className="founders__card" aria-hidden="true">
         <div className="founders__media">
           {FOUNDERS.map((founder, index) => (
-            <img
+            <Image
               className={`founders__photo${index === 0 ? " is-active" : ""}`}
               key={founder.id}
               data-founder-id={founder.id}
               src={founder.photo}
               alt=""
-              width={480}
-              height={640}
+              width={founder.photoWidth}
+              height={founder.photoHeight}
+              sizes="480px"
             />
           ))}
         </div>

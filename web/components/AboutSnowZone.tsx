@@ -1,7 +1,11 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import PixelSnow from "@/components/PixelSnow";
+
+const PixelSnow = dynamic(() => import("@/components/PixelSnow"), {
+  ssr: false,
+});
 
 type AboutSnowZoneProps = {
   children: ReactNode;
@@ -16,7 +20,7 @@ type AboutSnowZoneProps = {
 export function AboutSnowZone({ children }: AboutSnowZoneProps) {
   const zoneRef = useRef<HTMLDivElement>(null);
   const [zoneVisible, setZoneVisible] = useState(true);
-  const [reduceMotion, setReduceMotion] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(true);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");

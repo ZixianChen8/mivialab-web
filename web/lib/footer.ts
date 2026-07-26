@@ -17,8 +17,9 @@ export const FOOTER_ADDRESS = ["Ottawa–Toronto", "Canada"];
 
 export const FOOTER_CONTACT_LINKS: FooterLink[] = [
   { label: STUDIO_EMAIL, href: `mailto:${STUDIO_EMAIL}`, underline: true },
-  { label: "Contact", href: "#contact", underline: true },
+  { label: "Contact", href: "/#contact", underline: true },
   { label: "About", href: "/about", underline: true },
+  { label: "Privacy", href: "/privacy", underline: true },
 ];
 
 export const FOOTER_WORDMARK = "mivialab";

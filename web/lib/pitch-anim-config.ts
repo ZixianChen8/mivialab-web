@@ -11,7 +11,7 @@ export const PITCH_LABEL = "Our approach";
 export const PITCH_PARAGRAPH =
   "A website should feel like your business. AI makes it easier to create polished websites quickly, but without enough human judgment, they still feel generic. At MiviaLab, we take time to understand your business, customers, and goals before we design. These insights guide the website's structure, content, visuals, and customer journey. Every element should help visitors understand your business and take the right next step.";
 
-/** Short supporting line under the statement (reuses hero tagline). */
+/** Short supporting line under the statement (archived hero tagline copy). */
 export const PITCH_SUPPORT = "Custom sites, cared for end to end.";
 
 export const PITCH_PRIMARY = {

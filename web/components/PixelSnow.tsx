@@ -217,7 +217,9 @@ export default function PixelSnow({
   const materialRef = useRef<ShaderMaterial | null>(null);
   const resizeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  pausedRef.current = paused;
+  useEffect(() => {
+    pausedRef.current = paused;
+  }, [paused]);
 
   const variantValue = useMemo(() => {
     return variant === "round" ? 1.0 : variant === "snowflake" ? 2.0 : 0.0;

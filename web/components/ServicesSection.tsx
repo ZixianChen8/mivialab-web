@@ -22,7 +22,7 @@ const SERVICES: Service[] = [
     meta: "Launch + care",
     role: "Search Engine Optimization",
     description:
-      "We build your website using search-friendly structure and technical best practices, including metadata, mobile optimization, sitemap configuration, indexing setup and Google Search Console integration. Ongoing content creation, link building and ranking management are available separately.",
+      "We build your website using search-friendly structure and technical best practices, including metadata, mobile optimization, sitemap configuration, indexing setup and Google Search Console integration. Ongoing SEO can continue through a monthly care plan. New pages, features and integrations are quoted separately.",
   },
   {
     name: "Care",

@@ -166,10 +166,20 @@ export function PitchSection() {
           <p className="pitch__paragraph">{PITCH_PARAGRAPH}</p>
           <p className="pitch__support">{PITCH_SUPPORT}</p>
           <div className="pitch__actions">
-            <a className="pitch__cta pitch__cta--primary" href={PITCH_PRIMARY.href}>
+            <a
+              className="pitch__cta pitch__cta--primary"
+              href={PITCH_PRIMARY.href}
+              data-analytics-event="cta_click"
+              data-analytics-placement="approach"
+            >
               {PITCH_PRIMARY.label}
             </a>
-            <Link className="pitch__cta pitch__cta--secondary" href={PITCH_LINK.href}>
+            <Link
+              className="pitch__cta pitch__cta--secondary"
+              href={PITCH_LINK.href}
+              data-analytics-event="navigation_click"
+              data-analytics-placement="approach"
+            >
               {PITCH_LINK.label}
             </Link>
           </div>

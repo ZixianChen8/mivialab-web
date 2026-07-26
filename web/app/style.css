@@ -10,7 +10,7 @@
   /* Hero background / spotlight (static; archived JS tuning in assets/archive/landing-hero-gsap/) */
   --hero-bg-x: 50%;
   --hero-bg-y: 0%;
-  --hero-bg-offset-y: -14vh;
+  --hero-bg-offset-y: -18vh;
   --hero-bg-scale: 1.12;
   --hero-bg-inset: 8%;
   --hero-fg-x: 50%;
@@ -35,13 +35,16 @@
   --hero-fg-par-my: 18px;
   --hero-fg-par-ry: 4deg;
   --hero-fg-par-rx: -4deg;
-  /* Fallback until SiteMotion builds stops from hero-bg-layers-config (clear must precede scrim stops). */
+  /* Fallback until SiteMotion builds a seamless veil opacity ramp. */
   --hero-spotlight-scrim: radial-gradient(
     ellipse var(--hero-spot-w) var(--hero-spot-h) at var(--hero-spot-x) var(--hero-spot-y),
     transparent 0%,
     transparent var(--hero-spot-clear),
-    var(--hero-scrim-a) 76%,
-    var(--hero-scrim-b) 85%,
+    color-mix(in oklch, var(--hero-veil) 12%, transparent) 70%,
+    color-mix(in oklch, var(--hero-veil) 28%, transparent) 76%,
+    color-mix(in oklch, var(--hero-veil) 48%, transparent) 84%,
+    color-mix(in oklch, var(--hero-veil) 68%, transparent) 90%,
+    color-mix(in oklch, var(--hero-veil) 86%, transparent) 95%,
     var(--hero-veil) 100%
   );
 
@@ -268,7 +271,8 @@ button {
   /* Extra height below only — keeps the image top visible at start,
      while leaving room to drift upward on scroll */
   bottom: calc(var(--hero-bg-inset) * -2);
-  background-image: url("/images/website_with_characters_exp.webp");
+  /* Source: assets/images/background/website_with_characters_exp.webp */
+  background-image: url("/images/background/website_with_characters_exp.webp");
   background-size: cover;
   background-position: var(--hero-bg-x) var(--hero-bg-y);
   background-repeat: no-repeat;
@@ -292,6 +296,10 @@ button {
   position: absolute;
   inset: 0;
   background-image: url("/images/bg_2_layer_2.webp");
+  background-image: image-set(
+    url("/images/bg_2_layer_2.avif") type("image/avif"),
+    url("/images/bg_2_layer_2.webp") type("image/webp")
+  );
   background-size: cover;
   background-position: var(--hero-fg-x) var(--hero-fg-y);
   background-repeat: no-repeat;
@@ -320,7 +328,15 @@ button {
   background: var(--hero-spotlight-scrim);
   opacity: var(--hero-spot-strength);
   -webkit-mask-image: url("/images/bg_2_layer_2.webp");
+  -webkit-mask-image: image-set(
+    url("/images/bg_2_layer_2.avif") type("image/avif"),
+    url("/images/bg_2_layer_2.webp") type("image/webp")
+  );
   mask-image: url("/images/bg_2_layer_2.webp");
+  mask-image: image-set(
+    url("/images/bg_2_layer_2.avif") type("image/avif"),
+    url("/images/bg_2_layer_2.webp") type("image/webp")
+  );
   -webkit-mask-size: cover;
   mask-size: cover;
   -webkit-mask-position: var(--hero-fg-x) var(--hero-fg-y);
@@ -606,7 +622,7 @@ button {
   display: flex;
 }
 
-/* Hero dock — editorial zones across lower viewport */
+/* Hero dock — editorial zones across lower viewport (kicker/tagline archived in assets/archive/hero-kicker-tagline/) */
 .hero-dock {
   position: absolute;
   top: 48%;
@@ -637,15 +653,6 @@ button {
   padding-bottom: 0.35rem;
 }
 
-.hero-kicker {
-  margin: 0 0 0.85rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: color-mix(in oklch, var(--mist) 68%, transparent);
-}
-
 .brand-headline {
   margin: 0;
   max-width: 14ch;
@@ -665,23 +672,12 @@ button {
   padding-bottom: 0.25rem;
 }
 
-.brand-tagline {
-  margin: 0;
-  max-width: 34ch;
-  font-size: clamp(0.92rem, 1.35vw, 1.05rem);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.45;
-  color: color-mix(in oklch, var(--mist) 82%, transparent);
-  text-wrap: pretty;
-}
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem 1.15rem;
-  margin-top: 1.15rem;
+  margin-top: 0;
 }
 
 .hero-cta {
@@ -2452,7 +2448,7 @@ button {
   }
 
   .hero-bg {
-    transform: translateY(var(--hero-bg-offset-y)) scale(1.02) !important;
+    transform: translateY(var(--hero-bg-offset-y)) scale(var(--hero-bg-scale)) !important;
     will-change: auto;
   }
 

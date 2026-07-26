@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookieSettingsButton } from "@/components/CookieSettingsButton";
 import {
   FOOTER_ADDRESS,
   FOOTER_CONTACT_LINKS,
@@ -37,6 +38,18 @@ function FooterTextLink({ link }: { link: FooterLink }) {
   ]
     .filter(Boolean)
     .join(" ");
+  const analyticsProps = link.href.startsWith("mailto:")
+    ? {
+        "data-analytics-event": "contact_click",
+        "data-analytics-placement": "footer",
+        "data-analytics-method": "email",
+      }
+    : link.href === "/#contact"
+      ? {
+          "data-analytics-event": "cta_click",
+          "data-analytics-placement": "footer",
+        }
+      : {};
 
   const content = (
     <>
@@ -47,7 +60,7 @@ function FooterTextLink({ link }: { link: FooterLink }) {
 
   if (link.href.startsWith("/")) {
     return (
-      <Link className={className} href={link.href}>
+      <Link className={className} href={link.href} {...analyticsProps}>
         {content}
       </Link>
     );
@@ -57,6 +70,7 @@ function FooterTextLink({ link }: { link: FooterLink }) {
     <a
       className={className}
       href={link.href}
+      {...analyticsProps}
       {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       {content}
@@ -101,6 +115,9 @@ export function SiteFooter() {
                     <FooterTextLink link={link} />
                   </li>
                 ))}
+                <li>
+                  <CookieSettingsButton />
+                </li>
               </ul>
             </nav>
 

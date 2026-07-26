@@ -18,32 +18,54 @@ export function SiteMotion() {
 
     const heroSection = document.querySelector<HTMLElement>(".hero");
     let themeObserver: MutationObserver | undefined;
+    let mobileHeroMq: MediaQueryList | undefined;
+    let onHeroCssVarsChange: (() => void) | undefined;
     let onHeroPointerMove: ((e: PointerEvent) => void) | undefined;
     let onHeroPointerLeave: (() => void) | undefined;
 
     if (heroSection) {
-      const skyCfg = HERO_BG_LAYERS.sky;
-      const foliageCfg = HERO_BG_LAYERS.foliage;
-      const spotCfg = HERO_BG_LAYERS.spotlight;
       const parCfg = HERO_BG_LAYERS.parallax;
 
+      mobileHeroMq = window.matchMedia("(max-width: 640px)");
+      const skyVarKeys = [
+        "--hero-bg-scale",
+        "--hero-bg-y",
+        "--hero-bg-offset-y",
+        "--hero-bg-inset",
+      ] as const;
+
       const applyHeroCssVars = () => {
+        const skyCfg = HERO_BG_LAYERS.sky;
+        const foliageCfg = HERO_BG_LAYERS.foliage;
+        const spotCfg = HERO_BG_LAYERS.spotlight;
         const root = document.documentElement;
         const rootStyle = root.style;
         const computed = getComputedStyle(root);
-        const { gradient, strength } = buildHeroSpotlightScrim(spotCfg, {
+        const skyMobile = mobileHeroMq!.matches;
+        const spotlightForScrim = skyMobile
+          ? {
+              ...spotCfg,
+              fadeReach:
+                spotCfg.fadeReachMobile ?? Math.round(spotCfg.fadeReach * 0.92),
+            }
+          : spotCfg;
+        const { gradient, strength } = buildHeroSpotlightScrim(spotlightForScrim, {
           scrimA: computed.getPropertyValue("--hero-scrim-a").trim(),
           scrimB: computed.getPropertyValue("--hero-scrim-b").trim(),
           veil: computed.getPropertyValue("--hero-veil").trim(),
         });
-
         rootStyle.setProperty("--hero-spotlight-scrim", gradient);
         rootStyle.setProperty("--hero-spot-strength", String(strength));
-        rootStyle.setProperty("--hero-bg-scale", String(skyCfg.scale));
-        rootStyle.setProperty("--hero-bg-x", `${skyCfg.positionX}%`);
-        rootStyle.setProperty("--hero-bg-y", `${skyCfg.positionY}%`);
-        rootStyle.setProperty("--hero-bg-offset-y", `${skyCfg.offsetYVh}vh`);
-        rootStyle.setProperty("--hero-bg-inset", `${skyCfg.insetPercent}%`);
+        if (skyMobile) {
+          for (const key of skyVarKeys) rootStyle.removeProperty(key);
+          rootStyle.removeProperty("--hero-bg-x");
+        } else {
+          rootStyle.setProperty("--hero-bg-x", `${skyCfg.positionX}%`);
+          rootStyle.setProperty("--hero-bg-scale", String(skyCfg.scale));
+          rootStyle.setProperty("--hero-bg-y", `${skyCfg.positionY}%`);
+          rootStyle.setProperty("--hero-bg-offset-y", `${skyCfg.offsetYVh}vh`);
+          rootStyle.setProperty("--hero-bg-inset", `${skyCfg.insetPercent}%`);
+        }
         rootStyle.setProperty("--hero-fg-scale", String(foliageCfg.scale));
         rootStyle.setProperty("--hero-fg-x", `${foliageCfg.positionX}%`);
         rootStyle.setProperty("--hero-fg-y", `${foliageCfg.positionY}%`);
@@ -65,6 +87,11 @@ export function SiteMotion() {
       };
 
       applyHeroCssVars();
+      onHeroCssVarsChange = applyHeroCssVars;
+      mobileHeroMq.addEventListener("change", onHeroCssVarsChange);
+      if (process.env.NODE_ENV === "development") {
+        window.addEventListener("hero-bg-layers-config:update", onHeroCssVarsChange);
+      }
       themeObserver = new MutationObserver(applyHeroCssVars);
       themeObserver.observe(document.documentElement, {
         attributes: true,
@@ -72,7 +99,7 @@ export function SiteMotion() {
       });
 
       const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
-      if (parCfg.enabled && !reducedMotion && !coarsePointer) {
+      if (parCfg.enabled && !reducedMotion && !coarsePointer && !mobileHeroMq.matches) {
         const root = document.documentElement;
         root.style.setProperty("--hero-par-x", "0");
         root.style.setProperty("--hero-par-y", "0");
@@ -240,6 +267,12 @@ export function SiteMotion() {
 
     return () => {
       themeObserver?.disconnect();
+      if (mobileHeroMq && onHeroCssVarsChange) {
+        mobileHeroMq.removeEventListener("change", onHeroCssVarsChange);
+      }
+      if (process.env.NODE_ENV === "development" && onHeroCssVarsChange) {
+        window.removeEventListener("hero-bg-layers-config:update", onHeroCssVarsChange);
+      }
       if (heroSection && onHeroPointerMove) {
         heroSection.removeEventListener("pointermove", onHeroPointerMove);
       }

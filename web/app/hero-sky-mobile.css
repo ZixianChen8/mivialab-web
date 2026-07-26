@@ -1,0 +1,52 @@
+/* =============================================================================
+   MOBILE HERO SKY (viewport width ≤ 640px)
+
+   Tweak only the variables in :root below. Save and refresh (or hot reload).
+   Foliage (.hero-bg-fg) is unchanged.
+
+   scale        — sky size (try 0.85–0.95). Bigger number = larger sky.
+   x            — horizontal shift (px or vw, e.g. 0px, -20px, 3vw). translateX; not background %.
+   y            — vertical anchor % (try 38–44). Moves baked-in text up/down.
+   offset-y     — extra translateY shift in vh (usually 0 on mobile).
+   inset        — extra layer height; keep 0 unless you know you need it.
+   rotate       — 2D rotation in deg (e.g. 0deg, -2deg). Applied after scale.
+   ============================================================================= */
+
+@media (max-width: 640px) {
+  :root {
+    --hero-sky-mobile-scale: 2.7;
+    --hero-sky-mobile-x: 0px;
+    --hero-sky-mobile-y: 45%;
+    --hero-sky-mobile-offset-y: 0vh;
+    --hero-sky-mobile-inset: 0%;
+    --hero-sky-mobile-rotate: 5deg;
+  }
+
+  /* Flat hero on mobile: no perspective / 3D tilt */
+  .hero__clip {
+    perspective: none;
+    transform-style: flat;
+  }
+
+  .hero-bg {
+    bottom: 0;
+    background-size: 100% auto;
+    background-position: center var(--hero-sky-mobile-y);
+    transform-origin: center center;
+    --hero-bg-scale: var(--hero-sky-mobile-scale);
+    --hero-bg-y: var(--hero-sky-mobile-y);
+    --hero-bg-offset-y: var(--hero-sky-mobile-offset-y);
+    --hero-bg-inset: var(--hero-sky-mobile-inset);
+    transform:
+      translateX(var(--hero-sky-mobile-x))
+      translateY(var(--hero-bg-offset-y))
+      scale(var(--hero-bg-scale))
+      rotate(var(--hero-sky-mobile-rotate));
+    will-change: auto;
+  }
+
+  .hero-bg-fg {
+    transform: translateY(var(--hero-fg-offset-y)) scale(var(--hero-fg-scale));
+    will-change: auto;
+  }
+}
