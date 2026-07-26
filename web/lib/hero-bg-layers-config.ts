@@ -68,9 +68,9 @@ export const HERO_BG_LAYERS = {
 
 export type HeroBgLayersConfig = typeof HERO_BG_LAYERS;
 
-export type HeroSpotlightConfig = HeroBgLayersConfig["spotlight"] & {
-  fadeReach?: number;
-  fadeReachMobile?: number;
+/** Widened so runtime overrides (e.g. fadeReach from fadeReachMobile) type-check. */
+export type HeroSpotlightConfig = {
+  [K in keyof HeroBgLayersConfig["spotlight"]]: number;
 };
 
 type SpotlightColors = {
